@@ -12,6 +12,22 @@ window.NZ = (() => {
     k: (v) => d3.format('.0f')(v * 100) + '%',
     raw: (v) => String(v)
   };
+  // Whole-number shares that add up: largest-remainder rounding of a group of
+  // percentages to integers summing to round(total). A share that is above zero
+  // but rounds to 0 shows as "<1%".
+  const lr0 = (vals) => {
+    const tot = Math.round(vals.reduce((a, b) => a + (b || 0), 0));
+    const fl = vals.map((v) => Math.floor((v || 0) + 1e-9));
+    let left = tot - fl.reduce((a, b) => a + b, 0);
+    vals.map((v, i) => [(v || 0) - fl[i], i]).sort((a, b) => b[0] - a[0] || a[1] - b[1])
+      .forEach(([, i]) => { if (left > 0) { fl[i] += 1; left -= 1; } });
+    return fl;
+  };
+  const show0 = (orig, v) => (orig > 0 && v === 0 ? '<1' : String(v)) + '%';
+  const SK = ['alone', 'nat_needs_opp', 'labour'];
+  // Integer scenario shares for a row holding alone / nat_needs_opp / labour (+ opp_pivotal = the other two)
+  const trip = (r) => { const w = lr0(SK.map((k) => r[k])); const o = {}; SK.forEach((k, i) => { o[k] = w[i]; }); o.opp_pivotal = w[1] + w[2]; return o; };
+  const w = (r, k) => show0(r[k], trip(r)[k]);
   const tip = (box) => {
     let t = box.querySelector(':scope > .tip');
     if (!t) { t = document.createElement('div'); t.className = 'tip'; t.hidden = true; box.appendChild(t); }
@@ -54,7 +70,7 @@ window.NZ = (() => {
     s.appendChild(document.createTextNode(fmt.pct0(v)));
     return s;
   };
-  return {sc, scName, scLong, fmt, tip, ok, muted, svgIn, clear, rowsTable, barCell};
+  return {sc, scName, scLong, fmt, tip, ok, muted, svgIn, clear, rowsTable, barCell, lr0, show0, trip, w, SK};
 })();
 document.querySelectorAll('[data-sc]').forEach((e) => { e.style.background = NZ.sc[e.dataset.sc]; });
 document.querySelectorAll('[data-c]').forEach((e) => { e.style.background = e.dataset.c === 'muted' ? NZ.muted : dash.colors[0]; });
@@ -67,7 +83,18 @@ dash.draw('v', (el) => {
     const conds = el.dataset.where.split('&').map((p) => p.split('=').map(decodeURIComponent));
     row = d.data.find((r) => conds.every(([k, v]) => String(r[k]) === v));
   } else row = d.data[+(el.dataset.row || 0)];
-  const v = row ? row[el.dataset.field] : undefined;
+  const f = el.dataset.field;
+  const v = row ? row[f] : undefined;
+  if (v !== undefined && v !== null && el.dataset.fmt === 'pct0') {
+    // Shares shown together must add to 100: round the whole group, not each figure alone.
+    if (el.dataset.source === 'scenarios' && NZ.SK.concat('opp_pivotal').includes(row.scenario)) {
+      const all = {}; d.data.forEach((r) => { all[r.scenario] = r.pct; });
+      el.textContent = NZ.show0(v, NZ.trip(all)[row.scenario]); return;
+    }
+    if (NZ.SK.concat('opp_pivotal').includes(f) && NZ.SK.every((k) => typeof row[k] === 'number')) {
+      el.textContent = NZ.show0(v, NZ.trip(row)[f]); return;
+    }
+  }
   el.textContent = v === undefined || v === null ? '—' : NZ.fmt[el.dataset.fmt || 'raw'](v);
 });
 
@@ -76,6 +103,7 @@ dash.draw('grid', (el) => {
   if (!NZ.ok('grid')) return;
   const rows = dash.data('grid').data; const cols = [12, 11]; const keys = ['alone', 'nat_needs_opp', 'labour'];
   const rlab = [...new Map(rows.map((r) => [r.seat_order, r.seats])).entries()].sort((a, b) => a[0] - b[0]);
+  const pw = NZ.lr0(rows.map((r) => r.p_runs)); const pRun = new Map(rows.map((r, i) => [r, NZ.show0(r.p_runs, pw[i])]));
   const g = document.createElement('div'); g.className = 'sg';
   const add = (cls, t) => { const d = document.createElement('div'); d.className = cls; if (t) d.textContent = t; g.appendChild(d); return d; };
   add('sg-h', ''); cols.forEach((z) => { const r = rows.find((x) => x.nzf_seats === z); add('sg-h', r ? r.nzf : ''); });
@@ -83,13 +111,13 @@ dash.draw('grid', (el) => {
     add('sg-r', lab);
     cols.forEach((z) => {
       const r = rows.find((x) => x.seat_order === o && x.nzf_seats === z); const c = add('sg-c'); if (!r) return;
-      const p = document.createElement('div'); p.className = 'sg-p'; p.textContent = NZ.fmt.pct0(r.p_runs);
+      const p = document.createElement('div'); p.className = 'sg-p'; p.textContent = pRun.get(r);
       const s = document.createElement('small'); s.textContent = 'of runs'; p.appendChild(s); c.appendChild(p);
       const b = document.createElement('div'); b.className = 'sg-b';
       keys.forEach((k) => { if (r[k] <= 0) return; const sp = document.createElement('span'); sp.style.flex = String(r[k]); sp.style.background = NZ.sc[k]; b.appendChild(sp); });
       c.appendChild(b);
       const l = document.createElement('div'); l.className = 'sg-l';
-      keys.forEach((k) => { if (r[k] <= 0) return; const ln = document.createElement('div'); const i = document.createElement('i'); i.className = 'sw'; i.style.background = NZ.sc[k]; ln.appendChild(i); ln.appendChild(document.createTextNode(`${NZ.scName[k]} ${NZ.fmt.pct0(r[k])}`)); l.appendChild(ln); });
+      keys.forEach((k) => { if (r[k] <= 0) return; const ln = document.createElement('div'); const i = document.createElement('i'); i.className = 'sw'; i.style.background = NZ.sc[k]; ln.appendChild(i); ln.appendChild(document.createTextNode(`${NZ.scName[k]} ${NZ.w(r, k)}`)); l.appendChild(ln); });
       c.appendChild(l);
     });
   });
@@ -126,7 +154,11 @@ dash.draw('paths', (el) => {
 
 dash.draw('swt', (tb) => { const sg = (v) => (v > 0 ? '+' + v : v < 0 ? '−' + Math.abs(v) : '0'); NZ.rowsTable(tb, 'switches', [[(r) => r.switch], [(r) => sg(r.coalition_change), 'n'], [(r) => sg(r.house_change), 'n'], [(r) => NZ.fmt.pct0(r.p), 'n']]); });
 
-dash.draw('oppnat', (tb) => NZ.rowsTable(tb, 'opp_by_nat', [[(r) => r.band], [(r) => NZ.fmt.pct0(r.p_runs), 'n'], [(r) => NZ.barCell(r.opp_pivotal, 100, NZ.sc.nat_needs_opp)], [(r) => NZ.fmt.pct0(r.ent_drop), 'n']]));
+dash.draw('oppnat', (tb) => {
+  const d = dash.data('opp_by_nat'); const rows = d.status === 'ok' ? d.data : [];
+  const pw = NZ.lr0(rows.map((r) => r.p_runs)); const pRun = new Map(rows.map((r, i) => [r, NZ.show0(r.p_runs, pw[i])]));
+  NZ.rowsTable(tb, 'opp_by_nat', [[(r) => r.band], [(r) => pRun.get(r) || NZ.fmt.pct0(r.p_runs), 'n'], [(r) => NZ.barCell(r.opp_pivotal, 100, NZ.sc.nat_needs_opp)], [(r) => NZ.fmt.pct0(r.ent_drop), 'n']]);
+});
 
 dash.draw('enrol', (el) => {
   if (!NZ.ok('enrolment')) { NZ.clear(el); return; }
@@ -211,7 +243,7 @@ dash.draw('sens', (el) => {
       const v = r[k]; const y1 = y(acc); acc += v; const y2 = y(acc);
       svg.append('rect').attr('x', x(r.k)).attr('y', y2 + 1).attr('width', x.bandwidth()).attr('height', Math.max(0, y1 - y2 - 2)).attr('rx', 2).attr('fill', NZ.sc[k])
         .on('mousemove', (ev) => tp.show(ev, `Lean at ${NZ.fmt.k(r.k)} of history`, [[NZ.sc[k], `${NZ.scName[k]}: ${d3.format('.1f')(v)}%`]])).on('mouseleave', () => tp.hide());
-      if (y1 - y2 > 16) svg.append('text').attr('x', x(r.k) + x.bandwidth() / 2).attr('y', (y1 + y2) / 2 + 4).attr('text-anchor', 'middle').attr('fill', '#fff').attr('font-weight', 500).attr('pointer-events', 'none').text(d3.format('.0f')(v));
+      if (y1 - y2 > 16) svg.append('text').attr('x', x(r.k) + x.bandwidth() / 2).attr('y', (y1 + y2) / 2 + 4).attr('text-anchor', 'middle').attr('fill', '#fff').attr('font-weight', 500).attr('pointer-events', 'none').text(String(NZ.trip(r)[k]));
     });
     svg.append('text').attr('x', x(r.k) + x.bandwidth() / 2).attr('y', h - bt + 16).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg-muted)').attr('font-size', 11).text(NZ.fmt.k(r.k));
     if (Math.abs(r.k - 0.85) < 1e-9) svg.append('text').attr('x', x(r.k) + x.bandwidth() / 2).attr('y', h - bt + 30).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg)').attr('font-size', 11).text('central');
@@ -219,11 +251,11 @@ dash.draw('sens', (el) => {
 });
 
 dash.draw('vtable', (tb) => {
-  NZ.rowsTable(tb, 'variants', [[(r) => r.variant], [(r) => NZ.fmt.pct0(r.alone), 'n'], [(r) => NZ.fmt.pct0(r.nat_needs_opp), 'n'], [(r) => NZ.fmt.pct0(r.labour), 'n'], [(r) => NZ.fmt.pct0(r.opp_pivotal), 'n'], [(r) => NZ.fmt.pct0(r.wai), 'n'], [(r) => NZ.fmt.pct0(r.he), 'n']]);
+  NZ.rowsTable(tb, 'variants', [[(r) => r.variant], [(r) => NZ.w(r, 'alone'), 'n'], [(r) => NZ.w(r, 'nat_needs_opp'), 'n'], [(r) => NZ.w(r, 'labour'), 'n'], [(r) => NZ.w(r, 'opp_pivotal'), 'n'], [(r) => NZ.fmt.pct0(r.wai), 'n'], [(r) => NZ.fmt.pct0(r.he), 'n']]);
   tb.querySelectorAll('tr').forEach((tr) => { if (tr.dataset.key === 'central') tr.className = 'hl'; });
 });
 
-dash.draw('ytable', (tb) => NZ.rowsTable(tb, 'template_years', [[(r) => String(r.year)], [(r) => r.weight + '%', 'n'], [(r) => NZ.fmt.pct0(r.alone), 'n'], [(r) => NZ.fmt.pct0(r.nat_needs_opp), 'n'], [(r) => NZ.fmt.pct0(r.labour), 'n'], [(r) => NZ.fmt.pct0(r.opp_pivotal), 'n']]));
+dash.draw('ytable', (tb) => NZ.rowsTable(tb, 'template_years', [[(r) => String(r.year)], [(r) => r.weight + '%', 'n'], [(r) => NZ.w(r, 'alone'), 'n'], [(r) => NZ.w(r, 'nat_needs_opp'), 'n'], [(r) => NZ.w(r, 'labour'), 'n'], [(r) => NZ.w(r, 'opp_pivotal'), 'n']]));
 
 dash.draw('hist', (el) => {
   if (!NZ.ok('history_party')) { NZ.clear(el); return; }

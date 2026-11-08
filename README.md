@@ -19,6 +19,8 @@ A Monte Carlo model of the 2026 New Zealand general election special-vote count.
 
 The result is close to a coin toss. It depends mostly on how strongly 2026's specials lean left compared with past elections. The sensitivity runs cover this: at 70% of the historical lean the coalition governs alone 61.6% of the time, and at 100% it does so 45.7% of the time. See `outputs/summary.json` for every variant.
 
+Percentages that are shown together, such as the three scenarios or a row of a table, are rounded with the largest-remainder method so they always add to 100. A share that is above zero but rounds to nothing shows as "<1%".
+
 This is a model, not a forecast from inside information. The official result is due on **27 November 2026**.
 
 ## How it works

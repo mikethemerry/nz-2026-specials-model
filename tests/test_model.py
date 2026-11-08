@@ -78,3 +78,29 @@ def test_central_run_reproduces_published_headline():
     published = json.loads((ROOT / "outputs" / "summary.json").read_text())["central"]
     for k in ("alone", "nat_needs_opp", "labour", "opp_pivotal"):
         assert got[k] == published[k], k
+
+
+def test_largest_remainder_rounding_sums_exactly():
+    from nzspecials.analysis import lr, split
+    assert lr([526, 175, 299]) == [52.6, 17.5, 29.9]
+    assert round(sum(lr([1, 1, 1])), 1) == 100.0 and lr([1, 1, 1]) == [33.4, 33.3, 33.3]
+    assert lr([5, 0, 0]) == [100.0, 0.0, 0.0]
+    assert round(sum(lr([7, 3, 1], total=47.4)), 1) == 47.4
+    s = split(np.array(["alone"] * 2 + ["labour"] * 1))
+    assert s["opp_pivotal"] == round(s["nat_needs_opp"] + s["labour"], 1)
+
+
+def test_site_percentage_groups_add_to_100():
+    """Every set of shares the site shows together must sum to exactly 100.0."""
+    D = lambda f: json.loads((ROOT / "docs" / "data" / f"{f}.json").read_text())
+    k3 = ["alone", "nat_needs_opp", "labour"]
+    sc = {r["scenario"]: r["pct"] for r in D("scenarios")}
+    assert round(sum(sc[k] for k in k3), 1) == 100.0
+    assert sc["opp_pivotal"] == round(sc["nat_needs_opp"] + sc["labour"], 1)
+    for f in ("grid", "template_years", "variants", "sensitivity"):
+        for r in D(f):
+            assert round(sum(r[k] for k in k3), 1) == 100.0, (f, r)
+    for f, key in (("grid", "p_runs"), ("opp_by_nat", "p_runs"), ("outcomes", "pct"), ("paths", "pct")):
+        assert round(sum(r[key] for r in D(f)), 1) == 100.0, f
+    for k in k3:
+        assert round(sum(r["pct"] for r in D("paths") if r["scenario"] == k), 1) == sc[k]

@@ -43,10 +43,10 @@
  },
  "k07_he": {
   "label": "70% lean, 85% valid, Hamilton East 8,000",
-  "alone": 57.0,
+  "alone": 56.9,
   "nat_needs_opp": 18.9,
   "labour": 24.2,
-  "opp_pivotal": 43.0
+  "opp_pivotal": 43.1
  },
  "k085_v91": {
   "label": "85% lean, 91% valid",
