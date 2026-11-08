@@ -1,0 +1,51 @@
+/* Design tokens the dashboard page expects, for running it as a standalone site. */
+:root {
+  --font-anthropic-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-anthropic-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --color-bg: #faf9f6;
+  --color-fg: #141413;
+  --color-fg-muted: #6b6a64;
+  --color-panel: #ffffff;
+  --color-border-line: #e4e2da;
+  --color-ok: #0f7a3a;
+  --color-warn: #a86a00;
+  --color-bad: #c03030;
+  --cds-font-size-caption: 0.8125rem;
+  --cds-font-size-body: 1rem;
+  --cds-font-size-heading: 1.25rem;
+  --cds-font-size-title: 2rem;
+  --cds-font-weight-medium: 500;
+  --cds-gap-xs: 4px; --cds-gap-sm: 8px; --cds-gap-md: 16px; --cds-gap-lg: 24px; --cds-gap-xl: 40px;
+  --cds-pad-xs: 4px; --cds-pad-sm: 8px; --cds-pad-md: 12px; --cds-pad-lg: 16px;
+  --cds-radius: 8px;
+  --cds-surface-popover: #ffffff;
+  --cds-border: #d9d7cf;
+  --cds-shadow-popover: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --cds-text-secondary: #6b6a64;
+  --cds-chart-grid: #ecebe5;
+  --cds-chart-axis: #b9b7ae;
+  --cds-chart-reference: #8f8d85;
+  --cds-chart-muted: #b4b2a9;
+  --cds-dur-slow: 300ms;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1a1a19;
+    --color-fg: #f0efec;
+    --color-fg-muted: #a8a69e;
+    --color-panel: #232322;
+    --color-border-line: #383835;
+    --cds-surface-popover: #2b2b29;
+    --cds-border: #44443f;
+    --cds-text-secondary: #c3c2b7;
+    --cds-chart-grid: #2c2c2a;
+    --cds-chart-axis: #4a4a46;
+    --cds-chart-reference: #77766f;
+    --cds-chart-muted: #5f5e5a;
+  }
+}
+html { background: var(--color-bg); }
+body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-family: var(--font-anthropic-sans); }
+#dash-root { padding: clamp(16px, 4vw, 48px); }
+a { color: inherit; }
+.site-foot { max-width: 60rem; margin: 3rem auto 0; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); border-top: 1px solid var(--color-border-line); padding-top: 1rem; }

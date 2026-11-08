@@ -1,0 +1,18 @@
+[project]
+name = "nzspecials"
+version = "1.0.0"
+description = "Monte Carlo model of how special votes could change the 2026 New Zealand general election result"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = ["numpy>=2.0,<3"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.setuptools]
+packages = ["nzspecials"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

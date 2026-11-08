@@ -1,0 +1,463 @@
+{
+ "_source": "Electoral Commission, 2026 General Election preliminary count (electionresults.govt.nz/ge2026), retrieved 8 Nov 2026",
+ "party_votes": {
+  "NAT": 706680,
+  "LAB": 710330,
+  "GP": 321902,
+  "ACT": 264121,
+  "NZF": 236630,
+  "OPP": 144298,
+  "TPM": 13845,
+  "OTH": 20759
+ },
+ "party_votes_note": "OTH aggregates all parties below 1%",
+ "specials_estimate": 399365,
+ "overseas_estimate": 96947,
+ "electorates": {
+  "Auckland Central": {
+   "leader": "GP",
+   "runner_up": "NAT",
+   "margin": 2831,
+   "votes_counted": 30110
+  },
+  "Banks Peninsula": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 2261,
+   "votes_counted": 44839
+  },
+  "Botany": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 13073,
+   "votes_counted": 32069
+  },
+  "Christchurch Central": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 2632,
+   "votes_counted": 34895
+  },
+  "Christchurch East": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 9012,
+   "votes_counted": 37464
+  },
+  "Coromandel": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 14932,
+   "votes_counted": 40355
+  },
+  "Dunedin": {
+   "leader": "LAB",
+   "runner_up": "GP",
+   "margin": 8718,
+   "votes_counted": 35196
+  },
+  "East Cape": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 5325,
+   "votes_counted": 33920
+  },
+  "East Coast Bays": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 13819,
+   "votes_counted": 31004
+  },
+  "Epsom": {
+   "leader": "ACT",
+   "runner_up": "NAT",
+   "margin": 2044,
+   "votes_counted": 32201
+  },
+  "Glendene": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 6940,
+   "votes_counted": 29932
+  },
+  "Hamilton East": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 456,
+   "votes_counted": 31391
+  },
+  "Hamilton West": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 2181,
+   "votes_counted": 32264
+  },
+  "Henderson": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 6213,
+   "votes_counted": 28408
+  },
+  "Hutt South": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 889,
+   "votes_counted": 40292
+  },
+  "Ilam": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 6712,
+   "votes_counted": 35525
+  },
+  "Invercargill": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 9615,
+   "votes_counted": 33772
+  },
+  "Kaikōura": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 8018,
+   "votes_counted": 36817
+  },
+  "Kaipara ki Mahurangi": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 12592,
+   "votes_counted": 38131
+  },
+  "Kapiti": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 2077,
+   "votes_counted": 43774
+  },
+  "Kenepuru": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 9297,
+   "votes_counted": 31039
+  },
+  "Māngere": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 11970,
+   "votes_counted": 23624
+  },
+  "Manurewa": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 10973,
+   "votes_counted": 21569
+  },
+  "Maungakiekie": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 2952,
+   "votes_counted": 31876
+  },
+  "Mt Albert": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 4678,
+   "votes_counted": 32781
+  },
+  "Mt Maunganui": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 14059,
+   "votes_counted": 36998
+  },
+  "Mt Roskill": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 262,
+   "votes_counted": 30606
+  },
+  "Napier": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 6847,
+   "votes_counted": 36255
+  },
+  "Nelson": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 1210,
+   "votes_counted": 38456
+  },
+  "New Plymouth": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 7788,
+   "votes_counted": 38330
+  },
+  "North Shore": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 11151,
+   "votes_counted": 34270
+  },
+  "Northcote": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 3064,
+   "votes_counted": 33522
+  },
+  "Northland": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 7942,
+   "votes_counted": 37823
+  },
+  "Ōtāhuhu": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 10558,
+   "votes_counted": 20907
+  },
+  "Pakuranga": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 13691,
+   "votes_counted": 32170
+  },
+  "Palmerston North": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 2933,
+   "votes_counted": 36282
+  },
+  "Papakura": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 8394,
+   "votes_counted": 28728
+  },
+  "Port Waikato": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 10437,
+   "votes_counted": 35867
+  },
+  "Rangitata": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 13917,
+   "votes_counted": 35996
+  },
+  "Rangitīkei": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 5506,
+   "votes_counted": 37094
+  },
+  "Remutaka": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 14424,
+   "votes_counted": 38684
+  },
+  "Rotorua": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 5301,
+   "votes_counted": 31924
+  },
+  "Selwyn": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 13941,
+   "votes_counted": 38976
+  },
+  "Southland": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 11484,
+   "votes_counted": 34395
+  },
+  "Taieri": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 4798,
+   "votes_counted": 37380
+  },
+  "Takanini": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 1487,
+   "votes_counted": 25764
+  },
+  "Tāmaki": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 5356,
+   "votes_counted": 35924
+  },
+  "Taranaki-King Country": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 12031,
+   "votes_counted": 37310
+  },
+  "Taupō": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 13052,
+   "votes_counted": 38655
+  },
+  "Tauranga": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 10274,
+   "votes_counted": 34995
+  },
+  "Tukituki": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 8933,
+   "votes_counted": 34193
+  },
+  "Upper Harbour": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 8967,
+   "votes_counted": 30916
+  },
+  "Waikato": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 12576,
+   "votes_counted": 37471
+  },
+  "Waimakariri": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 11283,
+   "votes_counted": 43631
+  },
+  "Wairarapa": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 139,
+   "votes_counted": 41514
+  },
+  "Waitākere": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 2675,
+   "votes_counted": 34115
+  },
+  "Waitaki": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 8352,
+   "votes_counted": 39859
+  },
+  "Wellington Bays": {
+   "leader": "LAB",
+   "runner_up": "GP",
+   "margin": 140,
+   "votes_counted": 40961
+  },
+  "Wellington North": {
+   "leader": "GP",
+   "runner_up": "LAB",
+   "margin": 3006,
+   "votes_counted": 42706
+  },
+  "West Coast-Tasman": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 6601,
+   "votes_counted": 37445
+  },
+  "Whanganui": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 6748,
+   "votes_counted": 36785
+  },
+  "Whangaparāoa": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 15368,
+   "votes_counted": 37290
+  },
+  "Whangārei": {
+   "leader": "NAT",
+   "runner_up": "LAB",
+   "margin": 1092,
+   "votes_counted": 39404
+  },
+  "Wigram": {
+   "leader": "LAB",
+   "runner_up": "NAT",
+   "margin": 1935,
+   "votes_counted": 34281
+  },
+  "Hauraki-Waikato": {
+   "leader": "TPM",
+   "runner_up": "LAB",
+   "margin": 10441,
+   "votes_counted": 26781
+  },
+  "Ikaroa-Rāwhiti": {
+   "leader": "LAB",
+   "runner_up": "TPM",
+   "margin": 3132,
+   "votes_counted": 28444
+  },
+  "Tāmaki Makaurau": {
+   "leader": "TPM",
+   "runner_up": "LAB",
+   "margin": 7498,
+   "votes_counted": 25633
+  },
+  "Te Tai Hauāuru": {
+   "leader": "TPM",
+   "runner_up": "LAB",
+   "margin": 3841,
+   "votes_counted": 27038
+  },
+  "Te Tai Tokerau": {
+   "leader": "TPM",
+   "runner_up": "GP",
+   "margin": 436,
+   "votes_counted": 28448
+  },
+  "Te Tai Tonga": {
+   "leader": "LAB",
+   "runner_up": "GP",
+   "margin": 2773,
+   "votes_counted": 26564
+  },
+  "Waiariki": {
+   "leader": "TPM",
+   "runner_up": "GP",
+   "margin": 2274,
+   "votes_counted": 29641
+  }
+ },
+ "party_pct_printed": {
+  "NAT": 29.21,
+  "LAB": 29.36,
+  "GP": 13.3,
+  "ACT": 10.92,
+  "NZF": 9.78,
+  "OPP": 5.96,
+  "TPM": 0.57
+ },
+ "seats_projected_printed": {
+  "NAT": 42,
+  "LAB": 36,
+  "GP": 16,
+  "ACT": 13,
+  "NZF": 12,
+  "OPP": 7,
+  "TPM": 5,
+  "total": 131
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "_label": "Revised central + Hamilton East 8,000 specials",
+ "n": 20000,
+ "k_mean": 0.85,
+ "valid": 0.85,
+ "se_override": {
+  "Hamilton East": 8000
+ }
+}

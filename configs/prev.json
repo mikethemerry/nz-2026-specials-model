@@ -1,0 +1,6 @@
+{
+ "_label": "Previous central: 70% lean, 91% valid",
+ "n": 20000,
+ "k_mean": 0.7,
+ "valid": 0.91
+}

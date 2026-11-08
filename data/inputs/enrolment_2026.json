@@ -1,0 +1,75 @@
+{
+ "_sources": {
+  "monthly": "https://elections.nz/stats-and-research/enrolment-statistics/enrolment-by-general-electorate (statistics as at 30 September 2026)",
+  "snapshot": "https://vote.nz/2026-general-election/resources/enrolment-updates (daily snapshots; not final)"
+ },
+ "eligible_18_24": 440692,
+ "enrolled_18_24_30sep": 273946,
+ "total_enrolled_30sep": 3677600,
+ "eligible_total_30sep": 4051640,
+ "series": [
+  {
+   "date": "2026-09-30",
+   "label": "30 Sep",
+   "series": "monthly",
+   "rate_18_24": 62.16,
+   "total_electors": 3677600
+  },
+  {
+   "date": "2026-10-22",
+   "label": "22 Oct",
+   "series": "snapshot",
+   "rate_18_24": 69.3,
+   "total_electors": 3736715
+  },
+  {
+   "date": "2026-10-23",
+   "label": "23 Oct",
+   "series": "snapshot",
+   "rate_18_24": 69.9,
+   "total_electors": 3743507
+  },
+  {
+   "date": "2026-10-24",
+   "label": "24 Oct",
+   "series": "snapshot",
+   "rate_18_24": 69.9,
+   "total_electors": 3744643
+  },
+  {
+   "date": "2026-10-25",
+   "label": "25 Oct",
+   "series": "snapshot",
+   "rate_18_24": 70.2,
+   "total_electors": 3748990
+  },
+  {
+   "date": "2026-10-26",
+   "label": "26 Oct",
+   "series": "snapshot",
+   "rate_18_24": 71.2,
+   "total_electors": 3759992
+  },
+  {
+   "date": "2026-10-27",
+   "label": "27 Oct",
+   "series": "snapshot",
+   "rate_18_24": 72.7,
+   "total_electors": 3775076
+  },
+  {
+   "date": "2026-10-28",
+   "label": "28 Oct",
+   "series": "snapshot",
+   "rate_18_24": 73.8,
+   "total_electors": 3787116
+  },
+  {
+   "date": "2026-10-29",
+   "label": "29 Oct",
+   "series": "snapshot",
+   "rate_18_24": 74.2,
+   "total_electors": 3790946
+  }
+ ]
+}

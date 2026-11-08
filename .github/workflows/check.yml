@@ -1,0 +1,27 @@
+name: Reproduce results
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Tests
+        run: python -m pytest -q
+      - name: Raw data checksums
+        if: hashFiles('data/raw/manifest.json') != ''
+        run: python scripts/fetch_raw.py verify
+      - name: Calibration rebuilds from raw data
+        if: hashFiles('data/raw/manifest.json') != ''
+        run: python scripts/build_calibration.py --check
+      - name: Rerun the model
+        run: python scripts/run_model.py
+      - name: Published site data is unchanged
+        run: git diff --exit-code -- docs/data outputs/summary.json

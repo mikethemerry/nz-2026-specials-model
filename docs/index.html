@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NZ 2026: what the special votes will decide</title>
+<meta name="description" content="Monte Carlo model of the 2026 New Zealand special-vote count: scenarios, marginal seats, assumptions and methodology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Serif+4:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
+<style>
+#dash-root .nz{max-width:60rem;margin-inline:auto;font-family:var(--font-anthropic-sans);color:var(--color-fg)}
+.nz h1{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);margin:0 0 var(--cds-gap-sm)}
+.nz h2{font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium);margin:var(--cds-gap-xl) 0 var(--cds-gap-sm)}
+.nz h3{font-size:var(--cds-font-size-body);font-weight:var(--cds-font-weight-medium);margin:0 0 var(--cds-gap-xs)}
+.nz p,.nz li{line-height:1.6;max-width:44rem}
+.nz .lede{font-size:var(--cds-font-size-body);color:var(--color-fg-muted)}
+.nz b{font-weight:var(--cds-font-weight-medium);font-variant-numeric:tabular-nums}
+.nz .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr));gap:var(--cds-gap-md);margin:var(--cds-gap-lg) 0}
+.nz .tile,.nz .card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);position:relative}
+.nz .card{margin-top:var(--cds-gap-md)}
+.nz .strip{position:absolute;left:0;right:0;top:0;height:4px;border-radius:var(--cds-radius) var(--cds-radius) 0 0}
+.nz .big{font-family:var(--font-anthropic-serif);font-size:2.75rem;line-height:1.1;font-variant-numeric:tabular-nums;margin:var(--cds-gap-xs) 0}
+.nz .tile p{margin:0;font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.nz .tile.opp{border-style:dashed}
+.nz .note{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);margin:0 0 var(--cds-gap-sm)}
+.nz .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:var(--cds-gap-md)}
+.nz .grid .card{margin-top:0}
+.nz .chart{position:relative;width:100%;min-height:12rem}
+.nz .tw{overflow-x:auto}
+.nz table{width:100%;border-collapse:collapse;font-size:var(--cds-font-size-caption);font-variant-numeric:tabular-nums}
+.nz th{text-align:left;font-weight:var(--cds-font-weight-medium);color:var(--color-fg-muted);border-bottom:1px solid var(--color-border-line);padding:var(--cds-pad-xs) var(--cds-pad-sm) var(--cds-pad-xs) 0;vertical-align:bottom}
+.nz td{border-bottom:1px solid var(--color-border-line);padding:var(--cds-pad-xs) var(--cds-pad-sm) var(--cds-pad-xs) 0;vertical-align:top}
+.nz td.n,.nz th.n{text-align:right}
+.nz tr.hl td{font-weight:var(--cds-font-weight-medium)}
+.nz .legend{display:flex;flex-wrap:wrap;gap:var(--cds-gap-md);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);margin:0 0 var(--cds-gap-sm)}
+.nz .legend span{display:inline-flex;align-items:center;gap:6px}
+.nz .sw{width:10px;height:10px;border-radius:2px;display:inline-block}
+.nz .tip{position:absolute;pointer-events:none;background:var(--cds-surface-popover);border:1px solid var(--cds-border);border-radius:var(--cds-radius);box-shadow:var(--cds-shadow-popover);padding:var(--cds-pad-xs) var(--cds-pad-sm);font-size:var(--cds-font-size-caption);white-space:nowrap;z-index:2}
+.nz .tip .h{color:var(--cds-text-secondary)}
+.nz .bar{display:inline-block;height:8px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.nz ol li,.nz ul li{margin-bottom:var(--cds-gap-xs)}
+.nz [data-dash-source-state=refreshing]{opacity:.5;transition:opacity var(--cds-dur-slow)}
+.nz [data-dash-source-state=empty]{color:transparent}
+.nz .def{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.nz .sgw{min-height:20rem}
+.nz .sg{display:grid;grid-template-columns:minmax(6.5rem,auto) minmax(0,1fr) minmax(0,1fr);gap:var(--cds-gap-sm)}
+.nz .sg-h{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);align-self:end;font-weight:var(--cds-font-weight-medium)}
+.nz .sg-r{font-size:var(--cds-font-size-caption);align-self:center}
+.nz .sg-c{border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-sm)}
+.nz .sg-p{font-family:var(--font-anthropic-serif);font-size:var(--cds-font-size-heading);font-variant-numeric:tabular-nums}
+.nz .sg-p small{font-family:var(--font-anthropic-sans);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);margin-left:4px}
+.nz .sg-b{display:flex;height:10px;gap:2px;margin:6px 0}
+.nz .sg-b span{border-radius:2px}
+.nz .sg-l{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);line-height:1.5;font-variant-numeric:tabular-nums}
+.nz .sg-l i{margin-right:4px;vertical-align:-1px}
+.nz .pthw{min-height:22rem}
+.nz .pg{margin-bottom:var(--cds-gap-lg)}
+.nz .pg-h{font-weight:var(--cds-font-weight-medium);margin-bottom:var(--cds-gap-xs)}
+.nz .pg-r{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 3.5rem;gap:var(--cds-gap-sm);align-items:center;font-size:var(--cds-font-size-caption);padding:3px 0;border-bottom:1px solid var(--color-border-line)}
+.nz .pg-bw{height:10px}
+.nz .pg-b{display:block;height:10px;border-radius:2px}
+.nz .pg-v{text-align:right;font-variant-numeric:tabular-nums}
+.nz .callout{border-left:3px solid var(--color-border-line);padding-left:var(--cds-pad-md);border-radius:0}
+</style>
+</head>
+<body>
+<div id="dash-root">
+
+
+<div class='nz' data-read lang='en-NZ'>
+
+<header id='top'>
+  <h1>NZ 2026: what the special votes will decide (revised)</h1>
+  <p class='lede'>On the revised assumptions, the National-ACT-NZ First coalition governs alone in <b data-draw='v' data-source='scenarios' data-where='scenario=alone' data-field='pct' data-fmt='pct0'>—</b> of <b data-draw='v' data-source='inputs' data-where='key=sims' data-field='value' data-fmt='int'>—</b> simulated special-vote counts. Opportunity holds the balance of power in the other <b data-draw='v' data-source='scenarios' data-where='scenario=opp_pivotal' data-field='pct' data-fmt='pct0'>—</b>. Late enrolment by young voters makes this year's specials more left-leaning than the first model assumed. Official results are due on 27 November.</p>
+</header>
+
+<section id='scenarios' aria-label='The scenarios'>
+  <div class='tiles'>
+    <div class='tile'><span class='strip' data-sc='alone'></span><h3>Coalition governs alone</h3>
+      <div class='big' data-draw='v' data-source='scenarios' data-where='scenario=alone' data-field='pct' data-fmt='pct0'>—</div>
+      <p>National, ACT and NZ First have a majority on their own.</p></div>
+    <div class='tile'><span class='strip' data-sc='nat_needs_opp'></span><h3>National needs Opportunity</h3>
+      <div class='big' data-draw='v' data-source='scenarios' data-where='scenario=nat_needs_opp' data-field='pct' data-fmt='pct0'>—</div>
+      <p>An exact tie. The coalition can only govern with Opportunity, and Labour can't govern even with it.</p></div>
+    <div class='tile'><span class='strip' data-sc='labour'></span><h3>Labour could form a government</h3>
+      <div class='big' data-draw='v' data-source='scenarios' data-where='scenario=labour' data-field='pct' data-fmt='pct0'>—</div>
+      <p>Labour, Greens, Te Pāti Māori and Opportunity have a majority. Opportunity could choose either side.</p></div>
+    <div class='tile opp'><h3>Opportunity holds the balance</h3>
+      <div class='big' data-draw='v' data-source='scenarios' data-where='scenario=opp_pivotal' data-field='pct' data-fmt='pct0'>—</div>
+      <p>The two scenarios above combined: no majority without Opportunity.</p></div>
+  </div>
+  <p class='note callout'>What changed from the first model: the domestic special-vote lean is now <b data-draw='v' data-source='inputs' data-where='key=k_central' data-field='value' data-fmt='k'>—</b> of its historical level, up from <b data-draw='v' data-source='inputs' data-where='key=k_previous' data-field='value' data-fmt='k'>—</b>, because late enrolment moved earlier rather than disappearing. <b data-draw='v' data-source='inputs' data-where='key=valid_central' data-field='value' data-fmt='pct0'>—</b> of specials are assumed to count, down from <b data-draw='v' data-source='inputs' data-where='key=valid_previous' data-field='value' data-fmt='pct0'>—</b>, because more are expected to be thrown out. Together these take the coalition's chance of governing alone from <b data-draw='v' data-source='variants' data-where='id=prev' data-field='alone' data-fmt='pct0'>—</b> to <b data-draw='v' data-source='variants' data-where='id=central' data-field='alone' data-fmt='pct0'>—</b>.</p>
+</section>
+
+<section id='start'>
+  <h2>Where the count stands</h2>
+  <p>On the preliminary count National won <b data-draw='v' data-source='inputs' data-where='key=nat_electorates' data-field='value' data-fmt='int'>—</b> electorates, but its party vote only entitles it to <b data-draw='v' data-source='inputs' data-where='key=nat_entitlement' data-field='value' data-fmt='int'>—</b> seats. Te Pāti Māori won <b data-draw='v' data-source='inputs' data-where='key=tpm_electorates' data-field='value' data-fmt='int'>—</b> electorates on an entitlement of <b data-draw='v' data-source='inputs' data-where='key=tpm_entitlement' data-field='value' data-fmt='int'>—</b>. Those <b data-draw='v' data-source='inputs' data-where='key=overhang' data-field='value' data-fmt='int'>—</b> overhang seats take the House to <b data-draw='v' data-source='inputs' data-where='key=house' data-field='value' data-fmt='int'>—</b>, so a majority is <b data-draw='v' data-source='inputs' data-where='key=majority' data-field='value' data-fmt='int'>—</b>. The coalition holds <b data-draw='v' data-source='inputs' data-where='key=coalition_prelim' data-field='value' data-fmt='int'>—</b>. Labour, the Greens, Te Pāti Māori and Opportunity hold <b data-draw='v' data-source='inputs' data-where='key=left_opp_prelim' data-field='value' data-fmt='int'>—</b>.</p>
+  <p>Because National is in overhang, its seat count is simply the number of electorates it wins. Every electorate it loses on specials costs the coalition a seat and shrinks the House by one. Te Pāti Māori works the same way. National's party vote still matters, but through the size of the House: if specials cut its entitlement by a seat, that seat goes to another party while National keeps its electorates, so the House grows by one.</p>
+  <p>About <b data-draw='v' data-source='inputs' data-where='key=specials' data-field='value' data-fmt='int'>—</b> special votes are still to be counted, <b data-draw='v' data-source='inputs' data-where='key=overseas' data-field='value' data-fmt='int'>—</b> of them from overseas, compared with <b data-draw='v' data-source='inputs' data-where='key=specials_2023' data-field='value' data-fmt='int'>—</b> counted in 2023. Advance voting rose to <b data-draw='v' data-source='inputs' data-where='key=advance_pct_2026' data-field='value' data-fmt='pct1'>—</b> of ordinary votes from <b data-draw='v' data-source='inputs' data-where='key=advance_pct_2023' data-field='value' data-fmt='pct1'>—</b> in 2023, but those <b data-draw='v' data-source='inputs' data-where='key=advance_ordinary' data-field='value' data-fmt='int'>—</b> advance votes are ordinary votes and are already in the preliminary count. Only the specials are still to come.</p>
+</section>
+
+<section id='enrolment'>
+  <h2>Late enrolment moved earlier, it didn't disappear</h2>
+  <p>On 30 September, <b data-draw='v' data-source='enrol_stats' data-where='key=enrolled_18_24_sep' data-field='value' data-fmt='int'>—</b> of an estimated <b data-draw='v' data-source='enrol_stats' data-where='key=eligible_18_24' data-field='value' data-fmt='int'>—</b> eligible 18-24-year-olds were enrolled. By 29 October the rate had reached <b data-draw='v' data-source='enrolment' data-where='date=2026-10-29' data-field='rate_18_24' data-fmt='pct1'>—</b>, about <b data-draw='v' data-source='enrol_stats' data-where='key=enrolled_18_24_oct' data-field='value' data-fmt='int'>—</b> people, or <b data-draw='v' data-source='enrol_stats' data-where='key=youth_gain' data-field='value' data-fmt='int'>—</b> more young voters. That is <b data-draw='v' data-source='enrol_stats' data-where='key=youth_share_of_gain' data-field='value' data-fmt='pct0'>—</b> of the <b data-draw='v' data-source='enrol_stats' data-where='key=total_gain' data-field='value' data-fmt='int'>—</b> rise in total enrolment over the same period, and the rate kept climbing after the 25 October deadline as forms were processed.</p>
+  <p>Anyone who enrolled after the roll was printed had to cast a special vote. Under the 2023 rules, many of these voters would have enrolled during voting instead: <b data-draw='v' data-source='inputs' data-where='key=late_enrol_2023' data-field='value' data-fmt='int'>—</b> people enrolled or updated their details during the 2023 voting period, <b data-draw='v' data-source='inputs' data-where='key=eday_enrol_2023' data-field='value' data-fmt='int'>—</b> of them on election day. This year that effort happened before 25 October, so the late-enrolling, left-leaning slice of the specials is bigger than the first model assumed.</p>
+  <p>The counterweight: the Electoral Commission expected about <b data-draw='v' data-source='inputs' data-where='key=disallowed_est' data-field='value' data-fmt='int'>—</b> specials to be disallowed this year, around five times the usual number, mostly from people who turned up without being enrolled. They are inside the special-vote estimate but won't count, and they probably lean further left than the average special. So the <b data-draw='v' data-source='inputs' data-where='key=valid_central' data-field='value' data-fmt='pct0'>—</b> valid setting is, if anything, slightly generous to the left.</p>
+  <div class='card'>
+    <h3>Enrolment rate of 18-24-year-olds</h3>
+    <p class='note'>30 September is from the Commission's monthly statistics (hollow point). 22-29 October are its daily snapshots, which it says are not final and may be revised along with the eligible-population estimate.</p>
+    <div class='chart' data-draw='enrol' data-source='enrolment' style='min-height:14.5rem'></div>
+  </div>
+</section>
+
+<section id='decides'>
+  <h2>What decides which scenario we land in</h2>
+  <p>Three things decide almost every run: Wairarapa, Hamilton East and NZ First's last list seat. NZ First drops to 11 in <b data-draw='v' data-source='opp_stats' data-where='key=nzf11' data-field='value' data-fmt='pct0'>—</b> of runs. Labour takes Wairarapa in <b data-draw='v' data-source='opp_stats' data-where='key=wai' data-field='value' data-fmt='pct0'>—</b> and Hamilton East in <b data-draw='v' data-source='opp_stats' data-where='key=he' data-field='value' data-fmt='pct0'>—</b>. When National holds both marginals (<b data-draw='v' data-source='opp_stats' data-where='key=hold_both' data-field='value' data-fmt='pct0'>—</b> of runs), Labour never gets there. When Labour takes Wairarapa and NZ First drops, Labour could form a government <b data-draw='v' data-source='grid' data-where='id=wai_11' data-field='labour' data-fmt='pct0'>—</b> of the time.</p>
+  <div class='card'>
+    <h3>Outcome by marginal-seat result and NZ First's last seat</h3>
+    <p class='note'>Each cell shows the share of all runs with that combination, then how those runs split across the three scenarios. Te Tai Tokerau and Opportunity's extra seat vary within each cell.</p>
+    <div class='legend'><span><i class='sw' data-sc='alone'></i>Coalition alone</span><span><i class='sw' data-sc='nat_needs_opp'></i>National needs Opportunity</span><span><i class='sw' data-sc='labour'></i>Labour could form a government</span></div>
+    <div class='sgw' data-draw='grid' data-source='grid'></div>
+  </div>
+  <div class='card tw'>
+    <h3>The seats that can change the count</h3>
+    <p class='note'>Only races that change a party's seat total matter. The last chance column assumes the Hamilton East Labour candidate's figure of <b data-draw='v' data-source='inputs' data-where='key=he_specials_claim' data-field='value' data-fmt='int'>—</b> specials there, against the model's <b data-draw='v' data-source='inputs' data-where='key=he_specials_model' data-field='value' data-fmt='int'>—</b>.</p>
+    <table data-source='key_seats' data-row-key='seat'>
+      <thead><tr><th data-field='seat'>Seat</th><th data-field='leader'>Leads now</th><th class='n' data-field='margin'>Margin</th><th data-field='flips_to'>Could flip to</th><th data-field='flip_pct'>Chance it flips</th><th class='n' data-field='flip_pct_he8000'>With HE 8,000</th><th data-field='effect'>Effect on seats</th></tr></thead>
+      <tbody data-draw='keyseats'></tbody>
+    </table>
+  </div>
+</section>
+
+<section id='paths'>
+  <h2>Where the headline numbers come from</h2>
+  <p>Each run lands in one combination of events, and adding the combinations up gives the headline numbers. The two biggest routes to a Labour government are National losing one marginal while NZ First drops and National's entitlement slips (<b data-draw='v' data-source='paths' data-where='id=l1' data-field='pct' data-fmt='pct1'>—</b> of runs), and National losing both marginals while NZ First drops (<b data-draw='v' data-source='paths' data-where='id=l2' data-field='pct' data-fmt='pct1'>—</b>). The most common single outcome is National holding both while NZ First drops, which leaves the coalition with a one-seat majority (<b data-draw='v' data-source='paths' data-where='id=a1' data-field='pct' data-fmt='pct1'>—</b>).</p>
+  <div class='card'>
+    <h3>Every route to each scenario</h3>
+    <p class='note'>“Holds both” and “loses one” refer to Wairarapa and Hamilton East. “Entitlement drops” means National's party-vote entitlement falls by a seat. Grey figures are the coalition's seats and the House size.</p>
+    <div class='pthw' data-draw='paths' data-source='paths scenarios'></div>
+  </div>
+</section>
+
+<section id='combine'>
+  <h2>How the pieces combine</h2>
+  <p>The coalition's seats are <b data-draw='v' data-source='inputs' data-where='key=coalition_prelim' data-field='value' data-fmt='int'>—</b>, minus each National electorate lost, minus NZ First's lost seat. The House is <b data-draw='v' data-source='inputs' data-where='key=house' data-field='value' data-fmt='int'>—</b>, minus each National electorate lost, minus one if the Greens take Te Tai Tokerau, plus one if National's entitlement drops. A majority is half the House plus one, rounded down. That rule matches all but a handful of runs.</p>
+  <p>These events aren't independent. Each run draws one set of special votes, and that draw drives all of them. National's entitlement drops in <b data-draw='v' data-source='opp_stats' data-where='key=ent_given_hold' data-field='value' data-fmt='pct0'>—</b> of runs where it holds both marginals, <b data-draw='v' data-source='opp_stats' data-where='key=ent_given_lose1' data-field='value' data-fmt='pct0'>—</b> where it loses one and <b data-draw='v' data-source='opp_stats' data-where='key=ent_given_lose2' data-field='value' data-fmt='pct0'>—</b> where it loses both. NZ First's seat is only loosely tied to the marginals, because it depends on the nationwide vote.</p>
+  <div class='card tw'>
+    <h3>The switches</h3>
+    <p class='note'>What each event does to the coalition's seats and the size of the House, and how often it happens</p>
+    <table data-source='switches' data-row-key='id'>
+      <thead><tr><th data-field='switch'>Event</th><th class='n' data-field='coalition_change'>Coalition</th><th class='n' data-field='house_change'>House</th><th class='n' data-field='p'>Chance</th></tr></thead>
+      <tbody data-draw='swt'></tbody>
+    </table>
+  </div>
+</section>
+
+<section id='opportunity'>
+  <h2>When Opportunity holds the balance</h2>
+  <p>Opportunity holds the balance whenever the coalition lacks a majority on its own: <b data-draw='v' data-source='opp_stats' data-where='key=pivotal' data-field='value' data-fmt='pct0'>—</b> of runs. In the tie world (<b data-draw='v' data-source='scenarios' data-where='scenario=nat_needs_opp' data-field='pct' data-fmt='pct0'>—</b>), National can only govern with Opportunity, but Labour has no majority even with it. In the Labour-could-govern world (<b data-draw='v' data-source='scenarios' data-where='scenario=labour' data-field='pct' data-fmt='pct0'>—</b>), Opportunity can choose either side, which gives it the most leverage.</p>
+  <p>What has to be true:</p>
+  <ul>
+    <li><b>NZ First drops to 11 seats.</b> This happens in <b data-draw='v' data-source='opp_stats' data-where='key=piv_with_nzf11' data-field='value' data-fmt='pct0'>—</b> of the runs where Opportunity holds the balance. If NZ First keeps 12, Opportunity holds it only <b data-draw='v' data-source='opp_stats' data-where='key=piv_given_nzf12' data-field='value' data-fmt='pct0'>—</b> of the time.</li>
+    <li><b>Plus Labour takes a marginal, or National's entitlement drops.</b> Labour takes Wairarapa or Hamilton East in <b data-draw='v' data-source='opp_stats' data-where='key=piv_with_lab_marginal' data-field='value' data-fmt='pct0'>—</b> of these runs, and National's entitlement drops in <b data-draw='v' data-source='opp_stats' data-where='key=piv_with_entdrop' data-field='value' data-fmt='pct0'>—</b>.</li>
+    <li><b>In plain terms, the specials need to behave like 2017 or 2020.</b> In runs patterned on those years Opportunity holds the balance <b data-draw='v' data-source='template_years' data-where='year=2017' data-field='opp_pivotal' data-fmt='pct0'>—</b> and <b data-draw='v' data-source='template_years' data-where='year=2020' data-field='opp_pivotal' data-fmt='pct0'>—</b> of the time, against <b data-draw='v' data-source='template_years' data-where='year=2014' data-field='opp_pivotal' data-fmt='pct0'>—</b> and <b data-draw='v' data-source='template_years' data-where='year=2023' data-field='opp_pivotal' data-fmt='pct0'>—</b> for 2014 and 2023.</li>
+  </ul>
+  <div class='card tw'>
+    <h3>National's final party vote is the clearest signal on 27 November</h3>
+    <p class='note'>National was on <b data-draw='v' data-source='parties' data-where='party=National' data-field='prelim_pct' data-fmt='pct2'>—</b> at the preliminary count. Runs grouped by National's final share.</p>
+    <table data-source='opp_by_nat' data-row-key='band'>
+      <thead><tr><th data-field='band'>National's final share</th><th class='n' data-field='p_runs'>Share of runs</th><th data-field='opp_pivotal'>Opportunity holds the balance</th><th class='n' data-field='ent_drop'>Entitlement drops</th></tr></thead>
+      <tbody data-draw='oppnat'></tbody>
+    </table>
+  </div>
+</section>
+
+<section id='outcomes'>
+  <h2>Every outcome the model produced</h2>
+  <p>The size of the House matters as much as the coalition's total. The same number of coalition seats can be a majority, a tie or opposition, depending on how many overhang seats survive.</p>
+  <div class='card'>
+    <h3>Coalition seats by size of the House</h3>
+    <p class='note'>Share of simulations. Colour shows which scenario each combination produces, and darker means more likely.</p>
+    <div class='chart' data-draw='heat' data-source='outcomes' style='min-height:15rem'></div>
+  </div>
+</section>
+
+<section id='votes'>
+  <h2>The party vote</h2>
+  <p>The model's median has the Greens up <b data-draw='v' data-source='parties' data-where='party=Green' data-field='share_change' data-fmt='pp'>—</b>, National <b data-draw='v' data-source='parties' data-where='party=National' data-field='share_change' data-fmt='pp'>—</b>, NZ First <b data-draw='v' data-source='parties' data-where='party=NZ%20First' data-field='share_change' data-fmt='pp'>—</b> and Opportunity <b data-draw='v' data-source='parties' data-where='party=Opportunity' data-field='share_change' data-fmt='pp'>—</b>, with Labour at <b data-draw='v' data-source='parties' data-where='party=Labour' data-field='share_change' data-fmt='pp'>—</b>. Specials are a smaller share of the vote than in 2023, so the shifts are smaller.</p>
+  <div class='grid' style='margin-top:var(--cds-gap-md)'>
+    <div class='card'>
+      <h3>Change from preliminary to final, points</h3>
+      <p class='note'>2023 actual change against the 2026 projected median</p>
+      <div class='legend'><span><i class='sw' data-c='muted'></i>2023 actual</span><span><i class='sw' data-c='accent'></i>2026 projected</span></div>
+      <div class='chart' data-draw='chg' data-source='parties compare_2023' style='min-height:17rem'></div>
+    </div>
+    <div class='card tw'>
+      <h3>Party vote and seats</h3>
+      <p class='note'>Projected final vote is the median, with the 10th-90th percentile range below it.</p>
+      <table data-source='parties' data-row-key='party'>
+        <thead><tr><th data-field='party'>Party</th><th class='n' data-field='prelim_pct'>Prelim %</th><th class='n' data-field='final_pct_median'>Final %</th><th class='n' data-field='prelim_seats'>Prelim seats</th><th class='n' data-field='mean_seats'>Expected seats</th><th class='n' data-field='p_up'>Gains a seat</th><th class='n' data-field='p_down'>Loses a seat</th></tr></thead>
+        <tbody data-draw='ptable'></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id='sensitivity'>
+  <h2>How sensitive this is</h2>
+  <p>The biggest judgement call is still how left-leaning this year's domestic specials will be. At <b data-draw='v' data-source='sensitivity' data-where='k=0.7' data-field='k' data-fmt='k'>—</b> of the historical lean the coalition governs alone <b data-draw='v' data-source='sensitivity' data-where='k=0.7' data-field='alone' data-fmt='pct0'>—</b> of the time. At <b data-draw='v' data-source='sensitivity' data-where='k=1' data-field='k' data-fmt='k'>—</b> it's <b data-draw='v' data-source='sensitivity' data-where='k=1' data-field='alone' data-fmt='pct0'>—</b>. Going back to 2008 for the templates lowers Opportunity's chance to <b data-draw='v' data-source='variants' data-where='id=hist0823' data-field='opp_pivotal' data-fmt='pct0'>—</b>. But 2008 and 2011 were National landslide years with fewer and less left-leaning specials, so the central case leaves them out.</p>
+  <div class='card tw'>
+    <h3>Scenarios under different assumptions</h3>
+    <table data-source='variants' data-row-key='id'>
+      <thead><tr><th data-field='variant'>Assumptions</th><th class='n' data-field='alone'>Alone</th><th class='n' data-field='nat_needs_opp'>Needs Opp.</th><th class='n' data-field='labour'>Labour</th><th class='n' data-field='opp_pivotal'>Opp. holds balance</th><th class='n' data-field='wai'>Wairarapa flips</th><th class='n' data-field='he'>Ham. East flips</th></tr></thead>
+      <tbody data-draw='vtable'></tbody>
+    </table>
+  </div>
+  <div class='grid' style='margin-top:var(--cds-gap-md)'>
+    <div class='card'>
+      <h3>Scenarios by how left-leaning the specials are</h3>
+      <p class='note'>Domestic special-vote lean as a share of the historical lean, at the central valid share</p>
+      <div class='chart' data-draw='sens' data-source='sensitivity' style='min-height:16rem'></div>
+    </div>
+    <div class='card tw'>
+      <h3>Scenarios by which past year the specials resemble</h3>
+      <p class='note'>Weight is how often each year was drawn as the template.</p>
+      <table data-source='template_years' data-row-key='year'>
+        <thead><tr><th data-field='year'>Pattern of</th><th class='n' data-field='weight'>Weight</th><th class='n' data-field='alone'>Alone</th><th class='n' data-field='nat_needs_opp'>Needs Opp.</th><th class='n' data-field='labour'>Labour</th><th class='n' data-field='opp_pivotal'>Opp. holds balance</th></tr></thead>
+        <tbody data-draw='ytable'></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id='evidence'>
+  <h2>The evidence from 2008 to 2023</h2>
+  <p>National's share of special votes has been below its share of ordinary votes in every election since 2008, and the Greens' has always been above. In Labour-v-National seats, specials moved the margin towards Labour every time, but the size of that swing varied more than fourfold between elections.</p>
+  <div class='grid'>
+    <div class='card'>
+      <h3>Share of specials minus share of ordinary votes, points</h3>
+      <p class='note'>Nationwide party vote, official counts</p>
+      <div class='chart' data-draw='hist' data-source='history_party' style='min-height:16rem'></div>
+    </div>
+    <div class='card'>
+      <h3>Net special-vote gain, Labour minus National</h3>
+      <p class='note'>Votes, by seat and year. Above zero means specials favoured Labour.</p>
+      <div class='chart' data-draw='hseats' data-source='history_seats' style='min-height:16rem'></div>
+    </div>
+  </div>
+</section>
+
+<section id='method'>
+  <h2>Methodology</h2>
+  <ol>
+    <li><b>Starting point.</b> The Electoral Commission's preliminary count for every party and electorate, plus its estimate of the special votes still to be counted.</li>
+    <li><b>Party vote on specials.</b> For 2014, 2017, 2020 and 2023, each party's share of special votes was compared with its share of ordinary votes, separately for domestic and overseas specials, from the Commission's voting-place statistics. Each run draws one of those years as a template and applies its ratios to the 2026 preliminary shares. The domestic lean is set below its historical level because election-day enrolment has ended, but only modestly, given how much late enrolment moved earlier.</li>
+    <li><b>Valid specials.</b> A lower share of specials is assumed to count than in past elections, because the Commission expected many more to be thrown out from people who weren't enrolled.</li>
+    <li><b>Electorates.</b> Each seat's special-vote total comes from its 2023 ratio of special to ordinary votes (or its predecessor seat's), scaled to the 2026 total. In Labour-v-National seats, the swing on specials is the template year's average swing plus that seat's own historical lean, shrunk towards the average, plus noise. The Māori seats use the template year's swing between Te Pāti Māori and Labour.</li>
+    <li><b>Seats.</b> 120 seats go by Sainte-Laguë to parties with 5% of the party vote or an electorate. Electorate wins beyond a party's entitlement are kept as overhang, and the House grows to fit.</li>
+    <li><b>One draw per run.</b> The party vote and every electorate race in a run come from the same draw of special votes, so the events combine as they would on the night.</li>
+  </ol>
+  <div class='card tw'>
+    <h3>Assumptions</h3>
+    <table data-source='assumptions' data-row-key='id'>
+      <thead><tr><th data-field='assumption'>Assumption</th><th data-field='value'>Setting</th><th data-field='basis'>Basis</th><th data-field='if_wrong'>If it's wrong</th></tr></thead>
+      <tbody data-draw='atable'></tbody>
+    </table>
+  </div>
+  <h3 style='margin-top:var(--cds-gap-lg)'>Checks</h3>
+  <ul>
+    <li>Run on the preliminary votes with no specials, the seat allocation reproduces the Commission's projection of <b data-draw='v' data-source='inputs' data-where='key=house' data-field='value' data-fmt='int'>—</b> seats exactly, party by party.</li>
+    <li>The routes in “Where the headline numbers come from” add up to the headline scenario shares.</li>
+    <li>Using 2008-2023 instead of 2017-2023 for each seat's own lean barely changes the result (see the scenarios table).</li>
+  </ul>
+  <h3>Not modelled</h3>
+  <ul>
+    <li>The age and enrolment-status mix of this year's specials. The Commission publishes this in its detailed statistics after the official count.</li>
+    <li>Corrections from the official recount of ordinary votes. These usually move margins by tens of votes, which would only matter in Wairarapa and Wellington Bays.</li>
+    <li>Judicial recounts, legal challenges and coalition negotiations. The scenarios describe what the numbers allow.</li>
+    <li>New 2025 electorate boundaries. Seats are matched to their closest predecessor.</li>
+  </ul>
+  <h3>Sources</h3>
+  <ul>
+    <li><a href='https://electionresults.govt.nz/ge2026/'>Electoral Commission, 2026 preliminary count</a> and <a href='https://elections.nz/media-and-news/2026/2026-general-election-preliminary-results'>preliminary results release</a></li>
+    <li><a href='https://vote.nz/2026-general-election/resources/enrolment-updates'>Enrolment updates (daily snapshots)</a> and <a href='https://elections.nz/stats-and-research/enrolment-statistics/enrolment-by-general-electorate'>enrolment by general electorate (30 September)</a></li>
+    <li><a href='https://elections.nz/democracy-in-nz/historical-events/2023-general-election/report-on-the-2023-general-election'>Report on the 2023 General Election</a>: late enrolments and special votes in 2023</li>
+    <li><a href='https://www.1news.co.nz/2026/10/16/how-the-new-enrolment-rules-could-affect-the-election-result/'>1News</a>: the Commission's estimate of disallowed specials</li>
+    <li><a href='https://archive.electionresults.govt.nz/'>Electoral Commission results archive</a>: voting-place statistics for 2008-2023</li>
+    <li>Hamilton East specials: the figure of about 8,000 is from the Labour candidate's public page and is not yet confirmed.</li>
+  </ul>
+  <p class='def'>Model: <b data-draw='v' data-source='inputs' data-where='key=sims' data-field='value' data-fmt='int'>—</b> Monte Carlo runs at the central settings. Built 8 November 2026.</p>
+</section>
+</div>
+
+<footer class="site-foot"><p>Source code, data and methodology: <a href="https://github.com/mikethemerry/nz-2026-specials-model">github.com/mikethemerry/nz-2026-specials-model</a>. Every figure on this page is read from the JSON files in <a href="data/">data/</a>, produced by <code>make all</code>.</p></footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="dash-shim.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

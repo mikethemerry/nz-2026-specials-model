@@ -1,0 +1,99 @@
+{
+ "_note": "Hand-transcribed figures with sources. Each entry gives value, source URL and date.",
+ "specials_estimate": {
+  "value": 399365,
+  "source": "https://elections.nz/media-and-news/2026/2026-general-election-preliminary-results",
+  "date": "2026-11-07"
+ },
+ "overseas_estimate": {
+  "value": 96947,
+  "source": "https://elections.nz/media-and-news/2026/2026-general-election-preliminary-results",
+  "date": "2026-11-07"
+ },
+ "ordinary_votes": {
+  "value": 2432403,
+  "source": "https://elections.nz/media-and-news/2026/2026-general-election-preliminary-results",
+  "date": "2026-11-07"
+ },
+ "advance_ordinary_votes": {
+  "value": 1637183,
+  "source": "https://elections.nz/media-and-news/2026/2026-general-election-preliminary-results",
+  "date": "2026-11-07"
+ },
+ "advance_pct_2026": {
+  "value": 67.3,
+  "source": "https://elections.nz/media-and-news/2026/2026-general-election-preliminary-results",
+  "date": "2026-11-07"
+ },
+ "advance_pct_2023": {
+  "value": 61.4,
+  "source": "https://elections.nz/media-and-news/2026/2026-general-election-preliminary-results",
+  "date": "2026-11-07"
+ },
+ "disallowed_specials_estimate": {
+  "value": 55000,
+  "source": "https://www.1news.co.nz/2026/10/16/how-the-new-enrolment-rules-could-affect-the-election-result/",
+  "date": "2026-10-16"
+ },
+ "late_enrolments_2023_voting_period": {
+  "value": 450000,
+  "source": "https://elections.nz/democracy-in-nz/historical-events/2023-general-election/report-on-the-2023-general-election"
+ },
+ "election_day_enrolments_2023": {
+  "value": 110000,
+  "source": "https://elections.nz/democracy-in-nz/historical-events/2023-general-election/report-on-the-2023-general-election"
+ },
+ "post_writ_enrolments_2023": {
+  "value": 600000,
+  "source": "https://elections.nz/democracy-in-nz/historical-events/2023-general-election/report-on-the-2023-general-election"
+ },
+ "specials_counted_2023": {
+  "value": 541354,
+  "source": "Sum of special votes in 2023 voting-place statistics (data/raw/history/2023)"
+ },
+ "hamilton_east_specials_claim": {
+  "value": 8000,
+  "source": "Labour candidate Georgie Dansey's public Facebook page (https://www.facebook.com/georgiedansey); unverified",
+  "date": "2026-11-08"
+ },
+ "party_shares_2023": {
+  "source": "https://en.wikipedia.org/wiki/Results_of_the_2023_New_Zealand_general_election (preliminary and official counts)",
+  "rows": [
+   [
+    "National",
+    38.99,
+    38.06
+   ],
+   [
+    "Labour",
+    26.85,
+    26.91
+   ],
+   [
+    "Green",
+    10.78,
+    11.6
+   ],
+   [
+    "ACT",
+    9.0,
+    8.64
+   ],
+   [
+    "NZ First",
+    6.46,
+    6.08
+   ],
+   [
+    "Te Pāti Māori",
+    2.6,
+    3.08
+   ],
+   [
+    "Opportunity",
+    2.07,
+    2.22
+   ]
+  ]
+ }
+}

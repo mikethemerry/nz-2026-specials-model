@@ -1,0 +1,9 @@
+{
+ "_label": "70% lean, 85% valid, Hamilton East 8,000",
+ "n": 10000,
+ "k_mean": 0.7,
+ "valid": 0.85,
+ "se_override": {
+  "Hamilton East": 8000
+ }
+}

@@ -1,0 +1,507 @@
+{
+ "_source": "Derived from Electoral Commission voting-place statistics 2008-2023 (archive.electionresults.govt.nz) by `make calibrate`",
+ "party_votes_by_special_category": {
+  "2008": {
+   "SP_before": {
+    "ACT": 788,
+    "OTH": 1286,
+    "GP": 2134,
+    "LAB": 10563,
+    "TPM": 898,
+    "NAT": 12366,
+    "NZF": 1253
+   },
+   "SP_on": {
+    "ACT": 5038,
+    "OTH": 8156,
+    "GP": 13953,
+    "LAB": 56730,
+    "TPM": 5176,
+    "NAT": 64608,
+    "NZF": 4286
+   },
+   "SP_overseas": {
+    "ACT": 963,
+    "OTH": 839,
+    "GP": 4487,
+    "LAB": 8782,
+    "TPM": 437,
+    "NAT": 16548,
+    "NZF": 405
+   },
+   "TOTAL": {
+    "ACT": 85496,
+    "OTH": 99843,
+    "GP": 157613,
+    "LAB": 796880,
+    "TPM": 55980,
+    "NAT": 1053398,
+    "NZF": 95356
+   }
+  },
+  "2011": {
+   "SP_before": {
+    "ACT": 357,
+    "OTH": 1517,
+    "GP": 4276,
+    "LAB": 10569,
+    "TPM": 537,
+    "NAT": 14631,
+    "NZF": 2114
+   },
+   "SP_on": {
+    "ACT": 1412,
+    "OTH": 7813,
+    "GP": 22312,
+    "LAB": 45890,
+    "TPM": 2778,
+    "NAT": 67629,
+    "NZF": 7101
+   },
+   "SP_overseas": {
+    "ACT": 376,
+    "OTH": 592,
+    "GP": 4594,
+    "LAB": 4292,
+    "TPM": 178,
+    "NAT": 9842,
+    "NZF": 395
+   },
+   "TOTAL": {
+    "ACT": 23889,
+    "OTH": 113104,
+    "GP": 247372,
+    "LAB": 614937,
+    "TPM": 31982,
+    "NAT": 1058636,
+    "NZF": 147544
+   }
+  },
+  "2014": {
+   "SP_before": {
+    "ACT": 423,
+    "OTH": 5279,
+    "GP": 9990,
+    "LAB": 20749,
+    "TPM": 1206,
+    "NAT": 28211,
+    "NZF": 5186
+   },
+   "SP_on": {
+    "ACT": 1118,
+    "OTH": 10126,
+    "GP": 20821,
+    "LAB": 41283,
+    "TPM": 2409,
+    "NAT": 63511,
+    "NZF": 11690
+   },
+   "SP_overseas": {
+    "ACT": 340,
+    "OTH": 1980,
+    "GP": 10156,
+    "LAB": 6876,
+    "TPM": 351,
+    "NAT": 17373,
+    "NZF": 1188
+   },
+   "TOTAL": {
+    "ACT": 16689,
+    "OTH": 155389,
+    "GP": 257359,
+    "LAB": 604535,
+    "TPM": 31849,
+    "NAT": 1131501,
+    "NZF": 208300
+   }
+  },
+  "2017": {
+   "SP_overseas": {
+    "ACT": 390,
+    "OTH": 351,
+    "GP": 8980,
+    "LAB": 22537,
+    "TPM": 536,
+    "NAT": 22020,
+    "NZF": 1698,
+    "OPP": 2440
+   },
+   "SP_before": {
+    "ACT": 864,
+    "OTH": 2579,
+    "GP": 14078,
+    "LAB": 79076,
+    "TPM": 3268,
+    "NAT": 66173,
+    "NZF": 9242,
+    "OPP": 5943
+   },
+   "SP_on": {
+    "ACT": 695,
+    "OTH": 1971,
+    "GP": 8971,
+    "LAB": 54167,
+    "TPM": 2033,
+    "NAT": 53535,
+    "NZF": 8849,
+    "OPP": 5330
+   },
+   "TOTAL": {
+    "ACT": 13075,
+    "OTH": 27572,
+    "GP": 162443,
+    "LAB": 956184,
+    "TPM": 30580,
+    "NAT": 1152075,
+    "NZF": 186706,
+    "OPP": 63261
+   }
+  },
+  "2020": {
+   "SP_overseas": {
+    "ACT": 2565,
+    "OTH": 2296,
+    "GP": 11531,
+    "LAB": 32556,
+    "TPM": 574,
+    "NAT": 9233,
+    "NZF": 710,
+    "OPP": 1572
+   },
+   "SP_before": {
+    "ACT": 14336,
+    "OTH": 11662,
+    "GP": 21862,
+    "LAB": 136759,
+    "TPM": 4504,
+    "NAT": 52608,
+    "NZF": 5471,
+    "OPP": 4513
+   },
+   "SP_on": {
+    "ACT": 9798,
+    "OTH": 8664,
+    "GP": 10114,
+    "LAB": 78955,
+    "TPM": 3259,
+    "NAT": 32751,
+    "NZF": 3849,
+    "OPP": 2917
+   },
+   "TOTAL": {
+    "ACT": 219031,
+    "OTH": 106713,
+    "GP": 226757,
+    "LAB": 1443545,
+    "TPM": 33630,
+    "NAT": 738275,
+    "NZF": 75020,
+    "OPP": 43449
+   }
+  },
+  "2023": {
+   "SP_overseas": {
+    "ACT": 8280,
+    "OTH": 1570,
+    "GP": 18887,
+    "LAB": 13576,
+    "NAT": 26857,
+    "NZF": 2470,
+    "TPM": 2495,
+    "OPP": 3054
+   },
+   "SP_before": {
+    "ACT": 17854,
+    "OTH": 8442,
+    "GP": 35793,
+    "LAB": 67632,
+    "NAT": 96462,
+    "NZF": 10982,
+    "TPM": 12175,
+    "OPP": 6210
+   },
+   "SP_on": {
+    "ACT": 14028,
+    "OTH": 10487,
+    "GP": 27235,
+    "LAB": 60154,
+    "NAT": 70516,
+    "NZF": 10832,
+    "TPM": 9021,
+    "OPP": 6342
+   },
+   "TOTAL": {
+    "ACT": 246473,
+    "OTH": 95699,
+    "GP": 330907,
+    "LAB": 767540,
+    "NAT": 1085851,
+    "NZF": 173553,
+    "TPM": 87844,
+    "OPP": 63344
+   }
+  }
+ },
+ "mean_seat_swing_lab_minus_nat_pp": {
+  "2008": 2.65,
+  "2011": 2.64,
+  "2014": 4.93,
+  "2017": 8.42,
+  "2020": 11.33,
+  "2023": 3.13
+ },
+ "mean_seat_swing_lab_minus_tpm_pp": {
+  "2008": -9.67,
+  "2011": -5.44,
+  "2014": -1.51,
+  "2017": -4.31,
+  "2020": -8.49,
+  "2023": -13.36
+ },
+ "special_to_ordinary_ratio_2023": {
+  "Auckland Central": 0.483,
+  "Banks Peninsula": 0.21,
+  "Bay of Plenty": 0.208,
+  "Botany": 0.262,
+  "Christchurch Central": 0.308,
+  "Christchurch East": 0.205,
+  "Coromandel": 0.168,
+  "Dunedin": 0.223,
+  "East Coast": 0.16,
+  "East Coast Bays": 0.271,
+  "Epsom": 0.406,
+  "Hamilton East": 0.269,
+  "Hamilton West": 0.238,
+  "Hutt South": 0.206,
+  "Ilam": 0.268,
+  "Invercargill": 0.131,
+  "Kaikōura": 0.162,
+  "Kaipara ki Mahurangi": 0.253,
+  "Kelston": 0.299,
+  "Mana": 0.211,
+  "Māngere": 0.34,
+  "Manurewa": 0.428,
+  "Maungakiekie": 0.374,
+  "Mt Albert": 0.387,
+  "Mt Roskill": 0.314,
+  "Napier": 0.16,
+  "Nelson": 0.17,
+  "New Lynn": 0.266,
+  "New Plymouth": 0.152,
+  "North Shore": 0.265,
+  "Northcote": 0.258,
+  "Northland": 0.172,
+  "Ōhāriu": 0.241,
+  "Ōtaki": 0.155,
+  "Pakuranga": 0.252,
+  "Palmerston North": 0.187,
+  "Panmure-Ōtāhuhu": 0.424,
+  "Papakura": 0.318,
+  "Rangitata": 0.141,
+  "Rangitīkei": 0.171,
+  "Remutaka": 0.189,
+  "Rongotai": 0.278,
+  "Rotorua": 0.186,
+  "Selwyn": 0.2,
+  "Southland": 0.193,
+  "Taieri": 0.144,
+  "Takanini": 0.381,
+  "Tāmaki": 0.283,
+  "Taranaki-King Country": 0.187,
+  "Taupō": 0.182,
+  "Tauranga": 0.206,
+  "Te Atatū": 0.287,
+  "Tukituki": 0.171,
+  "Upper Harbour": 0.325,
+  "Waikato": 0.208,
+  "Waimakariri": 0.167,
+  "Wairarapa": 0.144,
+  "Waitaki": 0.172,
+  "Wellington Central": 0.384,
+  "West Coast-Tasman": 0.162,
+  "Whanganui": 0.145,
+  "Whangaparāoa": 0.232,
+  "Whangārei": 0.162,
+  "Wigram": 0.28,
+  "Hauraki-Waikato": 0.381,
+  "Ikaroa-Rāwhiti": 0.278,
+  "Tāmaki Makaurau": 0.377,
+  "Te Tai Hauāuru": 0.315,
+  "Te Tai Tokerau": 0.328,
+  "Te Tai Tonga": 0.264,
+  "Waiariki": 0.33
+ },
+ "seat_lean_2017_2023_pp": {
+  "Taieri": -5.2,
+  "Botany": 11.2,
+  "Coromandel": 2.6,
+  "Palmerston North": -4.5,
+  "Bay of Plenty": 5.7,
+  "Tukituki": 1.0,
+  "Whangaparāoa": 4.0,
+  "Waimakariri": -0.5,
+  "Rotorua": 4.5,
+  "West Coast-Tasman": -2.6,
+  "New Plymouth": 3.3,
+  "Banks Peninsula": -8.3,
+  "Māngere": -3.0,
+  "Takanini": 6.2,
+  "Southland": 3.8,
+  "Tāmaki": 9.6,
+  "East Coast Bays": 2.1,
+  "Hutt South": 3.0,
+  "Waitaki": -4.2,
+  "Northland": 6.0,
+  "Te Atatū": -0.8,
+  "Ilam": 0.1,
+  "Waikato": 4.9,
+  "Port Waikato": -0.1,
+  "Nelson": -1.1,
+  "Invercargill": -0.4,
+  "Mt Roskill": -4.2,
+  "Wellington Central": -6.6,
+  "Mt Albert": -4.9,
+  "Maungakiekie": 0.8,
+  "Mana": -0.8,
+  "East Coast": 4.7,
+  "Kaikōura": -1.4,
+  "Christchurch Central": -8.3,
+  "Kelston": -4.3,
+  "Napier": 0.8,
+  "Papakura": 9.7,
+  "Upper Harbour": 0.8,
+  "Kaipara ki Mahurangi": 2.0,
+  "Taupō": 3.6,
+  "Taranaki-King Country": 8.2,
+  "Whanganui": 0.9,
+  "Dunedin": -12.4,
+  "Manurewa": -5.3,
+  "Panmure-Ōtāhuhu": -7.1,
+  "North Shore": 1.5,
+  "Whangārei": 1.8,
+  "Rangitata": -2.2,
+  "Ōtaki": 4.2,
+  "Northcote": -2.0,
+  "Pakuranga": 9.1,
+  "Rangitīkei": 4.2,
+  "Remutaka": -6.6,
+  "Wairarapa": -2.8,
+  "Christchurch East": -7.3,
+  "Hamilton East": 1.4,
+  "Ōhāriu": -6.5,
+  "Wigram": -11.8,
+  "Tauranga": 2.1,
+  "Selwyn": 4.3,
+  "Hamilton West": -0.4,
+  "New Lynn": -3.3
+ },
+ "seat_lean_2008_2023_pp": {
+  "Wairarapa": -3.3,
+  "Hamilton East": 2.3,
+  "Mt Roskill": -2.0
+ },
+ "predecessor_seats": {
+  "East Cape": "East Coast",
+  "Glendene": "Kelston",
+  "Henderson": "Te Atatū",
+  "Kapiti": "Ōtaki",
+  "Kenepuru": "Mana",
+  "Mt Maunganui": "Bay of Plenty",
+  "Ōtāhuhu": "Panmure-Ōtāhuhu",
+  "Waitākere": "New Lynn",
+  "Wellington Bays": "Rongotai",
+  "Wellington North": "Wellington Central"
+ },
+ "marginal_history": [
+  {
+   "seat": "Wairarapa",
+   "year": 2008,
+   "labour_net": -466
+  },
+  {
+   "seat": "Wairarapa",
+   "year": 2011,
+   "labour_net": -471
+  },
+  {
+   "seat": "Wairarapa",
+   "year": 2014,
+   "labour_net": -561
+  },
+  {
+   "seat": "Wairarapa",
+   "year": 2017,
+   "labour_net": -145
+  },
+  {
+   "seat": "Wairarapa",
+   "year": 2020,
+   "labour_net": 1170
+  },
+  {
+   "seat": "Wairarapa",
+   "year": 2023,
+   "labour_net": -316
+  },
+  {
+   "seat": "Hamilton East",
+   "year": 2008,
+   "labour_net": -744
+  },
+  {
+   "seat": "Hamilton East",
+   "year": 2011,
+   "labour_net": -573
+  },
+  {
+   "seat": "Hamilton East",
+   "year": 2014,
+   "labour_net": -896
+  },
+  {
+   "seat": "Hamilton East",
+   "year": 2017,
+   "labour_net": -266
+  },
+  {
+   "seat": "Hamilton East",
+   "year": 2020,
+   "labour_net": 1238
+  },
+  {
+   "seat": "Hamilton East",
+   "year": 2023,
+   "labour_net": -1079
+  },
+  {
+   "seat": "Mt Roskill",
+   "year": 2008,
+   "labour_net": 851
+  },
+  {
+   "seat": "Mt Roskill",
+   "year": 2011,
+   "labour_net": 880
+  },
+  {
+   "seat": "Mt Roskill",
+   "year": 2014,
+   "labour_net": 1203
+  },
+  {
+   "seat": "Mt Roskill",
+   "year": 2017,
+   "labour_net": 1206
+  },
+  {
+   "seat": "Mt Roskill",
+   "year": 2020,
+   "labour_net": 3102
+  },
+  {
+   "seat": "Mt Roskill",
+   "year": 2023,
+   "labour_net": -269
+  }
+ ]
+}

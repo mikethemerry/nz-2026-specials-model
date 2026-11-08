@@ -1,0 +1,6 @@
+{
+ "_label": "Sensitivity: 70% lean",
+ "n": 10000,
+ "k_mean": 0.7,
+ "valid": 0.85
+}

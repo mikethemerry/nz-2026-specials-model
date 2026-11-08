@@ -1,0 +1,79 @@
+{
+ "central": {
+  "label": "Revised central: 85% lean, 85% valid",
+  "alone": 52.6,
+  "nat_needs_opp": 17.5,
+  "labour": 29.9,
+  "opp_pivotal": 47.4
+ },
+ "fe6": {
+  "label": "Revised central, seat lean from 2008-23",
+  "alone": 52.0,
+  "nat_needs_opp": 17.8,
+  "labour": 30.2,
+  "opp_pivotal": 48.0
+ },
+ "he8000": {
+  "label": "Revised central + Hamilton East 8,000 specials",
+  "alone": 47.3,
+  "nat_needs_opp": 19.1,
+  "labour": 33.6,
+  "opp_pivotal": 52.7
+ },
+ "hist0823": {
+  "label": "Revised central, templates back to 2008",
+  "alone": 59.9,
+  "nat_needs_opp": 15.5,
+  "labour": 24.6,
+  "opp_pivotal": 40.1
+ },
+ "k055": {
+  "label": "Sensitivity: 55% lean",
+  "alone": 72.9,
+  "nat_needs_opp": 14.8,
+  "labour": 12.3,
+  "opp_pivotal": 27.1
+ },
+ "k07": {
+  "label": "Sensitivity: 70% lean",
+  "alone": 61.6,
+  "nat_needs_opp": 17.5,
+  "labour": 20.9,
+  "opp_pivotal": 38.4
+ },
+ "k07_he": {
+  "label": "70% lean, 85% valid, Hamilton East 8,000",
+  "alone": 57.0,
+  "nat_needs_opp": 18.9,
+  "labour": 24.2,
+  "opp_pivotal": 43.0
+ },
+ "k085_v91": {
+  "label": "85% lean, 91% valid",
+  "alone": 48.7,
+  "nat_needs_opp": 17.6,
+  "labour": 33.7,
+  "opp_pivotal": 51.3
+ },
+ "k10": {
+  "label": "Sensitivity: 100% lean",
+  "alone": 45.7,
+  "nat_needs_opp": 16.3,
+  "labour": 38.0,
+  "opp_pivotal": 54.3
+ },
+ "k10_he": {
+  "label": "100% lean, 85% valid, Hamilton East 8,000",
+  "alone": 41.5,
+  "nat_needs_opp": 17.5,
+  "labour": 41.0,
+  "opp_pivotal": 58.5
+ },
+ "prev": {
+  "label": "Previous central: 70% lean, 91% valid",
+  "alone": 57.7,
+  "nat_needs_opp": 17.8,
+  "labour": 24.5,
+  "opp_pivotal": 42.3
+ }
+}
