@@ -70,12 +70,15 @@
 .nz .mx-rh .note{margin:0}
 .nz .mx-chips{display:inline-flex;gap:2px}
 .nz .mx-chips i{width:9px;height:9px;border-radius:2px;display:inline-block}
-.nz .mx-c{border-radius:4px;padding:10px 0;text-align:center;font-variant-numeric:tabular-nums;font-size:var(--cds-font-size-body)}
+.nz .mx-c{border-radius:4px;text-align:center;font-variant-numeric:tabular-nums;font-size:var(--cds-font-size-body);height:64px;display:flex;align-items:center;justify-content:center}
 .nz .mx-c.empty{color:var(--color-fg-muted)}
+.nz .mx-c.filled,.nz .mx-out{position:relative;flex-direction:column;align-items:stretch;justify-content:flex-start;overflow:hidden;gap:1px}
+.nz .mx-c.filled span,.nz .mx-out span{min-height:2px}
+.nz .mx-lab{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,.9);color:#0b0b0b;border-radius:4px;padding:1px 6px;font-size:var(--cds-font-size-caption);white-space:nowrap;font-variant-numeric:tabular-nums}
 .nz .mx-tot{text-align:center;color:var(--color-fg-muted);font-variant-numeric:tabular-nums;align-self:center}
 .nz .mx-eff{text-align:center;color:var(--color-fg-muted);line-height:1.3;align-self:start}
-.nz .mx-out{display:flex;flex-direction:column;height:64px;gap:1px;border-radius:4px;overflow:hidden}
-.nz .mx-out span{min-height:2px}
+.nz .mx-out{display:flex;height:64px;border-radius:4px;align-self:center}
+.nz .mx-out.all{box-shadow:0 0 0 1.5px var(--color-fg)}
 .nz .mx-key{display:flex;flex-wrap:wrap;gap:var(--cds-gap-md);margin-top:var(--cds-gap-sm);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
 .nz .mx-key .sw{margin-right:5px;vertical-align:-1px}
 .nz dl.glossary{display:grid;grid-template-columns:minmax(9rem,16rem) 1fr;gap:var(--cds-gap-sm) var(--cds-gap-lg);margin:0}
@@ -189,7 +192,7 @@
   </div>
   <div class='card'>
     <h3>Who gains, who pays</h3>
-    <p class='note'>How the 120 list seats change from the preliminary allocation, as a share of runs. Two-seat moves are top left and one-seat moves bottom right. "Nat entitlement" means National's entitlement drops: National keeps its seats as overhang and another party gains one. Every party that gains is outside the coalition, so the effect on the blocs depends only on who pays. Outcome bars include the electorate results in the same runs.</p>
+    <p class='note'>How the 120 list seats change from the preliminary allocation, as a share of runs. Two-seat moves are top left and one-seat moves bottom right. "Nat entitlement" means National's entitlement drops: National keeps its seats as overhang and another party gains one. Each square is one list-seat result, coloured by how the runs that produced it end up once the electorate results are included. Bars at the end of each row and column show the same for the whole row or column, and the outlined corner is all runs.</p>
     <div class='tw' data-draw='lmatrix'></div>
   </div>
 </section>

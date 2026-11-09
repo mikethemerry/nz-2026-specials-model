@@ -370,42 +370,54 @@ dash.draw('bground', (el) => {
   });
 });
 
-// Who gains, who pays: list-seat changes from the preliminary allocation.
+// Who gains, who pays: list-seat changes from the preliminary allocation. Each cell is one
+// list-seat result, filled with the outcome mix across the runs that produced it (the
+// electorates still vary within a cell). Row and column ends show the mix for the whole row
+// or column; the bottom-right corner is all runs.
 dash.draw('lmatrix', (el) => {
   el.replaceChildren();
-  if (!NZ.ok('list_matrix', 'list_matrix_rows', 'list_matrix_cols')) return;
+  if (!NZ.ok('list_matrix', 'list_matrix_rows', 'list_matrix_cols', 'scenarios')) return;
   const cells = dash.data('list_matrix').data, rows = dash.data('list_matrix_rows').data.slice().sort((a, b) => a.order - b.order);
   const cols = dash.data('list_matrix_cols').data.slice().sort((a, b) => a.order - b.order), P = NZ.PARTY;
-  const get = (r, c) => (cells.find((x) => x.row === r && x.col === c) || {pct: 0}).pct;
+  const all = {}; dash.data('scenarios').data.forEach((r) => { all[r.scenario] = r.pct; });
+  const get = (r, c) => cells.find((x) => x.row === r && x.col === c) || {pct: 0, runs: 0};
   const chips = (ps) => { const s = document.createElement('span'); s.className = 'mx-chips'; ps.forEach((p) => { const i = document.createElement('i'); i.style.background = P[p]; s.appendChild(i); }); return s; };
   const div = (cls, txt) => { const d = document.createElement('div'); if (cls) d.className = cls; if (txt !== undefined) d.textContent = txt; return d; };
-  const allPct = cells.map((x) => x.pct), whole = NZ.lr0(allPct), W = new Map(cells.map((x, i) => [x.row + '|' + x.col, NZ.show0(x.pct, whole[i])]));
+  const whole = NZ.lr0(cells.map((x) => x.pct)), W = new Map(cells.map((x, i) => [x.row + '|' + x.col, NZ.show0(x.pct, whole[i])]));
+  const mixTip = (r) => { const t = NZ.trip(r); return NZ.SK.map((k) => `${NZ.scLong[k]} ${t[k]}%`).join(', '); };
+  const stack = (r, cls) => {
+    const b = div(cls);
+    ['labour', 'nat_needs_opp', 'alone'].forEach((k) => { if (r[k] > 0) { const sp = document.createElement('span'); sp.style.flex = r[k]; sp.style.background = NZ.sc[k]; b.appendChild(sp); } });
+    return b;
+  };
   const g = div('mx');
-  g.style.gridTemplateColumns = `minmax(5.5rem,auto) repeat(${cols.length}, minmax(0,1fr))`;
+  g.style.gridTemplateColumns = `minmax(5.5rem,auto) repeat(${cols.length}, minmax(0,1fr)) minmax(3.5rem,0.8fr)`;
   g.appendChild(div('mx-corner', 'Gains ↓   Pays →'));
   cols.forEach((c) => { const d = div('mx-ch'); d.appendChild(chips(c.parties)); d.appendChild(div('', c.label)); g.appendChild(d); });
+  g.appendChild(div('mx-ch', 'Outcome'));
   rows.forEach((r) => {
     const h = div('mx-rh'); h.appendChild(chips(r.parties)); h.appendChild(div('', r.label)); h.appendChild(div('note', NZ.fmt.pct0(r.pct))); g.appendChild(h);
     cols.forEach((c) => {
-      const v = get(r.row, c.col), t = Math.min(1, v / 40), d = div('mx-c' + (v > 0 ? '' : ' empty'), v > 0 ? W.get(r.row + '|' + c.col) : '·');
-      if (v > 0) { d.style.background = `rgba(136,135,128,${0.12 + 0.62 * t})`; if (t > 0.55) d.style.color = '#fff'; }
-      d.title = `${r.label} while ${c.label}: ${v.toFixed(1)}% of runs`;
+      const x = get(r.row, c.col);
+      if (!(x.pct > 0)) { g.appendChild(div('mx-c empty', '·')); return; }
+      const d = stack(x, 'mx-c filled');
+      const lab = div('mx-lab', W.get(r.row + '|' + c.col)); d.appendChild(lab);
+      d.title = `${r.label} while ${c.label}: ${x.pct.toFixed(1)}% of runs (${x.runs.toLocaleString('en-NZ')} runs). Outcome: ${mixTip(x)}`;
       g.appendChild(d);
     });
+    const o = stack(r, 'mx-out'); o.title = `${r.label}, any payer. Outcome: ${mixTip(r)}`; g.appendChild(o);
   });
   g.appendChild(div('mx-rh note', 'All'));
   cols.forEach((c) => g.appendChild(div('mx-tot', NZ.fmt.pct0(c.pct))));
+  g.appendChild(div());
   g.appendChild(div('mx-rh note', 'Effect'));
   cols.forEach((c) => g.appendChild(div('mx-eff', c.effect)));
+  g.appendChild(div());
   g.appendChild(div('mx-rh note', 'Outcome'));
-  cols.forEach((c) => {
-    const b = div('mx-out'), tw = NZ.trip(c);
-    b.title = NZ.SK.map((k) => `${NZ.scLong[k]} ${tw[k]}%`).join(', ');
-    ['labour', 'nat_needs_opp', 'alone'].forEach((k) => { if (c[k] > 0) { const s = document.createElement('span'); s.style.flex = c[k]; s.style.background = NZ.sc[k]; b.appendChild(s); } });
-    g.appendChild(b);
-  });
+  cols.forEach((c) => { const o = stack(c, 'mx-out'); o.title = `${c.label}, any gainer. Outcome: ${mixTip(c)}`; g.appendChild(o); });
+  const corner = stack(all, 'mx-out all'); corner.title = `All runs. Outcome: ${mixTip(all)}`; corner.appendChild(div('mx-lab', 'All runs')); g.appendChild(corner);
   el.appendChild(g);
   const key = div('mx-key');
-  ['labour', 'nat_needs_opp', 'alone'].forEach((k) => { const s = document.createElement('span'); const i = document.createElement('i'); i.className = 'sw'; i.style.background = NZ.sc[k]; s.append(i, document.createTextNode(NZ.scLong[k])); key.appendChild(s); });
+  ['labour', 'nat_needs_opp', 'alone'].forEach((k) => { const sp = document.createElement('span'); const i = document.createElement('i'); i.className = 'sw'; i.style.background = NZ.sc[k]; sp.append(i, document.createTextNode(NZ.scLong[k])); key.appendChild(sp); });
   el.appendChild(key);
 });

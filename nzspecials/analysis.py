@@ -170,10 +170,18 @@ def list_matrix(c: dict) -> tuple[list, list, list]:
             other += 1
     flat = lr(list(cnt.ravel()) + [other])
     pct = np.array(flat[:-1]).reshape(cnt.shape)
-    cells = [{"row": MATRIX_ROWS[i][0], "col": MATRIX_COLS[j][0], "pct": float(pct[i, j])}
-             for i in range(len(MATRIX_ROWS)) for j in range(len(MATRIX_COLS))]
-    cells.append({"row": "other", "col": "other", "pct": flat[-1]})
-    rows = [{"row": r, "label": lab, "parties": ps, "order": i, "pct": round(float(pct[i].sum()), 1)} for i, (r, _, lab, ps) in enumerate(MATRIX_ROWS)]
+    gk_a, lk_a = np.array(["|".join(g) for g in gk]), np.array(["|".join(l) for l in lk])
+    rowmask = [gk_a == "|".join(k) for _, k, _, _ in MATRIX_ROWS]
+    keep = lambda d: {k: v for k, v in d.items() if k in SCENARIOS}
+    cells = []
+    for i in range(len(MATRIX_ROWS)):
+        for j in range(len(MATRIX_COLS)):
+            m = rowmask[i] & (lk_a == "|".join(MATRIX_COLS[j][1]))
+            cells.append({"row": MATRIX_ROWS[i][0], "col": MATRIX_COLS[j][0], "pct": float(pct[i, j]),
+                          "runs": int(m.sum()), **(keep(split(sc[m])) if m.any() else {k: None for k in SCENARIOS})})
+    cells.append({"row": "other", "col": "other", "pct": flat[-1], "runs": int(other)})
+    rows = [{"row": r, "label": lab, "parties": ps, "order": i, "pct": round(float(pct[i].sum()), 1), **keep(split(sc[rowmask[i]]))}
+            for i, (r, _, lab, ps) in enumerate(MATRIX_ROWS)]
     cols = [{"col": k, "label": lab, "parties": ps, "effect": eff, "order": j, "pct": round(float(pct[:, j].sum()), 1),
              **{s: v for s, v in split(sc[colmask[j]]).items() if s in SCENARIOS}} for j, (k, _, lab, ps, eff) in enumerate(MATRIX_COLS)]
     return cells, rows, cols
