@@ -1,0 +1,34 @@
+[
+ {
+  "key": "seat_years",
+  "value": 181
+ },
+ {
+  "key": "seat_years_missing",
+  "value": 60
+ },
+ {
+  "key": "swing_rmse",
+  "value": 3.7
+ },
+ {
+  "key": "swing_field_rmse",
+  "value": 3.6
+ },
+ {
+  "key": "swing_missing_rmse",
+  "value": 3.7
+ },
+ {
+  "key": "swing_field_missing_rmse",
+  "value": 3.6
+ },
+ {
+  "key": "flows_only_rmse",
+  "value": 4.7
+ },
+ {
+  "key": "flows_actual_specials_rmse",
+  "value": 3.7
+ }
+]

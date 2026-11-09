@@ -142,7 +142,11 @@ def parse_candidate_file(text: str) -> dict:
     for r in rows:
         if r and r[0] in cands and len(r) > 1:
             party[r[0]] = party_key(r[1])
-    cand = [{"name": c, "party": party.get(c, "IND"), "total": (total or [0] * len(cands))[i], "special": special[i]}
+    pname = {}
+    for r in rows:
+        if r and r[0] in cands and len(r) > 1:
+            pname[r[0]] = r[1]
+    cand = [{"name": c, "party": party.get(c, "IND"), "party_name": pname.get(c, ""), "total": (total or [0] * len(cands))[i], "special": special[i]}
             for i, c in enumerate(cands)]
     return {"electorate": name, "candidates": cand, "total_valid": total_valid, "special_valid": special_valid}
 

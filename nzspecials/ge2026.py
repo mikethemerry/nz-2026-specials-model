@@ -55,3 +55,27 @@ def parse_votes_counted(page: str) -> int | None:
     """electorate-details-NN.html -> total votes counted in the electorate."""
     m = re.search(r"VOTES COUNTED:\s*(?:</[^>]+>\s*<[^>]+>\s*)*([\d,]+)", page) or re.search(r"VOTES COUNTED:[^\d]*([\d,]+)", _text(page))
     return int(m.group(1).replace(",", "")) if m else None
+
+
+def parse_candidates(page: str) -> tuple[list[tuple[str, str | None, int]], dict]:
+    """electorate-details-NN.html -> ([(candidate, party name or None, votes)], {party name: party votes}).
+
+    In the page's candidates table each row pairs a candidate with their own party on the
+    right; a candidate with no party there is an independent, and rows with no candidate
+    list the remaining parties' votes.
+    """
+    m = re.search(r'id="partyCandidatesResultsTable"(.*?)</table>', page, re.S)
+    if not m:
+        return [], {}
+    cands, parties = [], {}
+    for row in re.findall(r"<tr[^>]*>(.*?)</tr>", m.group(1), re.S):
+        tds = re.findall(r"<td[^>]*>(.*?)</td>", row, re.S)
+        if len(tds) < 2:
+            continue
+        L = [_text(x) for x in re.findall(r"<span[^>]*>(.*?)</span>", tds[0], re.S)]
+        R = [_text(x) for x in re.findall(r"<span[^>]*>(.*?)</span>", tds[1], re.S)]
+        if len(L) >= 2 and L[1].replace(",", "").isdigit():
+            cands.append((L[0], R[0] if R and R[0] else None, int(L[1].replace(",", ""))))
+        if len(R) >= 2 and R[1].replace(",", "").isdigit():
+            parties[R[0]] = int(R[1].replace(",", ""))
+    return cands, parties

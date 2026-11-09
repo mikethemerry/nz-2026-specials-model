@@ -1,0 +1,199 @@
+{
+ "_source": "Estimated from the Electoral Commission's 2023 split-vote statistics for all 72 electorates (archive.electionresults.govt.nz/electionresults_2023/statistics/csv/split-votes-electorate-N.csv), retrieved 9 Nov 2026. For voters of each party (rows), a weight for each type of electorate candidate (columns): the probability of voting for a candidate is its weight divided by the summed weights of the candidates standing in that seat, plus ABS (informal or party vote only, weight 1). Fitted by maximum likelihood over seats with different candidate line-ups (Bradley-Terry / Luce iterative scaling), separately for general and Māori electorates. A Māori-electorate weight of 0 means that candidate type did not stand in a Māori seat in 2023; the general weight is used instead. Rebuilt by `make flows` from data/raw/splitvotes/2023.",
+ "general": {
+  "NAT": {
+   "NAT": 48.53,
+   "LAB": 1.501,
+   "GP": 0.8009,
+   "ACT": 3.395,
+   "NZF": 0.9207,
+   "OPP": 1.22,
+   "TPM": 0.2303,
+   "OTH": 0.4454,
+   "IND": 0.704,
+   "ABS": 1
+  },
+  "LAB": {
+   "NAT": 1.504,
+   "LAB": 26.78,
+   "GP": 3.03,
+   "ACT": 0.3011,
+   "NZF": 0.6111,
+   "OPP": 1.063,
+   "TPM": 1.038,
+   "OTH": 0.3048,
+   "IND": 0.3011,
+   "ABS": 1
+  },
+  "GP": {
+   "NAT": 3.154,
+   "LAB": 25.73,
+   "GP": 32.34,
+   "ACT": 0.5569,
+   "NZF": 0.4193,
+   "OPP": 4.281,
+   "TPM": 3.734,
+   "OTH": 0.7545,
+   "IND": 0.5628,
+   "ABS": 1
+  },
+  "ACT": {
+   "NAT": 47.62,
+   "LAB": 2.371,
+   "GP": 0.8921,
+   "ACT": 25.36,
+   "NZF": 1.876,
+   "OPP": 2.216,
+   "TPM": 0.3079,
+   "OTH": 1.313,
+   "IND": 2.063,
+   "ABS": 1
+  },
+  "NZF": {
+   "NAT": 8.43,
+   "LAB": 4.446,
+   "GP": 1.005,
+   "ACT": 1.636,
+   "NZF": 20.56,
+   "OPP": 1.594,
+   "TPM": 0.7192,
+   "OTH": 2.949,
+   "IND": 1.359,
+   "ABS": 1
+  },
+  "OPP": {
+   "NAT": 8.267,
+   "LAB": 12.6,
+   "GP": 9.819,
+   "ACT": 1.585,
+   "NZF": 0.9744,
+   "OPP": 35.64,
+   "TPM": 1.637,
+   "OTH": 1.329,
+   "IND": 1.378,
+   "ABS": 1
+  },
+  "TPM": {
+   "NAT": 0.7566,
+   "LAB": 4.754,
+   "GP": 4.525,
+   "ACT": 0.1493,
+   "NZF": 0.4085,
+   "OPP": 0.803,
+   "TPM": 11.71,
+   "OTH": 0.5112,
+   "IND": 0.3524,
+   "ABS": 1
+  },
+  "OTH": {
+   "NAT": 3.007,
+   "LAB": 1.404,
+   "GP": 1.132,
+   "ACT": 0.6968,
+   "NZF": 2.389,
+   "OPP": 1.142,
+   "TPM": 0.8005,
+   "OTH": 7.824,
+   "IND": 1.266,
+   "ABS": 1
+  }
+ },
+ "maori": {
+  "NAT": {
+   "NAT": 13.47,
+   "LAB": 0.9946,
+   "GP": 1.152,
+   "ACT": 0,
+   "NZF": 0,
+   "OPP": 0,
+   "TPM": 2.588,
+   "OTH": 0.9908,
+   "IND": 0.8267,
+   "ABS": 1
+  },
+  "LAB": {
+   "NAT": 0.05347,
+   "LAB": 11.1,
+   "GP": 1.761,
+   "ACT": 0,
+   "NZF": 0,
+   "OPP": 0,
+   "TPM": 6.188,
+   "OTH": 0.3725,
+   "IND": 0.05796,
+   "ABS": 1
+  },
+  "GP": {
+   "NAT": 0.1908,
+   "LAB": 5.645,
+   "GP": 14.77,
+   "ACT": 0,
+   "NZF": 0,
+   "OPP": 0,
+   "TPM": 10.96,
+   "OTH": 0.7512,
+   "IND": 0.09947,
+   "ABS": 1
+  },
+  "ACT": {
+   "NAT": 8.153,
+   "LAB": 1.307,
+   "GP": 1.07,
+   "ACT": 0,
+   "NZF": 0,
+   "OPP": 0,
+   "TPM": 2.098,
+   "OTH": 1.627,
+   "IND": 1.075,
+   "ABS": 1
+  },
+  "NZF": {
+   "NAT": 1.654,
+   "LAB": 2.798,
+   "GP": 1.11,
+   "ACT": 0,
+   "NZF": 0,
+   "OPP": 0,
+   "TPM": 3.403,
+   "OTH": 1.496,
+   "IND": 0.7632,
+   "ABS": 1
+  },
+  "OPP": {
+   "NAT": 1.238,
+   "LAB": 4.174,
+   "GP": 4.618,
+   "ACT": 0,
+   "NZF": 0,
+   "OPP": 0,
+   "TPM": 6.124,
+   "OTH": 1.091,
+   "IND": 0.3252,
+   "ABS": 1
+  },
+  "TPM": {
+   "NAT": 0.1057,
+   "LAB": 2.467,
+   "GP": 2.122,
+   "ACT": 0,
+   "NZF": 0,
+   "OPP": 0,
+   "TPM": 18.74,
+   "OTH": 0.2841,
+   "IND": 0.05354,
+   "ABS": 1
+  },
+  "OTH": {
+   "NAT": 0.4613,
+   "LAB": 1.119,
+   "GP": 0.8226,
+   "ACT": 0,
+   "NZF": 0,
+   "OPP": 0,
+   "TPM": 2.849,
+   "OTH": 3.288,
+   "IND": 0.7028,
+   "ABS": 1
+  }
+ }
+}

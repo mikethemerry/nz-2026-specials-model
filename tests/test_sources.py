@@ -94,3 +94,36 @@ def test_polling_place_named_special_is_not_a_special_vote():
     p1 = parse_candidate_file("\n".join(lines[:i] + [fake] + lines[i:]))
     assert p1["special_valid"] == p0["special_valid"]
     assert [c["special"] for c in p1["candidates"]] == [c["special"] for c in p0["candidates"]]
+
+
+def test_split_vote_parser_hamilton_east_2023():
+    """2023 Hamilton East split votes (no Green candidate): matches the browser extraction used for flows_2023.json."""
+    from nzspecials.splitvotes import last_paren, parse
+    assert last_paren("CORKIN, Alexander James (The Opportunities Party (TOP))") == "The Opportunities Party (TOP)"
+    assert last_paren("HOWARD, Thomas Edward (Ted) (Independent)") == "Independent"
+    name, cols, M = parse(read("2023_split_12.csv"))
+    assert name == "Hamilton East"
+    assert cols == ["ACT", "OTH", "LAB", "NAT", "NZF", "TPM", "OPP", "INF", "PVO"]
+    assert M["GP"] == [40, 149, 3292, 233, 48, 468, 345, 55, 88]
+    assert M["NAT"] == [632, 87, 449, 14448, 142, 57, 141, 190, 228]
+
+
+def test_flow_fit_recovers_known_weights():
+    """The Luce fit recovers the weights that generated synthetic seats with different candidate line-ups."""
+    from nzspecials.splitvotes import fit
+    true = {"NAT": 40.0, "LAB": 2.0, "GP": 1.0, "ACT": 4.0}
+    seats = []
+    for line_up in (["NAT", "LAB", "GP", "ACT"], ["NAT", "LAB"], ["LAB", "GP", "ACT"], ["NAT", "GP"]):
+        tot = sum(true[c] for c in line_up) + 1.0
+        row = [round(100000 * true[c] / tot) for c in line_up] + [round(100000 / tot)]
+        seats.append((line_up + ["INF"], {"NAT": row}))
+    W = fit(seats, iters=3000)["NAT"]
+    for c, v in true.items():
+        assert abs(W[c] - v) / v < 0.01, (c, W[c])
+
+
+def test_ge2026_candidate_table():
+    from nzspecials.ge2026 import parse_candidates
+    c, p = parse_candidates(read("ge2026_candidates_sample.html"))
+    assert c == [("BOONEN, Roy Peter", "Green Party", 1643), ("HEDLEY, Alex", "Labour Party", 11952), ("LAWRENCE, Te Kira", "New Zealand First Party", 1975)]
+    assert p == {"Green Party": 3091, "Labour Party": 9355, "New Zealand First Party": 3785}

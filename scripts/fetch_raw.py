@@ -161,6 +161,17 @@ def build_manifest() -> int:
                           "retrieved_at": dt.datetime.fromtimestamp(f.stat().st_mtime, dt.timezone.utc).isoformat(timespec="seconds"),
                           "via": "browser"}
                 n += 1
+    extra = [(f, f"https://archive.electionresults.govt.nz/electionresults_2023/statistics/csv/split-votes-electorate-{f.stem}.csv")
+             for f in (RAW / "splitvotes" / "2023").glob("*.csv")]
+    extra += [(f, f"{GE2026}/{f.name}") for f in (RAW / "ge2026").glob("*/*.html")]
+    for f, url in extra:
+        rel = f.relative_to(RAW).as_posix()
+        if rel in m:
+            continue
+        body = f.read_bytes()
+        m[rel] = {"url": url, "sha256": sha256(body), "bytes": len(body),
+                  "retrieved_at": dt.datetime.fromtimestamp(f.stat().st_mtime, dt.timezone.utc).isoformat(timespec="seconds"), "via": "browser"}
+        n += 1
     save_manifest(m)
     print(f"Added {n} files to {MANIFEST.relative_to(ROOT)} ({len(m)} total)")
     return 0

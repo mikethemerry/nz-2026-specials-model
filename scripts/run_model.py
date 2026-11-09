@@ -23,7 +23,7 @@ from nzspecials.model import Config, simulate  # noqa: E402
 CONFIGS = ROOT / "configs"
 OUT = ROOT / "outputs"
 SITE_DATA = ROOT / "docs" / "data"
-VARIANT_ORDER = ["prev", "k085_v91", "central", "he8000", "k07_he", "k10_he", "hist0823", "fe6"]
+VARIANT_ORDER = ["prev", "k085_v91", "no_field", "central", "he8000", "k07_he", "k10_he", "hist0823", "fe6"]
 SENSITIVITY = {0.55: "k055", 0.7: "k07", 0.85: "central", 1.0: "k10"}
 
 

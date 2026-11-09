@@ -1,6 +1,6 @@
 PY ?= python3
 
-.PHONY: all fetch fetch-history fetch-2026 verify-raw check-prelim calibrate check-calibration run test check serve clean
+.PHONY: all fetch fetch-history fetch-2026 verify-raw check-prelim check-flows backtest calibrate check-calibration run test check serve clean
 
 all: test run
 
@@ -21,6 +21,12 @@ check-prelim:                          ## compare prelim_2026.json with the late
 
 check-calibration:                     ## rebuild calibration from data/raw and diff with the committed file
 	$(PY) scripts/build_calibration.py --check
+
+check-flows:                           ## rebuild the party-to-candidate flow weights from data/raw/splitvotes and diff
+	$(PY) scripts/build_flows.py --check
+
+backtest:                              ## backtest the electorate model on 2017-2023 (needs data/raw); writes docs/data/backtest.json
+	$(PY) scripts/backtest_flows.py
 
 calibrate:                             ## rebuild and overwrite data/inputs/calibration.json
 	$(PY) scripts/build_calibration.py

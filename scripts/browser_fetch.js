@@ -1,4 +1,4 @@
-// Download every 2008-2023 voting-place CSV as one zip, from inside a browser.
+// Download every 2008-2023 voting-place CSV, and the 2023 split-vote statistics, as one zip, from inside a browser.
 //
 // The Commission's archive blocks scripted downloads (curl, Python) but not a
 // browser. To use:
@@ -7,7 +7,7 @@
 //   3. Paste this whole file and press Enter. Wait for "Done" (about 12 minutes:
 //      it deliberately goes slowly because the archive throttles fast requests).
 //   4. Unzip history.zip into data/raw/ so you get data/raw/history/<year>/...
-//   5. Run: python scripts/fetch_raw.py manifest && make check-calibration
+//   5. Run: python scripts/fetch_raw.py manifest && make check-calibration check-flows
 (async () => {
   const YEARS = ["2008", "2011", "2014", "2017", "2020", "2023"];
   const url = (y, kind, n) => +y >= 2017
@@ -39,6 +39,24 @@
     }
     console.log(y, kind, got, "of", SEATS[y]);
   }
+  // 2023 split-vote statistics (party vote x electorate vote), one file per electorate
+  let sv = 0;
+  for (let n = 1; n <= 72; n++) {
+    const u = `/electionresults_2023/statistics/csv/split-votes-electorate-${n}.csv`;
+    let ok = false;
+    for (let attempt = 0; attempt < 7 && !ok; attempt++) {
+      if (attempt) await sleep(2000 * 2 ** (attempt - 1));
+      try {
+        const r = await fetch(u, { cache: "no-store" });
+        if (!r.ok) continue;
+        files.push([`splitvotes/2023/${n}.csv`, new Uint8Array(await r.arrayBuffer())]);
+        ok = true; sv++;
+      } catch (e) { /* retry */ }
+    }
+    if (!ok) failed.push(u);
+    await sleep(700);
+  }
+  console.log("2023 split votes", sv, "of 72");
   if (failed.length) console.warn(failed.length, "files failed:", failed);
 
   // Minimal uncompressed ("stored") zip writer

@@ -104,3 +104,65 @@ def test_site_percentage_groups_add_to_100():
         assert round(sum(r[key] for r in D(f)), 1) == 100.0, f
     for k in k3:
         assert round(sum(r["pct"] for r in D("paths") if r["scenario"] == k), 1) == sc[k]
+
+
+def test_candidates_file_matches_preliminary_count():
+    """The 2026 candidate lists agree with prelim_2026.json in every seat, and party votes sum to the national totals."""
+    cand = json.loads((ROOT / "data" / "inputs" / "candidates_2026.json").read_text())["electorates"]
+    pre = load_prelim()
+    assert set(cand) == set(pre["electorates"])
+    for nm, e in pre["electorates"].items():
+        c = sorted(cand[nm]["candidates"], key=lambda x: -x["votes"])
+        assert (c[0]["party"], c[1]["party"], c[0]["votes"] - c[1]["votes"]) == (e["leader"], e["runner_up"], e["margin"]), nm
+    for p, v in pre["party_votes"].items():
+        assert sum(e["party_votes"].get(p, 0) for e in cand.values()) == v, p
+
+
+def test_flows_reproduce_every_seats_ordinary_result():
+    from nzspecials.flows import Seat, load_weights
+    W = load_weights()
+    cand = json.loads((ROOT / "data" / "inputs" / "candidates_2026.json").read_text())["electorates"]
+    for nm, e in cand.items():
+        s = Seat(nm, e["candidates"], e["party_votes"], W)
+        pred = (s.ord_party @ s.F)[:-1]
+        assert np.allclose(pred / pred.sum(), s.votes / s.votes.sum(), atol=1e-4), nm
+        assert np.allclose(s.F.sum(axis=1), 1)
+
+
+def test_hamilton_east_field_effect():
+    """No Green or ACT candidate in Hamilton East: Green voters mostly go to Labour, ACT voters to National, net to Labour."""
+    from nzspecials.allocation import INDEX
+    from nzspecials.flows import Seat, load_weights
+    e = json.loads((ROOT / "data" / "inputs" / "candidates_2026.json").read_text())["electorates"]["Hamilton East"]
+    s = Seat("Hamilton East", e["candidates"], e["party_votes"], load_weights())
+    assert "GP" not in s.types and "ACT" not in s.types
+    lab, nat = s.types.index("LAB"), s.types.index("NAT")
+    assert s.F[INDEX["GP"], lab] > 0.7 and s.F[INDEX["ACT"], nat] > 0.8
+    sims = simulate(Config(n=50, seed=3))
+    v = float(sims["field_pp"][list(sims["names"]).index("Hamilton East")])
+    assert -3 < v < -0.5          # National leads, so the effect on the leader's margin is negative
+
+
+def test_previous_seat_model_unchanged_when_field_switched_off():
+    """With the candidate field off, the model reproduces the earlier published central case exactly."""
+    from nzspecials.analysis import classify, scenario_shares
+    got = scenario_shares(classify(simulate(Config(candidate_field=False))))
+    assert (got["alone"], got["nat_needs_opp"], got["labour"]) == (52.6, 17.5, 29.9)
+
+
+def test_battleground_and_list_matrix():
+    """Battleground: left-leaning party on the left, odds sum to 100, histogram covers every run.
+    List matrix: cells (plus 'other') sum to exactly 100 and columns carry an outcome mix summing to 100."""
+    D = lambda f: json.loads((ROOT / "docs" / "data" / f"{f}.json").read_text())
+    from nzspecials.analysis import SIDE_ORDER
+    bg = D("battleground")
+    assert {r["seat"] for r in bg} >= {"Wairarapa", "Hamilton East"}
+    for r in bg:
+        assert SIDE_ORDER[r["left_party"]] < SIDE_ORDER[r["right_party"]], r["seat"]
+        assert round(r["left_win"] + r["right_win"], 1) == 100.0
+        assert sum(r["counts"]) == D("inputs")[[x["key"] for x in D("inputs")].index("sims")]["value"]
+        assert r["bin_start"] == -r["bin_width"] * len(r["counts"]) // 2
+    assert [r["order"] for r in bg] == sorted(r["order"] for r in bg)
+    assert round(sum(x["pct"] for x in D("list_matrix")), 1) == 100.0
+    for c in D("list_matrix_cols"):
+        assert round(c["alone"] + c["nat_needs_opp"] + c["labour"], 1) == 100.0

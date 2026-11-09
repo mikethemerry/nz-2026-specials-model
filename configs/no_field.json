@@ -1,0 +1,7 @@
+{
+ "_label": "Central without the 2026 candidate field (previous seat model)",
+ "n": 20000,
+ "k_mean": 0.85,
+ "valid": 0.85,
+ "candidate_field": false
+}

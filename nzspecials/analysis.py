@@ -62,6 +62,146 @@ def scenario_shares(c: dict) -> dict:
     return split(c["sc"])
 
 
+# Left-to-right order used to orient the battleground charts: the more left-leaning party is
+# always drawn on the left (Greens, Te Pāti Māori, Labour, Opportunity, NZ First, ACT, National).
+SIDE_ORDER = {"GP": 0, "TPM": 1, "LAB": 2, "OPP": 3, "NZF": 4, "ACT": 5, "NAT": 6}
+
+
+def display_name(name: str) -> str:
+    """'McANULTY, Kieran' -> 'Kieran McAnulty' (first given name, surname in normal case)."""
+    sur, _, given = name.partition(", ")
+    def cap(w):
+        for pre in ("Mc", "Mac"):
+            if w.startswith(pre) and len(w) > len(pre) and w[len(pre)].isupper():
+                return pre + w[len(pre):].title()
+        return w.title()
+    return f"{given.split()[0]} {' '.join(cap(w) for w in sur.split())}" if given else cap(sur)
+
+
+def seat_effect(winner: str, loser: str) -> str:
+    """What a change of hands from the preliminary leader does to the blocs (party codes)."""
+    if loser == "NAT":
+        return "Coalition loses a seat; House shrinks by one"
+    if winner == "NAT":
+        return "Coalition gains a seat; House grows by one"
+    if loser == "TPM":
+        return "Te Pāti Māori loses an overhang seat; House shrinks by one"
+    if winner == "TPM":
+        return "Te Pāti Māori gains an overhang seat; House grows by one"
+    if loser in ("ACT", "NZF"):
+        return "Coalition loses a seat"
+    if winner in ("ACT", "NZF"):
+        return "Coalition gains a seat"
+    return "No change to either bloc"
+
+
+def battleground(c: dict, prelim: dict, lo: float = 0.01) -> list:
+    """Seats that change hands in at least 1% (and at most 99%) of runs, with the distribution
+    of the final margin. x = right-hand candidate's margin over the left-hand candidate."""
+    from .data import load_json
+    cand = load_json("candidates_2026.json")["electorates"]
+    el = prelim["electorates"]
+    names = list(c["names"])
+    out = []
+    for j, seat in enumerate(names):
+        flip = float(c["flip"][:, j].mean())
+        if not lo <= flip <= 1 - lo:
+            continue
+        e = el[seat]
+        cs = sorted(cand[seat]["candidates"], key=lambda x: -x["votes"])
+        lead, chal = cs[0], cs[1]
+        lead_right = SIDE_ORDER.get(e["leader"], 3) > SIDE_ORDER.get(e["runner_up"], 3)
+        x = c["margin"][:, j].astype(float) * (1 if lead_right else -1)
+        left, right = (chal, lead) if lead_right else (lead, chal)
+        lp, rp = (e["runner_up"], e["leader"]) if lead_right else (e["leader"], e["runner_up"])
+        q = np.percentile(x, [0.5, 99.5])
+        ext = max(abs(q[0]), abs(q[1]), 50.0)
+        w = next(v for v in (10, 20, 25, 30, 40, 50, 60, 75, 100, 150, 200, 250, 500) if 2 * ext / v <= 44)
+        ext = np.ceil(ext / w) * w
+        edges = np.arange(-ext, ext + w / 2, w)
+        counts, _ = np.histogram(np.clip(x, -ext, ext - 1e-6), edges)
+        pl, pr = lr([(x < 0).sum(), (x >= 0).sum()])
+        eff_left = seat_effect(lp, rp) if lead_right else "No change to either bloc"
+        eff_right = "No change to either bloc" if lead_right else seat_effect(rp, lp)
+        out.append({"seat": seat, "left_name": display_name(left["name"]), "left_party": lp, "right_name": display_name(right["name"]), "right_party": rp,
+                    "left_win": pl, "right_win": pr, "prelim_x": int(e["margin"] * (1 if lead_right else -1)),
+                    "leader_party": e["leader"], "prelim_margin": int(e["margin"]),
+                    "median_x": int(np.median(x)), "p10_x": int(np.percentile(x, 10)), "p90_x": int(np.percentile(x, 90)),
+                    "bin_start": int(edges[0]), "bin_width": int(w), "counts": [int(v) for v in counts],
+                    "if_left_wins": eff_left, "if_right_wins": eff_right, "closeness": round(abs(50 - pl), 1)})
+    out.sort(key=lambda r: r["closeness"])
+    for i, r in enumerate(out):
+        r["order"] = i
+    return out
+
+
+MATRIX_ROWS = [("gp_opp", ("GP+1", "OPP+1"), "Grn +1, Opp +1", ["GP", "OPP"]),
+               ("gp2", ("GP+2",), "Grn +2", ["GP", "GP"]),
+               ("gp", ("GP+1",), "Grn +1", ["GP"])]
+MATRIX_COLS = [("nzf_nat", ("NAT-1", "NZF-1"), "NZF drops + Nat entitlement", ["NZF", "NAT"], "Coalition loses a seat; House grows by one"),
+               ("nzf_lab", ("LAB-1", "NZF-1"), "NZF drops + Lab −1", ["NZF", "LAB"], "Coalition loses a seat"),
+               ("nat_lab", ("LAB-1", "NAT-1"), "Nat entitlement + Lab −1", ["NAT", "LAB"], "House grows by one"),
+               ("nzf", ("NZF-1",), "NZF drops", ["NZF"], "Coalition loses a seat"),
+               ("nat", ("NAT-1",), "Nat entitlement", ["NAT"], "House grows by one"),
+               ("lab", ("LAB-1",), "Lab −1", ["LAB"], "No change to either bloc")]
+
+
+def list_matrix(c: dict) -> tuple[list, list, list]:
+    """List-seat changes from the preliminary allocation: gains (rows) x pays (columns).
+    National 'pays' when its party-vote entitlement drops (it keeps its seats as overhang)."""
+    S, sc = c["seats"], c["sc"]
+    P = ["NAT", "LAB", "GP", "ACT", "NZF", "OPP"]
+    pre = np.array([35, 36, 16, 13, 12, 7])
+    E = np.column_stack([c["ent"]] + [S[:, INDEX[p]] for p in P[1:]])
+    dE = E - pre
+    gk = [tuple(f"{P[i]}+{r[i]}" for i in range(6) if r[i] > 0) for r in dE]
+    lk = [tuple(sorted(f"{P[i]}{r[i]}" for i in range(6) if r[i] < 0)) for r in dE]
+    rid = {k: i for i, (_, k, _, _) in enumerate(MATRIX_ROWS)}
+    cid = {k: j for j, (_, k, _, _, _) in enumerate(MATRIX_COLS)}
+    cnt = np.zeros((len(MATRIX_ROWS), len(MATRIX_COLS)))
+    other = 0
+    colmask = np.zeros((len(MATRIX_COLS), len(dE)), bool)
+    for n, (g, l) in enumerate(zip(gk, lk)):
+        if l in cid:
+            colmask[cid[l], n] = True
+        if g in rid and l in cid:
+            cnt[rid[g], cid[l]] += 1
+        else:
+            other += 1
+    flat = lr(list(cnt.ravel()) + [other])
+    pct = np.array(flat[:-1]).reshape(cnt.shape)
+    cells = [{"row": MATRIX_ROWS[i][0], "col": MATRIX_COLS[j][0], "pct": float(pct[i, j])}
+             for i in range(len(MATRIX_ROWS)) for j in range(len(MATRIX_COLS))]
+    cells.append({"row": "other", "col": "other", "pct": flat[-1]})
+    rows = [{"row": r, "label": lab, "parties": ps, "order": i, "pct": round(float(pct[i].sum()), 1)} for i, (r, _, lab, ps) in enumerate(MATRIX_ROWS)]
+    cols = [{"col": k, "label": lab, "parties": ps, "effect": eff, "order": j, "pct": round(float(pct[:, j].sum()), 1),
+             **{s: v for s, v in split(sc[colmask[j]]).items() if s in SCENARIOS}} for j, (k, _, lab, ps, eff) in enumerate(MATRIX_COLS)]
+    return cells, rows, cols
+
+
+def field_inputs(c: dict, variants: dict, prelim: dict) -> list:
+    """Candidate-field figures quoted on the site."""
+    from .data import load_json
+    from .flows import MAJORS
+    cand = load_json("candidates_2026.json")["electorates"]
+    missing = 0
+    for e in cand.values():
+        pv, tot = e["party_votes"], sum(e["party_votes"].values())
+        have = {x["party"] for x in e["candidates"]}
+        missing += any(p not in have and pv.get(p, 0) > 0.03 * tot for p in MAJORS)
+    names = list(c["names"])
+    el = prelim["electorates"]
+
+    def lab_terms(seat):  # field effect in Labour-minus-National points
+        v = float(c["field_pp"][names.index(seat)])
+        return round(v if el[seat]["leader"] == "LAB" else -v, 1)
+    out = [("seats_missing_major", missing), ("he_field_pp", lab_terms("Hamilton East")), ("wai_field_pp", lab_terms("Wairarapa")),
+           ("he_flip", pc(c["flipf"]("Hamilton East")))]
+    if "no_field" in variants:
+        out.append(("he_flip_no_field", pc(variants["no_field"]["c"]["flipf"]("Hamilton East"))))
+    return out
+
+
 def site_datasets(c: dict, variants: dict, sensitivity: dict, he8000: dict, prelim: dict, ctx: dict, enrol: dict, calib: dict) -> dict:
     """All datasets the dashboard reads, keyed by dataset id (rows are lists of dicts)."""
     S, T, R, sc = c["seats"], c["total"], c["R"], c["sc"]
@@ -94,7 +234,8 @@ def site_datasets(c: dict, variants: dict, sensitivity: dict, he8000: dict, prel
         ("advance_pct_2026", ctx["advance_pct_2026"]["value"]), ("advance_pct_2023", ctx["advance_pct_2023"]["value"]),
         ("special_share_2026", round(specials * 0.85 / (ctx["ordinary_votes"]["value"] + specials * 0.85) * 100, 1)), ("special_share_2023", 19.0),
         ("he_specials_claim", ctx["hamilton_east_specials_claim"]["value"]), ("he_specials_model", he8000["he_model_specials"]),
-        ("wai_specials_model", he8000["wai_model_specials"])]]
+        ("wai_specials_model", he8000["wai_model_specials"]),
+        *field_inputs(c, variants, prelim)]]
 
     rows = []
     for p in ["NAT", "LAB", "GP", "ACT", "NZF", "OPP", "TPM"]:
@@ -214,4 +355,7 @@ def site_datasets(c: dict, variants: dict, sensitivity: dict, he8000: dict, prel
         hp.append(row)
     ds["history_party"] = hp
     ds["history_seats"] = calib.get("marginal_history", [])
+    ds["battleground"] = battleground(c, prelim)
+    ds["inputs"].append({"key": "battleground_n", "value": len(ds["battleground"])})
+    ds["list_matrix"], ds["list_matrix_rows"], ds["list_matrix_cols"] = list_matrix(c)
     return ds

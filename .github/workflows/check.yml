@@ -21,6 +21,12 @@ jobs:
       - name: Calibration rebuilds from raw data
         if: hashFiles('data/raw/manifest.json') != ''
         run: python scripts/build_calibration.py --check
+      - name: Flow weights rebuild from raw split votes
+        if: hashFiles('data/raw/splitvotes/2023/1.csv') != ''
+        run: python scripts/build_flows.py --check
+      - name: Backtest
+        if: hashFiles('data/raw/manifest.json') != ''
+        run: python scripts/backtest_flows.py > /dev/null
       - name: Rerun the model
         run: python scripts/run_model.py
       - name: Published site data is unchanged

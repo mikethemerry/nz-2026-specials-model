@@ -1,0 +1,3554 @@
+{
+ "_source": "Electoral Commission, 2026 General Election preliminary count, electorate details pages (https://electionresults.govt.nz/ge2026/electorate-details-NN.html), retrieved 9 Nov 2026 via browser. Party codes: NAT LAB GP ACT NZF OPP TPM; OTH = other registered party (name given); IND = no party listed. party_votes are the electorate's party votes, minor parties summed as OTH. Cross-checked: top two and margin match prelim_2026.json in all 71 seats; party votes sum to the national preliminary totals.",
+ "electorates": {
+  "Auckland Central": {
+   "number": 1,
+   "candidates": [
+    {
+     "name": "CHANG, Johan",
+     "party": "OPP",
+     "votes": 861
+    },
+    {
+     "name": "CHEN, Naisi",
+     "party": "LAB",
+     "votes": 2819
+    },
+    {
+     "name": "KINSER, Candace",
+     "party": "NAT",
+     "votes": 11111
+    },
+    {
+     "name": "MANAIA, Christopher",
+     "party": "OTH",
+     "votes": 162,
+     "party_name": "Aotearoa Legalise Cannabis Party"
+    },
+    {
+     "name": "MODKOVA, Antonia",
+     "party": "ACT",
+     "votes": 996
+    },
+    {
+     "name": "SWARBRICK, Chlöe",
+     "party": "GP",
+     "votes": 13942
+    }
+   ],
+   "party_votes": {
+    "OPP": 3176,
+    "LAB": 7747,
+    "NAT": 7976,
+    "OTH": 146,
+    "ACT": 3313,
+    "GP": 6017,
+    "NZF": 1573,
+    "TPM": 62
+   },
+   "candidate_informal": 206
+  },
+  "Banks Peninsula": {
+   "number": 2,
+   "candidates": [
+    {
+     "name": "McLELLAN, Tracey",
+     "party": "LAB",
+     "votes": 19216
+    },
+    {
+     "name": "PAULING, Craig",
+     "party": "GP",
+     "votes": 5396
+    },
+    {
+     "name": "SALES, Lesley Margaret",
+     "party": "OTH",
+     "votes": 91,
+     "party_name": "New Zealand Loyal"
+    },
+    {
+     "name": "STRINGER, John",
+     "party": "NZF",
+     "votes": 1612
+    },
+    {
+     "name": "TURNBULL, Kyle",
+     "party": "OTH",
+     "votes": 91,
+     "party_name": "Alliance Party"
+    },
+    {
+     "name": "TURNER, AmyLorraine",
+     "party": "OTH",
+     "votes": 99,
+     "party_name": "Conservative Party NZ"
+    },
+    {
+     "name": "WEENINK, Vanessa",
+     "party": "NAT",
+     "votes": 16955
+    },
+    {
+     "name": "WELLMAN, Zac",
+     "party": "ACT",
+     "votes": 1116
+    }
+   ],
+   "party_votes": {
+    "LAB": 12498,
+    "GP": 8006,
+    "OTH": 319,
+    "NZF": 3613,
+    "NAT": 11606,
+    "ACT": 4035,
+    "OPP": 4547,
+    "TPM": 43
+   },
+   "candidate_informal": 263
+  },
+  "Botany": {
+   "number": 3,
+   "candidates": [
+    {
+     "name": "DAHCHE, Ali",
+     "party": "ACT",
+     "votes": 1362
+    },
+    {
+     "name": "LEAVASA, Anae Neru",
+     "party": "LAB",
+     "votes": 7782
+    },
+    {
+     "name": "LUXON, Christopher",
+     "party": "NAT",
+     "votes": 20855
+    },
+    {
+     "name": "STOBO, Craig H.",
+     "party": "NZF",
+     "votes": 1667
+    }
+   ],
+   "party_votes": {
+    "ACT": 4013,
+    "LAB": 5846,
+    "NAT": 16328,
+    "NZF": 2285,
+    "OTH": 165,
+    "GP": 1839,
+    "OPP": 1406,
+    "TPM": 20
+   },
+   "candidate_informal": 403
+  },
+  "Christchurch Central": {
+   "number": 4,
+   "candidates": [
+    {
+     "name": "ANDERSON, Blair",
+     "party": "OTH",
+     "votes": 306,
+     "party_name": "Aotearoa Legalise Cannabis Party"
+    },
+    {
+     "name": "ARNEIL, Mark Russell",
+     "party": "NZF",
+     "votes": 1596
+    },
+    {
+     "name": "BYRNES, Greg",
+     "party": "OTH",
+     "votes": 98,
+     "party_name": "Alliance Party"
+    },
+    {
+     "name": "CARTER, Kahu",
+     "party": "GP",
+     "votes": 6165
+    },
+    {
+     "name": "HAMPTON, George",
+     "party": "LAB",
+     "votes": 13836
+    },
+    {
+     "name": "HANSEN, Tubby",
+     "party": "IND",
+     "votes": 142
+    },
+    {
+     "name": "LAURIE, Hayden",
+     "party": "IND",
+     "votes": 84
+    },
+    {
+     "name": "SKIPPER, Eden",
+     "party": "OPP",
+     "votes": 1155
+    },
+    {
+     "name": "STEPHENS, Dale Aotea",
+     "party": "NAT",
+     "votes": 11204
+    }
+   ],
+   "party_votes": {
+    "OTH": 356,
+    "NZF": 2552,
+    "GP": 6498,
+    "LAB": 11219,
+    "OPP": 3239,
+    "NAT": 8139,
+    "ACT": 2668,
+    "TPM": 32
+   },
+   "candidate_informal": 270
+  },
+  "Christchurch East": {
+   "number": 5,
+   "candidates": [
+    {
+     "name": "BUTLER, Teresa",
+     "party": "GP",
+     "votes": 3938
+    },
+    {
+     "name": "DAVIDS, Alexandra",
+     "party": "NAT",
+     "votes": 9793
+    },
+    {
+     "name": "DAVIDSON, Reuben John",
+     "party": "LAB",
+     "votes": 18805
+    },
+    {
+     "name": "GULLERY, Ethan",
+     "party": "OTH",
+     "votes": 179,
+     "party_name": "Alliance Party"
+    },
+    {
+     "name": "HOUGHTON, Helen",
+     "party": "OTH",
+     "votes": 245,
+     "party_name": "Conservative Party NZ"
+    },
+    {
+     "name": "LAMBERT, Paula",
+     "party": "OTH",
+     "votes": 392,
+     "party_name": "Aotearoa Legalise Cannabis Party"
+    },
+    {
+     "name": "MUELLER-CAJAR, David",
+     "party": "OTH",
+     "votes": 106,
+     "party_name": "NZ Outdoors & Freedom Party"
+    },
+    {
+     "name": "SEVERIN, Toni",
+     "party": "ACT",
+     "votes": 1373
+    },
+    {
+     "name": "SINGH, Vikramjit",
+     "party": "IND",
+     "votes": 63
+    },
+    {
+     "name": "THOMPSON, Glenn",
+     "party": "OTH",
+     "votes": 54,
+     "party_name": "New Zealand Loyal"
+    },
+    {
+     "name": "WIREMU, Shane",
+     "party": "NZF",
+     "votes": 2203
+    }
+   ],
+   "party_votes": {
+    "GP": 5777,
+    "NAT": 8042,
+    "LAB": 13761,
+    "OTH": 563,
+    "ACT": 3014,
+    "NZF": 3867,
+    "OPP": 2183,
+    "TPM": 59
+   },
+   "candidate_informal": 282
+  },
+  "Coromandel": {
+   "number": 6,
+   "candidates": [
+    {
+     "name": "ANDERSEN, Vincent",
+     "party": "NZF",
+     "votes": 3979
+    },
+    {
+     "name": "BENNETT, Glen",
+     "party": "LAB",
+     "votes": 7072
+    },
+    {
+     "name": "COBB, Ray",
+     "party": "OTH",
+     "votes": 318,
+     "party_name": "NZ Outdoors & Freedom Party"
+    },
+    {
+     "name": "GREALEY, Pamela",
+     "party": "GP",
+     "votes": 4302
+    },
+    {
+     "name": "HART, Steven",
+     "party": "IND",
+     "votes": 161
+    },
+    {
+     "name": "McCORMICK, Mike",
+     "party": "ACT",
+     "votes": 2221
+    },
+    {
+     "name": "SIMPSON, Scott",
+     "party": "NAT",
+     "votes": 22004
+    }
+   ],
+   "party_votes": {
+    "NZF": 6414,
+    "LAB": 7814,
+    "OTH": 404,
+    "GP": 3238,
+    "ACT": 6585,
+    "NAT": 13900,
+    "OPP": 1747,
+    "TPM": 59
+   },
+   "candidate_informal": 298
+  },
+  "Dunedin": {
+   "number": 7,
+   "candidates": [
+    {
+     "name": "ASUNCION, Kristine",
+     "party": "NAT",
+     "votes": 7088
+    },
+    {
+     "name": "BAINBRIDGE-ZAFAR, David",
+     "party": "OPP",
+     "votes": 1367
+    },
+    {
+     "name": "BILLOT, Victor",
+     "party": "OTH",
+     "votes": 191,
+     "party_name": "Alliance Party"
+    },
+    {
+     "name": "BROOKING, Rachel",
+     "party": "LAB",
+     "votes": 16088
+    },
+    {
+     "name": "HERNANDEZ, Francisco Bagkus",
+     "party": "GP",
+     "votes": 7370
+    },
+    {
+     "name": "McDERMOTT, Adrian",
+     "party": "OTH",
+     "votes": 290,
+     "party_name": "Aotearoa Legalise Cannabis Party"
+    },
+    {
+     "name": "McDONALD-KING, Kym",
+     "party": "NZF",
+     "votes": 2223
+    },
+    {
+     "name": "ONG, Benedict",
+     "party": "IND",
+     "votes": 265
+    }
+   ],
+   "party_votes": {
+    "NAT": 5885,
+    "OPP": 3123,
+    "OTH": 250,
+    "LAB": 11691,
+    "GP": 9096,
+    "NZF": 2634,
+    "ACT": 2305,
+    "TPM": 66
+   },
+   "candidate_informal": 314
+  },
+  "East Cape": {
+   "number": 8,
+   "candidates": [
+    {
+     "name": "DICKSON, Gordon John",
+     "party": "IND",
+     "votes": 276
+    },
+    {
+     "name": "HAWKES, Darrin",
+     "party": "ACT",
+     "votes": 1982
+    },
+    {
+     "name": "KIRKPATRICK, Dana Margot",
+     "party": "NAT",
+     "votes": 16404
+    },
+    {
+     "name": "LUXTON, Jo",
+     "party": "LAB",
+     "votes": 11079
+    },
+    {
+     "name": "SMITH, Cail",
+     "party": "OPP",
+     "votes": 779
+    },
+    {
+     "name": "WALKER, Jordan",
+     "party": "GP",
+     "votes": 2862
+    }
+   ],
+   "party_votes": {
+    "ACT": 4505,
+    "NAT": 10254,
+    "LAB": 9569,
+    "OPP": 1432,
+    "GP": 3294,
+    "OTH": 252,
+    "NZF": 4258,
+    "TPM": 181
+   },
+   "candidate_informal": 382
+  },
+  "East Coast Bays": {
+   "number": 9,
+   "candidates": [
+    {
+     "name": "LIND, Allan",
+     "party": "OTH",
+     "votes": 157,
+     "party_name": "New Zealand Loyal"
+    },
+    {
+     "name": "McENROE, Brendan",
+     "party": "LAB",
+     "votes": 6174
+    },
+    {
+     "name": "McKEE, Abe",
+     "party": "GP",
+     "votes": 2224
+    },
+    {
+     "name": "MILLS, Samuel",
+     "party": "ACT",
+     "votes": 1086
+    },
+    {
+     "name": "STANFORD, Erica",
+     "party": "NAT",
+     "votes": 19993
+    },
+    {
+     "name": "TAYLOR, Vaughan",
+     "party": "NZF",
+     "votes": 1117
+    }
+   ],
+   "party_votes": {
+    "OTH": 227,
+    "LAB": 5744,
+    "GP": 2510,
+    "ACT": 4327,
+    "NAT": 13726,
+    "NZF": 2547,
+    "OPP": 1745,
+    "TPM": 33
+   },
+   "candidate_informal": 253
+  },
+  "Epsom": {
+   "number": 10,
+   "candidates": [
+    {
+     "name": "BELICH, Camilla",
+     "party": "LAB",
+     "votes": 5798
+    },
+    {
+     "name": "GOLDSMITH, Paul",
+     "party": "NAT",
+     "votes": 9742
+    },
+    {
+     "name": "GUMMER, Martin",
+     "party": "NZF",
+     "votes": 359
+    },
+    {
+     "name": "JACKSON, Paul",
+     "party": "OPP",
+     "votes": 1181
+    },
+    {
+     "name": "JERRY, Sawan",
+     "party": "OTH",
+     "votes": 22,
+     "party_name": "Vision New Zealand"
+    },
+    {
+     "name": "SEYMOUR, David",
+     "party": "ACT",
+     "votes": 11786
+    },
+    {
+     "name": "XU-NAN, Lawrence",
+     "party": "GP",
+     "votes": 3105
+    }
+   ],
+   "party_votes": {
+    "LAB": 5414,
+    "NAT": 13754,
+    "NZF": 1401,
+    "OPP": 2688,
+    "OTH": 108,
+    "ACT": 4976,
+    "GP": 3751,
+    "TPM": 29
+   },
+   "candidate_informal": 169
+  },
+  "Glendene": {
+   "number": 11,
+   "candidates": [
+    {
+     "name": "FRENCH, Evan",
+     "party": "OPP",
+     "votes": 937
+    },
+    {
+     "name": "KUMAR, Sunil",
+     "party": "NAT",
+     "votes": 7538
+    },
+    {
+     "name": "McNEIL, Rob",
+     "party": "OTH",
+     "votes": 198,
+     "party_name": "Animal Justice Party Aotearoa New Zealand"
+    },
+    {
+     "name": "NGARO, Alfred",
+     "party": "NZF",
+     "votes": 2178
+    },
+    {
+     "name": "ROBERTS, Amanda",
+     "party": "ACT",
+     "votes": 1170
+    },
+    {
+     "name": "SCHUSTER, Tua",
+     "party": "IND",
+     "votes": 95
+    },
+    {
+     "name": "SEPULONI, Carmel Jean",
+     "party": "LAB",
+     "votes": 14478
+    },
+    {
+     "name": "SERHAN, Yasmine",
+     "party": "GP",
+     "votes": 2900
+    }
+   ],
+   "party_votes": {
+    "OPP": 1704,
+    "NAT": 7007,
+    "OTH": 235,
+    "NZF": 2513,
+    "ACT": 1683,
+    "LAB": 12320,
+    "GP": 4149,
+    "TPM": 60
+   },
+   "candidate_informal": 438
+  },
+  "Hamilton East": {
+   "number": 12,
+   "candidates": [
+    {
+     "name": "DANSEY, Georgie",
+     "party": "LAB",
+     "votes": 13683
+    },
+    {
+     "name": "GIELEN, Jacobus",
+     "party": "IND",
+     "votes": 166
+    },
+    {
+     "name": "HAMILTON, Ryan",
+     "party": "NAT",
+     "votes": 14139
+    },
+    {
+     "name": "LABOYRIE, Nicola",
+     "party": "NZF",
+     "votes": 1589
+    },
+    {
+     "name": "POCOCK, Naomi",
+     "party": "OPP",
+     "votes": 1373
+    }
+   ],
+   "party_votes": {
+    "LAB": 9480,
+    "NAT": 9960,
+    "NZF": 2715,
+    "OPP": 2007,
+    "ACT": 2958,
+    "OTH": 206,
+    "GP": 3883,
+    "TPM": 52
+   },
+   "candidate_informal": 324
+  },
+  "Hamilton West": {
+   "number": 13,
+   "candidates": [
+    {
+     "name": "COUPER, Nathan Lee",
+     "party": "IND",
+     "votes": 32
+    },
+    {
+     "name": "HUTT, Louise",
+     "party": "GP",
+     "votes": 3349
+    },
+    {
+     "name": "PHELPS, Steve",
+     "party": "IND",
+     "votes": 96
+    },
+    {
+     "name": "POKERE-PHILLIPS, Donna",
+     "party": "OTH",
+     "votes": 115,
+     "party_name": "NZ Outdoors & Freedom Party"
+    },
+    {
+     "name": "POTAKA, Tama William",
+     "party": "NAT",
+     "votes": 13616
+    },
+    {
+     "name": "SMITH, Blair",
+     "party": "OPP",
+     "votes": 959
+    },
+    {
+     "name": "STONE, Kevin",
+     "party": "NZF",
+     "votes": 2185
+    },
+    {
+     "name": "THOMSON, Wiremu",
+     "party": "IND",
+     "votes": 93
+    },
+    {
+     "name": "WILLIAMSON, Myra",
+     "party": "LAB",
+     "votes": 11435
+    }
+   ],
+   "party_votes": {
+    "GP": 3689,
+    "OTH": 277,
+    "NAT": 9502,
+    "OPP": 1715,
+    "NZF": 3203,
+    "LAB": 10360,
+    "ACT": 3170,
+    "TPM": 85
+   },
+   "candidate_informal": 384
+  },
+  "Henderson": {
+   "number": 14,
+   "candidates": [
+    {
+     "name": "LUV, Kay",
+     "party": "IND",
+     "votes": 144
+    },
+    {
+     "name": "NICHOLAS, Angee",
+     "party": "NAT",
+     "votes": 7751
+    },
+    {
+     "name": "PAPALI'I, Kelso",
+     "party": "IND",
+     "votes": 73
+    },
+    {
+     "name": "PEIRCE, Nick",
+     "party": "ACT",
+     "votes": 1032
+    },
+    {
+     "name": "TALAGI, John Divine Paola",
+     "party": "IND",
+     "votes": 54
+    },
+    {
+     "name": "TWYFORD, Phil",
+     "party": "LAB",
+     "votes": 13964
+    },
+    {
+     "name": "WELLS, Alika",
+     "party": "GP",
+     "votes": 2326
+    },
+    {
+     "name": "WILSON, David Ashley",
+     "party": "NZF",
+     "votes": 1741
+    },
+    {
+     "name": "WONG, Almo",
+     "party": "OPP",
+     "votes": 931
+    }
+   ],
+   "party_votes": {
+    "NAT": 7170,
+    "ACT": 1758,
+    "LAB": 12342,
+    "GP": 3046,
+    "NZF": 2546,
+    "OPP": 1097,
+    "OTH": 198,
+    "TPM": 68
+   },
+   "candidate_informal": 387
+  },
+  "Hutt South": {
+   "number": 15,
+   "candidates": [
+    {
+     "name": "ANDERSEN, Ginny",
+     "party": "LAB",
+     "votes": 17957
+    },
+    {
+     "name": "BISHOP, Chris",
+     "party": "NAT",
+     "votes": 17068
+    },
+    {
+     "name": "BOYCE, Alistair",
+     "party": "NZF",
+     "votes": 1032
+    },
+    {
+     "name": "DICK, Malcolm",
+     "party": "IND",
+     "votes": 63
+    },
+    {
+     "name": "PETTERSON, Tom",
+     "party": "IND",
+     "votes": 42
+    },
+    {
+     "name": "SMITH, David L F",
+     "party": "IND",
+     "votes": 36
+    },
+    {
+     "name": "WHITE, Courtney",
+     "party": "GP",
+     "votes": 2355
+    },
+    {
+     "name": "WYLIE-VAN EERD, Ben",
+     "party": "OPP",
+     "votes": 1044
+    }
+   ],
+   "party_votes": {
+    "LAB": 14599,
+    "NAT": 9927,
+    "NZF": 3165,
+    "GP": 5599,
+    "OPP": 3610,
+    "ACT": 2745,
+    "OTH": 184,
+    "TPM": 113
+   },
+   "candidate_informal": 294
+  },
+  "Ilam": {
+   "number": 16,
+   "candidates": [
+    {
+     "name": "CAMPBELL, Hamish",
+     "party": "NAT",
+     "votes": 17699
+    },
+    {
+     "name": "DAVIDSON, Mike",
+     "party": "GP",
+     "votes": 4261
+    },
+    {
+     "name": "FRASER, Courtney",
+     "party": "OTH",
+     "votes": 183,
+     "party_name": "Alliance Party"
+    },
+    {
+     "name": "HARPUR, Ken",
+     "party": "ACT",
+     "votes": 916
+    },
+    {
+     "name": "JAMIESON, Rata",
+     "party": "LAB",
+     "votes": 10987
+    },
+    {
+     "name": "WALTON, Nathan",
+     "party": "NZF",
+     "votes": 1193
+    }
+   ],
+   "party_votes": {
+    "NAT": 12458,
+    "GP": 4439,
+    "OTH": 226,
+    "ACT": 3780,
+    "LAB": 8987,
+    "NZF": 2436,
+    "OPP": 2945,
+    "TPM": 32
+   },
+   "candidate_informal": 286
+  },
+  "Invercargill": {
+   "number": 17,
+   "candidates": [
+    {
+     "name": "GRUMBALL, Anntwinette",
+     "party": "OTH",
+     "votes": 824,
+     "party_name": "Aotearoa Legalise Cannabis Party"
+    },
+    {
+     "name": "KENNEDY, Dave",
+     "party": "GP",
+     "votes": 2066
+    },
+    {
+     "name": "LEE, Janice",
+     "party": "LAB",
+     "votes": 10112
+    },
+    {
+     "name": "SEAGER, Hayden John",
+     "party": "IND",
+     "votes": 475
+    },
+    {
+     "name": "SIMMONDS, Penny",
+     "party": "NAT",
+     "votes": 19727
+    }
+   ],
+   "party_votes": {
+    "OTH": 379,
+    "GP": 2504,
+    "LAB": 9090,
+    "NAT": 11280,
+    "ACT": 4488,
+    "NZF": 4440,
+    "OPP": 1295,
+    "TPM": 45
+   },
+   "candidate_informal": 568
+  },
+  "Kaikōura": {
+   "number": 18,
+   "candidates": [
+    {
+     "name": "ARBUCKLE, Jamie",
+     "party": "NZF",
+     "votes": 5376
+    },
+    {
+     "name": "BRITTON, Iain",
+     "party": "IND",
+     "votes": 123
+    },
+    {
+     "name": "FLIGHT, Matt",
+     "party": "LAB",
+     "votes": 10151
+    },
+    {
+     "name": "HILL-HUGHES, Oliver John",
+     "party": "IND",
+     "votes": 305
+    },
+    {
+     "name": "HOWARD, Ted",
+     "party": "IND",
+     "votes": 321
+    },
+    {
+     "name": "SMITH, Stuart",
+     "party": "NAT",
+     "votes": 18169
+    },
+    {
+     "name": "SPOONER, Tom",
+     "party": "ACT",
+     "votes": 1969
+    }
+   ],
+   "party_votes": {
+    "NZF": 5517,
+    "LAB": 7470,
+    "NAT": 12724,
+    "ACT": 5877,
+    "OTH": 321,
+    "GP": 2876,
+    "OPP": 1833,
+    "TPM": 33
+   },
+   "candidate_informal": 365
+  },
+  "Kaipara ki Mahurangi": {
+   "number": 19,
+   "candidates": [
+    {
+     "name": "BROWN, Zephyr",
+     "party": "GP",
+     "votes": 2726
+    },
+    {
+     "name": "COURT, Simon",
+     "party": "ACT",
+     "votes": 2856
+    },
+    {
+     "name": "DENNIS, Mark",
+     "party": "IND",
+     "votes": 956
+    },
+    {
+     "name": "DOTCOM, Liz",
+     "party": "OTH",
+     "votes": 116,
+     "party_name": "NZ Outdoors & Freedom Party"
+    },
+    {
+     "name": "EB, Daniel",
+     "party": "OPP",
+     "votes": 1381
+    },
+    {
+     "name": "MARCROFT, Jenny",
+     "party": "NZF",
+     "votes": 2753
+    },
+    {
+     "name": "ROWE, Jessica",
+     "party": "NAT",
+     "votes": 19297
+    },
+    {
+     "name": "SWINBURN, Jolyon",
+     "party": "LAB",
+     "votes": 6705
+    },
+    {
+     "name": "WAGSTAFF, Ivan",
+     "party": "IND",
+     "votes": 1124
+    }
+   ],
+   "party_votes": {
+    "GP": 3408,
+    "ACT": 6567,
+    "OTH": 277,
+    "OPP": 2114,
+    "NZF": 4904,
+    "NAT": 14220,
+    "LAB": 6452,
+    "TPM": 33
+   },
+   "candidate_informal": 213
+  },
+  "Kapiti": {
+   "number": 20,
+   "candidates": [
+    {
+     "name": "COSTLEY, Tim",
+     "party": "NAT",
+     "votes": 20689
+    },
+    {
+     "name": "GAYLOR, Penny",
+     "party": "NZF",
+     "votes": 1443
+    },
+    {
+     "name": "GOODE, Richard",
+     "party": "IND",
+     "votes": 33
+    },
+    {
+     "name": "HANDFORD, Sophie",
+     "party": "LAB",
+     "votes": 18612
+    },
+    {
+     "name": "SNG, Chee Khiang (CK)",
+     "party": "OPP",
+     "votes": 930
+    },
+    {
+     "name": "WALKER, Michael",
+     "party": "IND",
+     "votes": 50
+    },
+    {
+     "name": "WILLIS, Melody",
+     "party": "GP",
+     "votes": 1803
+    }
+   ],
+   "party_votes": {
+    "NAT": 12321,
+    "NZF": 4006,
+    "LAB": 13581,
+    "OPP": 3819,
+    "GP": 5616,
+    "ACT": 4004,
+    "OTH": 233,
+    "TPM": 57
+   },
+   "candidate_informal": 207
+  },
+  "Kenepuru": {
+   "number": 21,
+   "candidates": [
+    {
+     "name": "BLACKSHAW, Jon",
+     "party": "NZF",
+     "votes": 1478
+    },
+    {
+     "name": "EDMONDS, Barbara",
+     "party": "LAB",
+     "votes": 17294
+    },
+    {
+     "name": "EVETTS, Matthew",
+     "party": "NAT",
+     "votes": 7997
+    },
+    {
+     "name": "MASON, Robert",
+     "party": "OPP",
+     "votes": 1135
+    },
+    {
+     "name": "PHAM, Lan",
+     "party": "GP",
+     "votes": 2587
+    },
+    {
+     "name": "WESSEX, Bob",
+     "party": "IND",
+     "votes": 53
+    }
+   ],
+   "party_votes": {
+    "NZF": 2179,
+    "LAB": 13111,
+    "NAT": 6254,
+    "OPP": 2645,
+    "GP": 4669,
+    "ACT": 1763,
+    "OTH": 174,
+    "TPM": 61
+   },
+   "candidate_informal": 372
+  },
+  "Māngere": {
+   "number": 22,
+   "candidates": [
+    {
+     "name": "AFEAKI, Hine",
+     "party": "OTH",
+     "votes": 167,
+     "party_name": "NZ Outdoors & Freedom Party"
+    },
+    {
+     "name": "ALP, Kelvyn",
+     "party": "OTH",
+     "votes": 36,
+     "party_name": "New Zealand Loyal"
+    },
+    {
+     "name": "BOURKE, Rosemary",
+     "party": "NAT",
+     "votes": 2845
+    },
+    {
+     "name": "HAU, Vicky",
+     "party": "NZF",
+     "votes": 1729
+    },
+    {
+     "name": "LANE, Ben",
+     "party": "OPP",
+     "votes": 540
+    },
+    {
+     "name": "MULIPOLA, Michel",
+     "party": "GP",
+     "votes": 2313
+    },
+    {
+     "name": "SINGH, Manu",
+     "party": "ACT",
+     "votes": 384
+    },
+    {
+     "name": "SOSENE, Lemauga Lydia",
+     "party": "LAB",
+     "votes": 14815
+    },
+    {
+     "name": "TAIONE, Alani Fisher",
+     "party": "IND",
+     "votes": 185
+    },
+    {
+     "name": "TE MOKE, Timoti",
+     "party": "IND",
+     "votes": 179
+    }
+   ],
+   "party_votes": {
+    "OTH": 173,
+    "NAT": 2696,
+    "NZF": 2114,
+    "OPP": 624,
+    "GP": 1929,
+    "ACT": 579,
+    "LAB": 14857,
+    "TPM": 66
+   },
+   "candidate_informal": 426
+  },
+  "Manurewa": {
+   "number": 23,
+   "candidates": [
+    {
+     "name": "MAJEED, Ghouse",
+     "party": "NAT",
+     "votes": 3471
+    },
+    {
+     "name": "TAVUI, Avalua",
+     "party": "OTH",
+     "votes": 309,
+     "party_name": "Animal Justice Party Aotearoa New Zealand"
+    },
+    {
+     "name": "TOFILAU TEVAGA, Esther",
+     "party": "NZF",
+     "votes": 2767
+    },
+    {
+     "name": "WILLIAMS, Arena",
+     "party": "LAB",
+     "votes": 14444
+    }
+   ],
+   "party_votes": {
+    "NAT": 3651,
+    "OTH": 221,
+    "NZF": 2016,
+    "LAB": 12681,
+    "ACT": 558,
+    "GP": 1743,
+    "OPP": 400,
+    "TPM": 68
+   },
+   "candidate_informal": 525
+  },
+  "Maungakiekie": {
+   "number": 24,
+   "candidates": [
+    {
+     "name": "ALVAREZ DE LUGO, Juan",
+     "party": "ACT",
+     "votes": 817
+    },
+    {
+     "name": "FLEMING, Greg",
+     "party": "NAT",
+     "votes": 14626
+    },
+    {
+     "name": "LANGEVELD, Keegan",
+     "party": "NZF",
+     "votes": 879
+    },
+    {
+     "name": "PAULL, Derrick",
+     "party": "OPP",
+     "votes": 1015
+    },
+    {
+     "name": "POWELL, Adam",
+     "party": "GP",
+     "votes": 2466
+    },
+    {
+     "name": "RADHAKRISHNAN, Priyanca",
+     "party": "LAB",
+     "votes": 11674
+    }
+   ],
+   "party_votes": {
+    "ACT": 2928,
+    "NAT": 9695,
+    "NZF": 2006,
+    "OPP": 2524,
+    "GP": 4050,
+    "LAB": 10284,
+    "OTH": 165,
+    "TPM": 42
+   },
+   "candidate_informal": 380
+  },
+  "Mt Albert": {
+   "number": 25,
+   "candidates": [
+    {
+     "name": "BONES, Luke",
+     "party": "IND",
+     "votes": 87
+    },
+    {
+     "name": "EDEN-WHAITIRI, Sheldon",
+     "party": "NZF",
+     "votes": 703
+    },
+    {
+     "name": "LEE, Melissa",
+     "party": "NAT",
+     "votes": 9389
+    },
+    {
+     "name": "MENENDEZ MARCH, Ricardo",
+     "party": "GP",
+     "votes": 3595
+    },
+    {
+     "name": "PRICE, Alex",
+     "party": "ACT",
+     "votes": 668
+    },
+    {
+     "name": "WHITE, Helen",
+     "party": "LAB",
+     "votes": 14067
+    },
+    {
+     "name": "WONG, Qiulae",
+     "party": "OPP",
+     "votes": 3960
+    }
+   ],
+   "party_votes": {
+    "NZF": 1695,
+    "NAT": 8177,
+    "GP": 6625,
+    "ACT": 2451,
+    "LAB": 10148,
+    "OPP": 3360,
+    "OTH": 150,
+    "TPM": 49
+   },
+   "candidate_informal": 285
+  },
+  "Mt Maunganui": {
+   "number": 26,
+   "candidates": [
+    {
+     "name": "COXHEAD, Tracey",
+     "party": "NZF",
+     "votes": 2664
+    },
+    {
+     "name": "GRATTAN, Caitlin",
+     "party": "OTH",
+     "votes": 249,
+     "party_name": "Animal Justice Party Aotearoa New Zealand"
+    },
+    {
+     "name": "GREY, Rhieve",
+     "party": "LAB",
+     "votes": 7520
+    },
+    {
+     "name": "LUXTON, Cameron",
+     "party": "ACT",
+     "votes": 2041
+    },
+    {
+     "name": "RUTHERFORD, Tom",
+     "party": "NAT",
+     "votes": 21579
+    },
+    {
+     "name": "WESTHEAD, Pualele Joan",
+     "party": "GP",
+     "votes": 2536
+    },
+    {
+     "name": "YOUNG, Greer",
+     "party": "OTH",
+     "votes": 107,
+     "party_name": "New Zealand Loyal"
+    }
+   ],
+   "party_votes": {
+    "NZF": 4717,
+    "OTH": 244,
+    "LAB": 7040,
+    "ACT": 5461,
+    "NAT": 14240,
+    "GP": 3016,
+    "OPP": 2068,
+    "TPM": 69
+   },
+   "candidate_informal": 302
+  },
+  "Mt Roskill": {
+   "number": 27,
+   "candidates": [
+    {
+     "name": "ATTENBOROUGH, Jamie",
+     "party": "OPP",
+     "votes": 760
+    },
+    {
+     "name": "CHEUNG, Carlos",
+     "party": "NAT",
+     "votes": 13320
+    },
+    {
+     "name": "DEO, Priyanka",
+     "party": "OTH",
+     "votes": 151,
+     "party_name": "Animal Justice Party Aotearoa New Zealand"
+    },
+    {
+     "name": "IYER, Anjana",
+     "party": "GP",
+     "votes": 1574
+    },
+    {
+     "name": "QU, Yang",
+     "party": "ACT",
+     "votes": 763
+    },
+    {
+     "name": "WOOD, Michael Philip",
+     "party": "LAB",
+     "votes": 13582
+    }
+   ],
+   "party_votes": {
+    "OPP": 1620,
+    "NAT": 10349,
+    "OTH": 302,
+    "GP": 3359,
+    "ACT": 1968,
+    "LAB": 10978,
+    "NZF": 1793,
+    "TPM": 37
+   },
+   "candidate_informal": 422
+  },
+  "Napier": {
+   "number": 28,
+   "candidates": [
+    {
+     "name": "BOONEN, Roy Peter",
+     "party": "GP",
+     "votes": 1643
+    },
+    {
+     "name": "HEDLEY, Alex",
+     "party": "LAB",
+     "votes": 11952
+    },
+    {
+     "name": "LAWRENCE, Te Kira",
+     "party": "NZF",
+     "votes": 1975
+    },
+    {
+     "name": "NIMON, Katie",
+     "party": "NAT",
+     "votes": 18799
+    },
+    {
+     "name": "ORMOND, John",
+     "party": "ACT",
+     "votes": 1288
+    },
+    {
+     "name": "WAINWRIGHT, Graham",
+     "party": "IND",
+     "votes": 287
+    }
+   ],
+   "party_votes": {
+    "GP": 3091,
+    "LAB": 9355,
+    "NZF": 3785,
+    "NAT": 12362,
+    "ACT": 5329,
+    "OTH": 236,
+    "OPP": 1837,
+    "TPM": 50
+   },
+   "candidate_informal": 262
+  },
+  "Nelson": {
+   "number": 29,
+   "candidates": [
+    {
+     "name": "BAILLIE, Chris",
+     "party": "ACT",
+     "votes": 1360
+    },
+    {
+     "name": "BOYACK, Rachel",
+     "party": "LAB",
+     "votes": 15636
+    },
+    {
+     "name": "CAMERON, Blair",
+     "party": "NAT",
+     "votes": 16846
+    },
+    {
+     "name": "CRAWFORD, Julian",
+     "party": "OTH",
+     "votes": 195,
+     "party_name": "New Zealand Loyal"
+    },
+    {
+     "name": "DYER, Bruce",
+     "party": "IND",
+     "votes": 60
+    },
+    {
+     "name": "KUNTZSCH, Jodie",
+     "party": "OPP",
+     "votes": 1083
+    },
+    {
+     "name": "O'NEILL-STEVENS, Rohan",
+     "party": "GP",
+     "votes": 2952
+    }
+   ],
+   "party_votes": {
+    "ACT": 4442,
+    "LAB": 11083,
+    "NAT": 10358,
+    "OTH": 371,
+    "OPP": 3166,
+    "GP": 5176,
+    "NZF": 3614,
+    "TPM": 42
+   },
+   "candidate_informal": 324
+  },
+  "New Plymouth": {
+   "number": 30,
+   "candidates": [
+    {
+     "name": "CLINTON-GOHDES, Amanda",
+     "party": "LAB",
+     "votes": 13498
+    },
+    {
+     "name": "KANE, Rusty",
+     "party": "IND",
+     "votes": 640
+    },
+    {
+     "name": "LUCAS, Sarah",
+     "party": "OPP",
+     "votes": 2330
+    },
+    {
+     "name": "MacLEOD, David",
+     "party": "NAT",
+     "votes": 21286
+    }
+   ],
+   "party_votes": {
+    "LAB": 9169,
+    "OPP": 2276,
+    "NAT": 12945,
+    "ACT": 5139,
+    "OTH": 308,
+    "GP": 3536,
+    "NZF": 4691,
+    "TPM": 77
+   },
+   "candidate_informal": 561
+  },
+  "North Shore": {
+   "number": 31,
+   "candidates": [
+    {
+     "name": "CHHOUR, Karen",
+     "party": "ACT",
+     "votes": 1747
+    },
+    {
+     "name": "COLLINS, Sam",
+     "party": "LAB",
+     "votes": 8433
+    },
+    {
+     "name": "JACOBSEN, Josh",
+     "party": "GP",
+     "votes": 2566
+    },
+    {
+     "name": "KNILL, Holly",
+     "party": "OPP",
+     "votes": 1659
+    },
+    {
+     "name": "WATTS, Simon",
+     "party": "NAT",
+     "votes": 19584
+    }
+   ],
+   "party_votes": {
+    "ACT": 5278,
+    "LAB": 6879,
+    "GP": 3258,
+    "OPP": 2724,
+    "NAT": 13785,
+    "OTH": 157,
+    "NZF": 2053,
+    "TPM": 22
+   },
+   "candidate_informal": 281
+  },
+  "Northcote": {
+   "number": 32,
+   "candidates": [
+    {
+     "name": "BIDOIS, Dan",
+     "party": "NAT",
+     "votes": 15969
+    },
+    {
+     "name": "CARRINGTON, Lily",
+     "party": "OTH",
+     "votes": 146,
+     "party_name": "Animal Justice Party Aotearoa New Zealand"
+    },
+    {
+     "name": "DRURY, Marie",
+     "party": "OTH",
+     "votes": 81,
+     "party_name": "Conservative Party NZ"
+    },
+    {
+     "name": "FORD, Barak",
+     "party": "OTH",
+     "votes": 67,
+     "party_name": "New Zealand Loyal"
+    },
+    {
+     "name": "GOODSIR, Bhen",
+     "party": "GP",
+     "votes": 1644
+    },
+    {
+     "name": "HABRAKEN, Daryl",
+     "party": "NZF",
+     "votes": 846
+    },
+    {
+     "name": "HALBERT, Shanan",
+     "party": "LAB",
+     "votes": 12905
+    },
+    {
+     "name": "LUNDQVIST, Martin",
+     "party": "ACT",
+     "votes": 571
+    },
+    {
+     "name": "MARSH, Cody",
+     "party": "OPP",
+     "votes": 1015
+    }
+   ],
+   "party_votes": {
+    "NAT": 10661,
+    "OTH": 262,
+    "GP": 4457,
+    "NZF": 2490,
+    "LAB": 9350,
+    "ACT": 3254,
+    "OPP": 2807,
+    "TPM": 30
+   },
+   "candidate_informal": 278
+  },
+  "Northland": {
+   "number": 33,
+   "candidates": [
+    {
+     "name": "CAMERON, Mark",
+     "party": "ACT",
+     "votes": 2058
+    },
+    {
+     "name": "FINLAYSON, Mike",
+     "party": "GP",
+     "votes": 3413
+    },
+    {
+     "name": "JONES, Shane",
+     "party": "NZF",
+     "votes": 5750
+    },
+    {
+     "name": "LATIMER, Ashleigh",
+     "party": "LAB",
+     "votes": 8614
+    },
+    {
+     "name": "LYE, Jeffrey",
+     "party": "OTH",
+     "votes": 443,
+     "party_name": "Aotearoa Legalise Cannabis Party"
+    },
+    {
+     "name": "LYELL, Douglas Robert",
+     "party": "OTH",
+     "votes": 123,
+     "party_name": "Conservative Party NZ"
+    },
+    {
+     "name": "McCALLUM, Grant Lewis",
+     "party": "NAT",
+     "votes": 16556
+    },
+    {
+     "name": "McINTOSH, Richard",
+     "party": "IND",
+     "votes": 160
+    },
+    {
+     "name": "VERHOEVEN, Pete",
+     "party": "OTH",
+     "votes": 147,
+     "party_name": "New Zealand Loyal"
+    },
+    {
+     "name": "WAIT, Alistair",
+     "party": "OTH",
+     "votes": 200,
+     "party_name": "NZ Outdoors & Freedom Party"
+    }
+   ],
+   "party_votes": {
+    "ACT": 6110,
+    "GP": 4003,
+    "NZF": 6232,
+    "LAB": 7782,
+    "OTH": 569,
+    "NAT": 11127,
+    "OPP": 1715,
+    "TPM": 98
+   },
+   "candidate_informal": 249
+  },
+  "Ōtāhuhu": {
+   "number": 34,
+   "candidates": [
+    {
+     "name": "ALCOCK, John",
+     "party": "OTH",
+     "votes": 142,
+     "party_name": "New Zealand Loyal"
+    },
+    {
+     "name": "ARYA, Lalit",
+     "party": "NAT",
+     "votes": 3268
+    },
+    {
+     "name": "DEVOE, Henrietta",
+     "party": "ACT",
+     "votes": 595
+    },
+    {
+     "name": "FALEU, Phillip Harry",
+     "party": "IND",
+     "votes": 117
+    },
+    {
+     "name": "HAUNGA, Eseta",
+     "party": "IND",
+     "votes": 118
+    },
+    {
+     "name": "MACRAE-MARTIN, Adam",
+     "party": "OPP",
+     "votes": 417
+    },
+    {
+     "name": "MOKARAKA, Karl",
+     "party": "OTH",
+     "votes": 242,
+     "party_name": "Vision New Zealand"
+    },
+    {
+     "name": "ROBB, James Gordon",
+     "party": "IND",
+     "votes": 107
+    },
+    {
+     "name": "SALESA, Jenny",
+     "party": "LAB",
+     "votes": 13826
+    },
+    {
+     "name": "SKIPWITH, Te Whatanui Leka",
+     "party": "GP",
+     "votes": 1552
+    }
+   ],
+   "party_votes": {
+    "OTH": 210,
+    "NAT": 3212,
+    "ACT": 466,
+    "OPP": 448,
+    "LAB": 13093,
+    "GP": 1472,
+    "NZF": 1639,
+    "TPM": 55
+   },
+   "candidate_informal": 523
+  },
+  "Pakuranga": {
+   "number": 35,
+   "candidates": [
+    {
+     "name": "BROWN, Simeon",
+     "party": "NAT",
+     "votes": 21264
+    },
+    {
+     "name": "HUANG, Kevin",
+     "party": "OPP",
+     "votes": 2005
+    },
+    {
+     "name": "MATTHEWS, Campbell Henry",
+     "party": "LAB",
+     "votes": 7573
+    },
+    {
+     "name": "PARMAR, Parmjeet",
+     "party": "ACT",
+     "votes": 981
+    }
+   ],
+   "party_votes": {
+    "NAT": 14919,
+    "OPP": 1655,
+    "LAB": 6459,
+    "ACT": 4054,
+    "OTH": 181,
+    "GP": 2236,
+    "NZF": 2459,
+    "TPM": 31
+   },
+   "candidate_informal": 347
+  },
+  "Palmerston North": {
+   "number": 36,
+   "candidates": [
+    {
+     "name": "BAKER, Brian",
+     "party": "OTH",
+     "votes": 482,
+     "party_name": "Animal Justice Party Aotearoa New Zealand"
+    },
+    {
+     "name": "BANSAL, Ankit",
+     "party": "NAT",
+     "votes": 14196
+    },
+    {
+     "name": "GHIMIRE, Netra Prasad",
+     "party": "OPP",
+     "votes": 1082
+    },
+    {
+     "name": "MOSS, Joshua",
+     "party": "OTH",
+     "votes": 254,
+     "party_name": "Alliance Party"
+    },
+    {
+     "name": "TUIONO, Teanau",
+     "party": "GP",
+     "votes": 2447
+    },
+    {
+     "name": "UTIKERE, Tangi",
+     "party": "LAB",
+     "votes": 17129
+    }
+   ],
+   "party_votes": {
+    "OTH": 328,
+    "NAT": 9642,
+    "OPP": 2253,
+    "GP": 4444,
+    "LAB": 11865,
+    "ACT": 3767,
+    "NZF": 3743,
+    "TPM": 83
+   },
+   "candidate_informal": 610
+  },
+  "Papakura": {
+   "number": 37,
+   "candidates": [
+    {
+     "name": "CHATTERTON, Emma May",
+     "party": "NAT",
+     "votes": 16118
+    },
+    {
+     "name": "DALTON, Angela",
+     "party": "GP",
+     "votes": 2621
+    },
+    {
+     "name": "KANONGATA'A, Anahila",
+     "party": "LAB",
+     "votes": 7724
+    },
+    {
+     "name": "SINGH, Malkiat",
+     "party": "ACT",
+     "votes": 1286
+    },
+    {
+     "name": "TAMAKI, Hannah",
+     "party": "OTH",
+     "votes": 470,
+     "party_name": "Vision New Zealand"
+    }
+   ],
+   "party_votes": {
+    "NAT": 10881,
+    "GP": 1844,
+    "LAB": 8097,
+    "ACT": 3422,
+    "OTH": 261,
+    "NZF": 3097,
+    "OPP": 901,
+    "TPM": 70
+   },
+   "candidate_informal": 489
+  },
+  "Port Waikato": {
+   "number": 38,
+   "candidates": [
+    {
+     "name": "BRACHI, Matt",
+     "party": "LAB",
+     "votes": 7911
+    },
+    {
+     "name": "COSTELLO, Casey",
+     "party": "NZF",
+     "votes": 4334
+    },
+    {
+     "name": "LOCHEAD-MACMILLAN, Sarah",
+     "party": "ACT",
+     "votes": 2456
+    },
+    {
+     "name": "MORGAN, Carl",
+     "party": "GP",
+     "votes": 2457
+    },
+    {
+     "name": "PAUL, Matthew",
+     "party": "NAT",
+     "votes": 18348
+    }
+   ],
+   "party_votes": {
+    "LAB": 7333,
+    "NZF": 4943,
+    "ACT": 5692,
+    "GP": 2360,
+    "NAT": 13486,
+    "OTH": 330,
+    "OPP": 1326,
+    "TPM": 77
+   },
+   "candidate_informal": 361
+  },
+  "Rangitata": {
+   "number": 39,
+   "candidates": [
+    {
+     "name": "ALLRED, Aaron",
+     "party": "ACT",
+     "votes": 951
+    },
+    {
+     "name": "HARRIS, Matt",
+     "party": "OPP",
+     "votes": 696
+    },
+    {
+     "name": "McCRACKEN, Kevin",
+     "party": "OTH",
+     "votes": 137,
+     "party_name": "NZ Outdoors & Freedom Party"
+    },
+    {
+     "name": "MALAMA, Sange",
+     "party": "LAB",
+     "votes": 8319
+    },
+    {
+     "name": "MEAGER, James",
+     "party": "NAT",
+     "votes": 22236
+    },
+    {
+     "name": "NICHOLSON, Isaac",
+     "party": "NZF",
+     "votes": 1745
+    },
+    {
+     "name": "RICHARDS, Dave",
+     "party": "GP",
+     "votes": 1438
+    },
+    {
+     "name": "THOMAS, Karl",
+     "party": "OTH",
+     "votes": 103,
+     "party_name": "Conservative Party NZ"
+    }
+   ],
+   "party_votes": {
+    "ACT": 5301,
+    "OPP": 1314,
+    "OTH": 301,
+    "LAB": 9435,
+    "NAT": 13094,
+    "NZF": 4266,
+    "GP": 2086,
+    "TPM": 30
+   },
+   "candidate_informal": 312
+  },
+  "Rangitīkei": {
+   "number": 40,
+   "candidates": [
+    {
+     "name": "BACKHOUSE, Cedric",
+     "party": "OTH",
+     "votes": 223,
+     "party_name": "NZ Outdoors & Freedom Party"
+    },
+    {
+     "name": "GIBSON, Steve",
+     "party": "NZF",
+     "votes": 3460
+    },
+    {
+     "name": "HOGGARD, Andrew",
+     "party": "ACT",
+     "votes": 3248
+    },
+    {
+     "name": "LONG, Bernard",
+     "party": "GP",
+     "votes": 2574
+    },
+    {
+     "name": "REDMAYNE, Suze",
+     "party": "NAT",
+     "votes": 16290
+    },
+    {
+     "name": "SEVERINSEN, Karl",
+     "party": "LAB",
+     "votes": 10784
+    },
+    {
+     "name": "SMITH, Jason Michael",
+     "party": "OTH",
+     "votes": 161,
+     "party_name": "New Zealand Loyal"
+    }
+   ],
+   "party_votes": {
+    "OTH": 357,
+    "NZF": 5583,
+    "ACT": 5403,
+    "GP": 2791,
+    "NAT": 11154,
+    "LAB": 9838,
+    "OPP": 1581,
+    "TPM": 91
+   },
+   "candidate_informal": 354
+  },
+  "Remutaka": {
+   "number": 41,
+   "candidates": [
+    {
+     "name": "DENCH, Victor Edward",
+     "party": "IND",
+     "votes": 122
+    },
+    {
+     "name": "ELDER, Nigel",
+     "party": "ACT",
+     "votes": 1941
+    },
+    {
+     "name": "FOSTER, Andy",
+     "party": "NZF",
+     "votes": 3407
+    },
+    {
+     "name": "HIPKINS, Chris",
+     "party": "LAB",
+     "votes": 21885
+    },
+    {
+     "name": "LATEEF, Zabeen",
+     "party": "NAT",
+     "votes": 7461
+    },
+    {
+     "name": "NORTON, Chris",
+     "party": "GP",
+     "votes": 2241
+    },
+    {
+     "name": "ROSS, Luke",
+     "party": "OPP",
+     "votes": 1197
+    }
+   ],
+   "party_votes": {
+    "ACT": 2931,
+    "NZF": 3907,
+    "LAB": 15808,
+    "NAT": 8056,
+    "GP": 4798,
+    "OPP": 2604,
+    "OTH": 275,
+    "TPM": 71
+   },
+   "candidate_informal": 430
+  },
+  "Rotorua": {
+   "number": 42,
+   "candidates": [
+    {
+     "name": "BROWN, Billy",
+     "party": "NZF",
+     "votes": 3218
+    },
+    {
+     "name": "LILEY, Finn",
+     "party": "OPP",
+     "votes": 1098
+    },
+    {
+     "name": "McCLAY, Todd",
+     "party": "NAT",
+     "votes": 16285
+    },
+    {
+     "name": "WANG, Fisher",
+     "party": "LAB",
+     "votes": 10984
+    }
+   ],
+   "party_votes": {
+    "NZF": 4565,
+    "OPP": 1673,
+    "NAT": 10259,
+    "LAB": 7717,
+    "ACT": 4273,
+    "OTH": 249,
+    "GP": 2904,
+    "TPM": 126
+   },
+   "candidate_informal": 304
+  },
+  "Selwyn": {
+   "number": 43,
+   "candidates": [
+    {
+     "name": "DE ANDA, Alma",
+     "party": "GP",
+     "votes": 2623
+    },
+    {
+     "name": "GAUTAM, Sunita",
+     "party": "LAB",
+     "votes": 7962
+    },
+    {
+     "name": "GRIGG, Nicola",
+     "party": "NAT",
+     "votes": 21903
+    },
+    {
+     "name": "LUKE, Jesse",
+     "party": "OTH",
+     "votes": 118,
+     "party_name": "Alliance Party"
+    },
+    {
+     "name": "MEE, Adrian",
+     "party": "OPP",
+     "votes": 1237
+    },
+    {
+     "name": "MUNDT, Elizabeth",
+     "party": "NZF",
+     "votes": 2396
+    },
+    {
+     "name": "MURRAY, Iain",
+     "party": "ACT",
+     "votes": 1562
+    },
+    {
+     "name": "RAKOVIC, Zoran",
+     "party": "IND",
+     "votes": 990
+    }
+   ],
+   "party_votes": {
+    "GP": 3264,
+    "LAB": 8208,
+    "NAT": 14239,
+    "OTH": 215,
+    "OPP": 2348,
+    "NZF": 4598,
+    "ACT": 5960,
+    "TPM": 37
+   },
+   "candidate_informal": 185
+  },
+  "Southland": {
+   "number": 44,
+   "candidates": [
+    {
+     "name": "BEEBE, Bianca",
+     "party": "OPP",
+     "votes": 2017
+    },
+    {
+     "name": "HERRICK, Jason",
+     "party": "NZF",
+     "votes": 2725
+    },
+    {
+     "name": "McDONALD, Peter",
+     "party": "LAB",
+     "votes": 7809
+    },
+    {
+     "name": "MACLEAN, Naomi",
+     "party": "OTH",
+     "votes": 123,
+     "party_name": "Vision New Zealand"
+    },
+    {
+     "name": "MOONEY, Joseph",
+     "party": "NAT",
+     "votes": 19293
+    },
+    {
+     "name": "STEPHENSON, Todd",
+     "party": "ACT",
+     "votes": 2199
+    }
+   ],
+   "party_votes": {
+    "OPP": 2000,
+    "NZF": 3759,
+    "LAB": 5810,
+    "OTH": 363,
+    "NAT": 13406,
+    "ACT": 5901,
+    "GP": 2961,
+    "TPM": 49
+   },
+   "candidate_informal": 229
+  },
+  "Taieri": {
+   "number": 45,
+   "candidates": [
+    {
+     "name": "BYARS, Robbie",
+     "party": "ACT",
+     "votes": 1671
+    },
+    {
+     "name": "FRENCH, Matthew",
+     "party": "NAT",
+     "votes": 11268
+    },
+    {
+     "name": "KNIGHT, Anna",
+     "party": "OTH",
+     "votes": 176,
+     "party_name": "Alliance Party"
+    },
+    {
+     "name": "LEARY, Ingrid",
+     "party": "LAB",
+     "votes": 16066
+    },
+    {
+     "name": "PATTERSON, Mark",
+     "party": "NZF",
+     "votes": 4595
+    },
+    {
+     "name": "WILLIS, Scott",
+     "party": "GP",
+     "votes": 3271
+    }
+   ],
+   "party_votes": {
+    "ACT": 3839,
+    "NAT": 9657,
+    "OTH": 297,
+    "LAB": 12739,
+    "NZF": 4311,
+    "GP": 4232,
+    "OPP": 2065,
+    "TPM": 63
+   },
+   "candidate_informal": 309
+  },
+  "Takanini": {
+   "number": 46,
+   "candidates": [
+    {
+     "name": "IKILEI, Elliot",
+     "party": "NZF",
+     "votes": 1880
+    },
+    {
+     "name": "NAKHLE, Rima",
+     "party": "NAT",
+     "votes": 12120
+    },
+    {
+     "name": "SINGH, Kharag",
+     "party": "LAB",
+     "votes": 10633
+    },
+    {
+     "name": "TEIO, Paul",
+     "party": "OTH",
+     "votes": 162,
+     "party_name": "New Zealand Loyal"
+    },
+    {
+     "name": "TULLOCH, Lynley",
+     "party": "OTH",
+     "votes": 395,
+     "party_name": "Animal Justice Party Aotearoa New Zealand"
+    }
+   ],
+   "party_votes": {
+    "NZF": 2080,
+    "NAT": 9603,
+    "LAB": 9478,
+    "OTH": 176,
+    "ACT": 1549,
+    "GP": 1838,
+    "OPP": 792,
+    "TPM": 41
+   },
+   "candidate_informal": 565
+  },
+  "Tāmaki": {
+   "number": 47,
+   "candidates": [
+    {
+     "name": "CHRISTMAS, James",
+     "party": "ACT",
+     "votes": 7670
+    },
+    {
+     "name": "HARRIS, Max",
+     "party": "LAB",
+     "votes": 9974
+    },
+    {
+     "name": "HASKELL, Sacha",
+     "party": "OPP",
+     "votes": 1002
+    },
+    {
+     "name": "MACKENZIE MAYO, Donald",
+     "party": "GP",
+     "votes": 1369
+    },
+    {
+     "name": "MURALIDHAR, Mahesh",
+     "party": "NAT",
+     "votes": 15330
+    },
+    {
+     "name": "PAUSINA, Ryan Earl",
+     "party": "IND",
+     "votes": 125
+    },
+    {
+     "name": "SMITH, Finlay",
+     "party": "IND",
+     "votes": 155
+    }
+   ],
+   "party_votes": {
+    "ACT": 5923,
+    "LAB": 7369,
+    "OPP": 2629,
+    "GP": 3093,
+    "NAT": 14687,
+    "OTH": 106,
+    "NZF": 1776,
+    "TPM": 32
+   },
+   "candidate_informal": 299
+  },
+  "Taranaki-King Country": {
+   "number": 48,
+   "candidates": [
+    {
+     "name": "JOVICIC, Ivana",
+     "party": "ACT",
+     "votes": 2600
+    },
+    {
+     "name": "KURIGER, Barbara Joan",
+     "party": "NAT",
+     "votes": 19439
+    },
+    {
+     "name": "McCABE, Phil",
+     "party": "GP",
+     "votes": 3390
+    },
+    {
+     "name": "PATTEMORE, David",
+     "party": "LAB",
+     "votes": 7408
+    },
+    {
+     "name": "SMITH, Lee",
+     "party": "NZF",
+     "votes": 3961
+    }
+   ],
+   "party_votes": {
+    "ACT": 6527,
+    "NAT": 13540,
+    "GP": 2969,
+    "LAB": 6925,
+    "NZF": 5116,
+    "OTH": 424,
+    "OPP": 1559,
+    "TPM": 107
+   },
+   "candidate_informal": 307
+  },
+  "Taupō": {
+   "number": 49,
+   "candidates": [
+    {
+     "name": "FLATT, Chris",
+     "party": "LAB",
+     "votes": 10176
+    },
+    {
+     "name": "KEARNEY, Celine",
+     "party": "GP",
+     "votes": 2241
+    },
+    {
+     "name": "NIKOLAO, Itania",
+     "party": "IND",
+     "votes": 255
+    },
+    {
+     "name": "PLUMMER, Sam",
+     "party": "OPP",
+     "votes": 1544
+    },
+    {
+     "name": "UPSTON, Louise Claire",
+     "party": "NAT",
+     "votes": 23228
+    },
+    {
+     "name": "WILSON, Gordon",
+     "party": "OTH",
+     "votes": 586,
+     "party_name": "New Zealand Loyal"
+    }
+   ],
+   "party_votes": {
+    "LAB": 8600,
+    "GP": 2692,
+    "OPP": 1802,
+    "NAT": 13927,
+    "OTH": 292,
+    "ACT": 6483,
+    "NZF": 4578,
+    "TPM": 70
+   },
+   "candidate_informal": 625
+  },
+  "Tauranga": {
+   "number": 50,
+   "candidates": [
+    {
+     "name": "CARTER, Michael",
+     "party": "OPP",
+     "votes": 1671
+    },
+    {
+     "name": "CONNELY, Sam",
+     "party": "OTH",
+     "votes": 338,
+     "party_name": "Animal Justice Party Aotearoa New Zealand"
+    },
+    {
+     "name": "MALTBY, Tim",
+     "party": "IND",
+     "votes": 323
+    },
+    {
+     "name": "NORTON, Bryan",
+     "party": "ACT",
+     "votes": 2452
+    },
+    {
+     "name": "OOSTHUIZEN, Daniël",
+     "party": "GP",
+     "votes": 1722
+    },
+    {
+     "name": "TINETTI, Jan",
+     "party": "LAB",
+     "votes": 8843
+    },
+    {
+     "name": "UFFINDELL, Sam",
+     "party": "NAT",
+     "votes": 19117
+    }
+   ],
+   "party_votes": {
+    "OPP": 2130,
+    "OTH": 238,
+    "ACT": 4929,
+    "GP": 2759,
+    "LAB": 6907,
+    "NAT": 12947,
+    "NZF": 4796,
+    "TPM": 61
+   },
+   "candidate_informal": 421
+  },
+  "Tukituki": {
+   "number": 51,
+   "candidates": [
+    {
+     "name": "DOUGLAS, Rob",
+     "party": "ACT",
+     "votes": 976
+    },
+    {
+     "name": "LONGWORTH, Mark Norman",
+     "party": "GP",
+     "votes": 1989
+    },
+    {
+     "name": "MANNING, Romana (Marnz)",
+     "party": "OTH",
+     "votes": 221,
+     "party_name": "Aotearoa Legalise Cannabis Party"
+    },
+    {
+     "name": "RANDELL, Taine",
+     "party": "NZF",
+     "votes": 3883
+    },
+    {
+     "name": "SCOTT, Dan",
+     "party": "LAB",
+     "votes": 8393
+    },
+    {
+     "name": "SETON, Grant",
+     "party": "IND",
+     "votes": 37
+    },
+    {
+     "name": "TOSH, Allister David",
+     "party": "IND",
+     "votes": 29
+    },
+    {
+     "name": "WARD, Rachel",
+     "party": "OPP",
+     "votes": 1097
+    },
+    {
+     "name": "WEDD, Catherine",
+     "party": "NAT",
+     "votes": 17326
+    }
+   ],
+   "party_votes": {
+    "ACT": 5244,
+    "GP": 2856,
+    "OTH": 230,
+    "NZF": 3973,
+    "LAB": 8384,
+    "OPP": 1729,
+    "NAT": 11509,
+    "TPM": 51
+   },
+   "candidate_informal": 242
+  },
+  "Upper Harbour": {
+   "number": 52,
+   "candidates": [
+    {
+     "name": "BARAL, Hannah Pia",
+     "party": "LAB",
+     "votes": 7700
+    },
+    {
+     "name": "BREWER, Cameron",
+     "party": "NAT",
+     "votes": 16667
+    },
+    {
+     "name": "GRIFFITHS, Jonathon",
+     "party": "IND",
+     "votes": 179
+    },
+    {
+     "name": "PATROS, Panos",
+     "party": "ACT",
+     "votes": 1196
+    },
+    {
+     "name": "RICHARDS, Ryan",
+     "party": "GP",
+     "votes": 2328
+    },
+    {
+     "name": "SOARES, Bernadette",
+     "party": "NZF",
+     "votes": 1286
+    },
+    {
+     "name": "TEVAGA, Romeo",
+     "party": "OPP",
+     "votes": 1203
+    }
+   ],
+   "party_votes": {
+    "LAB": 7334,
+    "NAT": 12482,
+    "ACT": 3694,
+    "GP": 2780,
+    "NZF": 2330,
+    "OPP": 1928,
+    "OTH": 150,
+    "TPM": 42
+   },
+   "candidate_informal": 331
+  },
+  "Waikato": {
+   "number": 53,
+   "candidates": [
+    {
+     "name": "COOKSON, Robert John",
+     "party": "NZF",
+     "votes": 3891
+    },
+    {
+     "name": "PARMAR, Ash",
+     "party": "ACT",
+     "votes": 2074
+    },
+    {
+     "name": "ROBINSON, Turi Te Kamonga",
+     "party": "IND",
+     "votes": 167
+    },
+    {
+     "name": "TOKO, Jamie",
+     "party": "LAB",
+     "votes": 9011
+    },
+    {
+     "name": "VAN DE MOLEN, Tim",
+     "party": "NAT",
+     "votes": 21587
+    },
+    {
+     "name": "WHYTE, Brendan Richard",
+     "party": "IND",
+     "votes": 276
+    }
+   ],
+   "party_votes": {
+    "NZF": 5086,
+    "ACT": 6316,
+    "LAB": 6966,
+    "NAT": 14781,
+    "OTH": 271,
+    "GP": 2238,
+    "OPP": 1529,
+    "TPM": 80
+   },
+   "candidate_informal": 374
+  },
+  "Waimakariri": {
+   "number": 54,
+   "candidates": [
+    {
+     "name": "BETTRIDGE, Ashley",
+     "party": "ACT",
+     "votes": 1772
+    },
+    {
+     "name": "DOOCEY, Matt",
+     "party": "NAT",
+     "votes": 23910
+    },
+    {
+     "name": "FARRELLY, Jackie",
+     "party": "NZF",
+     "votes": 2502
+    },
+    {
+     "name": "ROSEWARNE, Dan",
+     "party": "LAB",
+     "votes": 12627
+    },
+    {
+     "name": "WESLEY, Richard",
+     "party": "GP",
+     "votes": 2478
+    }
+   ],
+   "party_votes": {
+    "ACT": 6096,
+    "NAT": 14624,
+    "NZF": 5616,
+    "LAB": 10913,
+    "GP": 3660,
+    "OTH": 308,
+    "OPP": 2222,
+    "TPM": 38
+   },
+   "candidate_informal": 300
+  },
+  "Wairarapa": {
+   "number": 55,
+   "candidates": [
+    {
+     "name": "ALE, Victoria",
+     "party": "OTH",
+     "votes": 62,
+     "party_name": "Alliance Party"
+    },
+    {
+     "name": "BUTTERICK, Mike",
+     "party": "NAT",
+     "votes": 17943
+    },
+    {
+     "name": "CRAIG, Lauren",
+     "party": "GP",
+     "votes": 1098
+    },
+    {
+     "name": "GARDNER, Jared Warren",
+     "party": "IND",
+     "votes": 63
+    },
+    {
+     "name": "McANULTY, Kieran",
+     "party": "LAB",
+     "votes": 17804
+    },
+    {
+     "name": "MARK, Ron",
+     "party": "NZF",
+     "votes": 3555
+    },
+    {
+     "name": "SHEPHERD, Matt",
+     "party": "OPP",
+     "votes": 474
+    },
+    {
+     "name": "YOUNG, Barry",
+     "party": "OTH",
+     "votes": 279,
+     "party_name": "NZ Outdoors & Freedom Party"
+    }
+   ],
+   "party_votes": {
+    "OTH": 410,
+    "NAT": 12804,
+    "GP": 3596,
+    "LAB": 11940,
+    "NZF": 5039,
+    "OPP": 2157,
+    "ACT": 5279,
+    "TPM": 58
+   },
+   "candidate_informal": 236
+  },
+  "Waitākere": {
+   "number": 56,
+   "candidates": [
+    {
+     "name": "ABEL, Steve",
+     "party": "GP",
+     "votes": 4625
+    },
+    {
+     "name": "LOHENI, Agnes",
+     "party": "NAT",
+     "votes": 10805
+    },
+    {
+     "name": "O'KEEFE, Bianca",
+     "party": "IND",
+     "votes": 1253
+    },
+    {
+     "name": "ROACH, Mark",
+     "party": "OPP",
+     "votes": 1181
+    },
+    {
+     "name": "SHERIDAN, Callum",
+     "party": "ACT",
+     "votes": 2249
+    },
+    {
+     "name": "WALTERS, Vanushi",
+     "party": "LAB",
+     "votes": 13480
+    }
+   ],
+   "party_votes": {
+    "GP": 5830,
+    "NAT": 8657,
+    "OPP": 2394,
+    "ACT": 2985,
+    "LAB": 10631,
+    "OTH": 259,
+    "NZF": 3128,
+    "TPM": 63
+   },
+   "candidate_informal": 450
+  },
+  "Waitaki": {
+   "number": 57,
+   "candidates": [
+    {
+     "name": "ANDERSON, Miles John",
+     "party": "NAT",
+     "votes": 19790
+    },
+    {
+     "name": "BEAMISH, Sean",
+     "party": "ACT",
+     "votes": 1848
+    },
+    {
+     "name": "GRAAMANS, Adrian Daegal",
+     "party": "IND",
+     "votes": 157
+    },
+    {
+     "name": "JUDGE, Bronwyn",
+     "party": "IND",
+     "votes": 465
+    },
+    {
+     "name": "LAWS, Michael",
+     "party": "NZF",
+     "votes": 3922
+    },
+    {
+     "name": "O'CONNOR, Damien",
+     "party": "LAB",
+     "votes": 11438
+    },
+    {
+     "name": "SHAND, Daniel",
+     "party": "IND",
+     "votes": 255
+    },
+    {
+     "name": "TAIT, Helen",
+     "party": "OPP",
+     "votes": 1633
+    }
+   ],
+   "party_votes": {
+    "NAT": 14528,
+    "ACT": 6187,
+    "NZF": 4502,
+    "LAB": 8001,
+    "OPP": 2285,
+    "OTH": 300,
+    "GP": 3805,
+    "TPM": 32
+   },
+   "candidate_informal": 347
+  },
+  "Wellington Bays": {
+   "number": 58,
+   "candidates": [
+    {
+     "name": "ANDERSON, Liam",
+     "party": "IND",
+     "votes": 41
+    },
+    {
+     "name": "GENTER, Julie Anne",
+     "party": "GP",
+     "votes": 15167
+    },
+    {
+     "name": "KINGDON-BEBB, Kayla",
+     "party": "OPP",
+     "votes": 2115
+    },
+    {
+     "name": "McDONALD, Donald DS",
+     "party": "IND",
+     "votes": 56
+    },
+    {
+     "name": "McKEE, Nicole",
+     "party": "ACT",
+     "votes": 1450
+    },
+    {
+     "name": "MUTHU, Karunā",
+     "party": "NAT",
+     "votes": 5550
+    },
+    {
+     "name": "RENNEY, Craig",
+     "party": "LAB",
+     "votes": 15307
+    },
+    {
+     "name": "WARNER, Gerald",
+     "party": "NZF",
+     "votes": 914
+    },
+    {
+     "name": "WELSH, Bruce",
+     "party": "IND",
+     "votes": 99
+    }
+   ],
+   "party_votes": {
+    "GP": 11803,
+    "OPP": 5108,
+    "ACT": 1846,
+    "NAT": 6080,
+    "LAB": 13937,
+    "NZF": 1658,
+    "OTH": 184,
+    "TPM": 62
+   },
+   "candidate_informal": 262
+  },
+  "Wellington North": {
+   "number": 59,
+   "candidates": [
+    {
+     "name": "APPLEBY, Michael",
+     "party": "OTH",
+     "votes": 183,
+     "party_name": "Aotearoa Legalise Cannabis Party"
+    },
+    {
+     "name": "ARNEIL, Taylor",
+     "party": "NZF",
+     "votes": 620
+    },
+    {
+     "name": "HAGUE, Matthew",
+     "party": "ACT",
+     "votes": 900
+    },
+    {
+     "name": "HAMMOND, Jessica",
+     "party": "OPP",
+     "votes": 2278
+    },
+    {
+     "name": "HARFORD, Joshua",
+     "party": "OTH",
+     "votes": 133,
+     "party_name": "Alliance Party"
+    },
+    {
+     "name": "PAUL, Tamatha",
+     "party": "GP",
+     "votes": 16664
+    },
+    {
+     "name": "PITTS, Jonathan",
+     "party": "NAT",
+     "votes": 7908
+    },
+    {
+     "name": "VERRALL, Ayesha",
+     "party": "LAB",
+     "votes": 13658
+    }
+   ],
+   "party_votes": {
+    "OTH": 191,
+    "NZF": 1340,
+    "ACT": 2437,
+    "OPP": 6446,
+    "GP": 11540,
+    "NAT": 7669,
+    "LAB": 12953,
+    "TPM": 44
+   },
+   "candidate_informal": 173
+  },
+  "West Coast-Tasman": {
+   "number": 60,
+   "candidates": [
+    {
+     "name": "BEAUMONT, Andrew Charles",
+     "party": "GP",
+     "votes": 2312
+    },
+    {
+     "name": "CLEINE, Jamie",
+     "party": "NZF",
+     "votes": 4077
+    },
+    {
+     "name": "DYATLOVA-MURPHY, Sara",
+     "party": "OTH",
+     "votes": 87,
+     "party_name": "Alliance Party"
+    },
+    {
+     "name": "GREY, Sue",
+     "party": "OTH",
+     "votes": 1341,
+     "party_name": "NZ Outdoors & Freedom Party"
+    },
+    {
+     "name": "HISLOP, Alexander",
+     "party": "OTH",
+     "votes": 121,
+     "party_name": "New Zealand Loyal"
+    },
+    {
+     "name": "HOCKING, Janelle",
+     "party": "ACT",
+     "votes": 1891
+    },
+    {
+     "name": "MILNE, Katie",
+     "party": "NAT",
+     "votes": 16475
+    },
+    {
+     "name": "OSMASTON, Richard Francis",
+     "party": "IND",
+     "votes": 45
+    },
+    {
+     "name": "PATERSON, Rory William",
+     "party": "LAB",
+     "votes": 9874
+    },
+    {
+     "name": "ROOKE, Kevin",
+     "party": "IND",
+     "votes": 35
+    },
+    {
+     "name": "UDDSTROM, Cindie",
+     "party": "OPP",
+     "votes": 912
+    }
+   ],
+   "party_votes": {
+    "GP": 4211,
+    "NZF": 5899,
+    "OTH": 680,
+    "ACT": 5357,
+    "NAT": 11078,
+    "LAB": 7819,
+    "OPP": 2221,
+    "TPM": 45
+   },
+   "candidate_informal": 241
+  },
+  "Whanganui": {
+   "number": 61,
+   "candidates": [
+    {
+     "name": "BATES, Carl",
+     "party": "NAT",
+     "votes": 19373
+    },
+    {
+     "name": "COFFEY, Juan Charles",
+     "party": "IND",
+     "votes": 323
+    },
+    {
+     "name": "HIPANGO-BROWNLIE, Harete",
+     "party": "NZF",
+     "votes": 3412
+    },
+    {
+     "name": "KYLE, Sandra",
+     "party": "OTH",
+     "votes": 613,
+     "party_name": "Animal Justice Party Aotearoa New Zealand"
+    },
+    {
+     "name": "ROBERTS, Angela",
+     "party": "LAB",
+     "votes": 12625
+    }
+   ],
+   "party_votes": {
+    "NAT": 11177,
+    "NZF": 5626,
+    "OTH": 352,
+    "LAB": 9576,
+    "ACT": 4532,
+    "GP": 3421,
+    "OPP": 1579,
+    "TPM": 74
+   },
+   "candidate_informal": 439
+  },
+  "Whangaparāoa": {
+   "number": 62,
+   "candidates": [
+    {
+     "name": "FAITHFULL, Brenton Bruce",
+     "party": "OTH",
+     "votes": 550,
+     "party_name": "New Zealand Loyal"
+    },
+    {
+     "name": "MITCHELL, Mark",
+     "party": "NAT",
+     "votes": 24695
+    },
+    {
+     "name": "MULLER PALLARÈS, Estefania",
+     "party": "LAB",
+     "votes": 9327
+    },
+    {
+     "name": "ROZA, Helena",
+     "party": "ACT",
+     "votes": 2175
+    }
+   ],
+   "party_votes": {
+    "OTH": 306,
+    "NAT": 15074,
+    "LAB": 6422,
+    "ACT": 6197,
+    "GP": 2794,
+    "NZF": 4567,
+    "OPP": 1741,
+    "TPM": 29
+   },
+   "candidate_informal": 393
+  },
+  "Whangārei": {
+   "number": 63,
+   "candidates": [
+    {
+     "name": "BEHARRELL, Luke",
+     "party": "IND",
+     "votes": 33
+    },
+    {
+     "name": "BLACKMAN, Collin",
+     "party": "OTH",
+     "votes": 132,
+     "party_name": "New Zealand Loyal"
+    },
+    {
+     "name": "BUDD, Lloyd Sam",
+     "party": "NAT",
+     "votes": 15757
+    },
+    {
+     "name": "CLOTWORTHY, Daryl Warren",
+     "party": "IND",
+     "votes": 89
+    },
+    {
+     "name": "COCURULLO, Vince",
+     "party": "NZF",
+     "votes": 5842
+    },
+    {
+     "name": "DELLABARCA, Simon",
+     "party": "OPP",
+     "votes": 748
+    },
+    {
+     "name": "GRAHAM, Doug",
+     "party": "ACT",
+     "votes": 1476
+    },
+    {
+     "name": "PAYINDA, Gary",
+     "party": "LAB",
+     "votes": 14665
+    },
+    {
+     "name": "TWYMAN, Jon",
+     "party": "IND",
+     "votes": 98
+    },
+    {
+     "name": "WAKELAM, Noah",
+     "party": "OTH",
+     "votes": 212,
+     "party_name": "NZ Outdoors & Freedom Party"
+    }
+   ],
+   "party_votes": {
+    "OTH": 413,
+    "NAT": 11955,
+    "NZF": 6035,
+    "OPP": 2076,
+    "ACT": 5265,
+    "LAB": 9266,
+    "GP": 4124,
+    "TPM": 71
+   },
+   "candidate_informal": 317
+  },
+  "Wigram": {
+   "number": 64,
+   "candidates": [
+    {
+     "name": "ALEXANDER, William Donald",
+     "party": "OTH",
+     "votes": 136,
+     "party_name": "Free Palestine"
+    },
+    {
+     "name": "McCLURE, Laura",
+     "party": "ACT",
+     "votes": 1115
+    },
+    {
+     "name": "McTAGUE, Geoff",
+     "party": "IND",
+     "votes": 142
+    },
+    {
+     "name": "PANDEY, Shreejan",
+     "party": "GP",
+     "votes": 2215
+    },
+    {
+     "name": "PARK, Bryce",
+     "party": "NZF",
+     "votes": 1956
+    },
+    {
+     "name": "SUMMERFIELD, Tracy",
+     "party": "NAT",
+     "votes": 13151
+    },
+    {
+     "name": "YANZICK, Dominik",
+     "party": "LAB",
+     "votes": 15086
+    }
+   ],
+   "party_votes": {
+    "OTH": 277,
+    "ACT": 2709,
+    "GP": 4087,
+    "NZF": 3117,
+    "NAT": 9917,
+    "LAB": 11535,
+    "OPP": 2395,
+    "TPM": 36
+   },
+   "candidate_informal": 420
+  },
+  "Hauraki-Waikato": {
+   "number": 65,
+   "candidates": [
+    {
+     "name": "DENBY, Neil",
+     "party": "IND",
+     "votes": 705
+    },
+    {
+     "name": "KIRIONA, Kingi",
+     "party": "LAB",
+     "votes": 7541
+    },
+    {
+     "name": "MAIPI-CLARKE, Hana-Rawhiti",
+     "party": "TPM",
+     "votes": 17982
+    }
+   ],
+   "party_votes": {
+    "LAB": 13305,
+    "TPM": 1469,
+    "ACT": 219,
+    "OTH": 331,
+    "GP": 9091,
+    "NAT": 690,
+    "NZF": 930,
+    "OPP": 409
+   },
+   "candidate_informal": 520
+  },
+  "Ikaroa-Rāwhiti": {
+   "number": 66,
+   "candidates": [
+    {
+     "name": "MAXWELL, Haley",
+     "party": "TPM",
+     "votes": 9003
+    },
+    {
+     "name": "TANGAERE-MANUEL, Cushla",
+     "party": "LAB",
+     "votes": 12135
+    },
+    {
+     "name": "TE AU-SKIPWORTH, Heather",
+     "party": "GP",
+     "votes": 6762
+    }
+   ],
+   "party_votes": {
+    "TPM": 1506,
+    "LAB": 15472,
+    "GP": 9026,
+    "ACT": 135,
+    "OTH": 260,
+    "NAT": 477,
+    "NZF": 822,
+    "OPP": 450
+   },
+   "candidate_informal": 521
+  },
+  "Tāmaki Makaurau": {
+   "number": 67,
+   "candidates": [
+    {
+     "name": "KAIPARA, Oriini",
+     "party": "TPM",
+     "votes": 13505
+    },
+    {
+     "name": "LEONI, Kerrin",
+     "party": "LAB",
+     "votes": 6007
+    },
+    {
+     "name": "TE OHAERE, Florence",
+     "party": "GP",
+     "votes": 5406
+    }
+   ],
+   "party_votes": {
+    "TPM": 1454,
+    "LAB": 12258,
+    "GP": 9011,
+    "ACT": 158,
+    "OTH": 372,
+    "NAT": 557,
+    "NZF": 875,
+    "OPP": 626
+   },
+   "candidate_informal": 689
+  },
+  "Te Tai Hauāuru": {
+   "number": 68,
+   "candidates": [
+    {
+     "name": "KĀTENE, Te Pūoho",
+     "party": "LAB",
+     "votes": 10836
+    },
+    {
+     "name": "NGAREWA-PACKER, Debbie",
+     "party": "TPM",
+     "votes": 14677
+    },
+    {
+     "name": "RAUKAWA, Coral",
+     "party": "NAT",
+     "votes": 1104
+    }
+   ],
+   "party_votes": {
+    "LAB": 12439,
+    "TPM": 1532,
+    "NAT": 651,
+    "ACT": 186,
+    "OTH": 357,
+    "GP": 9876,
+    "NZF": 1065,
+    "OPP": 542
+   },
+   "candidate_informal": 421
+  },
+  "Te Tai Tokerau": {
+   "number": 69,
+   "candidates": [
+    {
+     "name": "BARKLEY, Karl",
+     "party": "IND",
+     "votes": 236
+    },
+    {
+     "name": "EDWARDS, Aperahama",
+     "party": "TPM",
+     "votes": 8484
+    },
+    {
+     "name": "HERBERT, Maki",
+     "party": "OTH",
+     "votes": 809,
+     "party_name": "Aotearoa Legalise Cannabis Party"
+    },
+    {
+     "name": "KAPA-KINGI, Mariameno",
+     "party": "OTH",
+     "votes": 4059,
+     "party_name": "Te Tai Tokerau Party"
+    },
+    {
+     "name": "LYNDON, Hūhana",
+     "party": "GP",
+     "votes": 8048
+    },
+    {
+     "name": "PRIME, Willow-Jean",
+     "party": "LAB",
+     "votes": 6209
+    }
+   ],
+   "party_votes": {
+    "TPM": 1252,
+    "OTH": 1017,
+    "GP": 10369,
+    "LAB": 12487,
+    "ACT": 230,
+    "NAT": 849,
+    "NZF": 1327,
+    "OPP": 641
+   },
+   "candidate_informal": 512
+  },
+  "Te Tai Tonga": {
+   "number": 70,
+   "candidates": [
+    {
+     "name": "FERRIS, Tākuta",
+     "party": "IND",
+     "votes": 4716
+    },
+    {
+     "name": "FISHER, Christine",
+     "party": "OTH",
+     "votes": 531,
+     "party_name": "New Zealand Loyal"
+    },
+    {
+     "name": "HENARE, Tania Lee",
+     "party": "OTH",
+     "votes": 1250,
+     "party_name": "Aotearoa Legalise Cannabis Party"
+    },
+    {
+     "name": "MURCH, Lisa",
+     "party": "TPM",
+     "votes": 4951
+    },
+    {
+     "name": "RAMSDEN, Mananui",
+     "party": "LAB",
+     "votes": 8614
+    },
+    {
+     "name": "TE MORENGA, Lisa",
+     "party": "GP",
+     "votes": 5841
+    }
+   ],
+   "party_votes": {
+    "OTH": 447,
+    "TPM": 929,
+    "LAB": 10663,
+    "GP": 9797,
+    "ACT": 446,
+    "NAT": 1429,
+    "NZF": 1597,
+    "OPP": 1030
+   },
+   "candidate_informal": 553
+  },
+  "Waiariki": {
+   "number": 71,
+   "candidates": [
+    {
+     "name": "BOYNTON, Toni",
+     "party": "LAB",
+     "votes": 4130
+    },
+    {
+     "name": "WAIKATO, Tania",
+     "party": "GP",
+     "votes": 10806
+    },
+    {
+     "name": "WAITITI, Rawiri",
+     "party": "TPM",
+     "votes": 13080
+    },
+    {
+     "name": "WHAREWERA, Pāpā",
+     "party": "OPP",
+     "votes": 911
+    }
+   ],
+   "party_votes": {
+    "LAB": 13647,
+    "GP": 11097,
+    "TPM": 2011,
+    "OPP": 519,
+    "ACT": 152,
+    "OTH": 383,
+    "NAT": 504,
+    "NZF": 908
+   },
+   "candidate_informal": 522
+  }
+ }
+}

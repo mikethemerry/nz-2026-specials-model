@@ -1,6 +1,9 @@
 window.NZ = (() => {
   const C = dash.colors;
-  const sc = {alone: C[0], nat_needs_opp: C[3] || C[1], labour: C[7] || C[2]};
+  // Party colours, used throughout: scenarios take the colour of the party they turn on.
+  const PARTY = {NAT: '#2a78d6', LAB: '#e34948', GP: '#008300', ACT: '#eda100', NZF: '#444441', OPP: '#7f3fbf', TPM: '#8a2b4a', OTH: '#888780', IND: '#888780'};
+  const PNAME = {NAT: 'National', LAB: 'Labour', GP: 'Green', ACT: 'ACT', NZF: 'NZ First', OPP: 'Opportunity', TPM: 'Te Pāti Māori'};
+  const sc = {alone: PARTY.NAT, nat_needs_opp: PARTY.OPP, labour: PARTY.LAB};
   const scName = {alone: 'Coalition alone', nat_needs_opp: 'National needs Opportunity', labour: 'Labour could form a government'};
   const scLong = {alone: 'Coalition governs alone', nat_needs_opp: 'National needs Opportunity', labour: 'Labour could form a government'};
   const fmt = {
@@ -10,6 +13,8 @@ window.NZ = (() => {
     int: d3.format(','),
     pp: (v) => (v > 0 ? '+' : v < 0 ? '−' : '') + d3.format('.2f')(Math.abs(v)) + ' pts',
     k: (v) => d3.format('.0f')(v * 100) + '%',
+    pp1: (v) => (v > 0 ? '+' : v < 0 ? '−' : '') + d3.format('.1f')(Math.abs(v)) + ' pts',
+    pts1: (v) => d3.format('.1f')(v) + ' pts',
     raw: (v) => String(v)
   };
   // Whole-number shares that add up: largest-remainder rounding of a group of
@@ -70,7 +75,7 @@ window.NZ = (() => {
     s.appendChild(document.createTextNode(fmt.pct0(v)));
     return s;
   };
-  return {sc, scName, scLong, fmt, tip, ok, muted, svgIn, clear, rowsTable, barCell, lr0, show0, trip, w, SK};
+  return {sc, scName, scLong, fmt, tip, ok, muted, svgIn, clear, rowsTable, barCell, lr0, show0, trip, w, SK, PARTY, PNAME};
 })();
 document.querySelectorAll('[data-sc]').forEach((e) => { e.style.background = NZ.sc[e.dataset.sc]; });
 document.querySelectorAll('[data-c]').forEach((e) => { e.style.background = e.dataset.c === 'muted' ? NZ.muted : dash.colors[0]; });
@@ -260,7 +265,7 @@ dash.draw('ytable', (tb) => NZ.rowsTable(tb, 'template_years', [[(r) => String(r
 dash.draw('hist', (el) => {
   if (!NZ.ok('history_party')) { NZ.clear(el); return; }
   const rows = dash.data('history_party').data;
-  const series = [['NAT', 'National', dash.colors[0]], ['LAB', 'Labour', dash.colors[7] || dash.colors[1]], ['GP', 'Green', dash.colors[5] || dash.colors[2]], ['NZF', 'NZ First', NZ.muted]];
+  const series = [['NAT', 'National', NZ.PARTY.NAT], ['LAB', 'Labour', NZ.PARTY.LAB], ['GP', 'Green', NZ.PARTY.GP], ['NZF', 'NZ First', NZ.PARTY.NZF]];
   const h = 250, lm = 34, rm = 70, top = 10, bm = 24;
   const [svg, w] = NZ.svgIn(el, h);
   const x = d3.scalePoint(rows.map((r) => r.year), [lm, w - rm]);
@@ -286,12 +291,12 @@ dash.draw('hseats', (el) => {
   const pw = (w - lm) / seats.length; const ext = d3.max(rows, (r) => Math.abs(r.labour_net));
   const y = d3.scaleLinear([-ext, ext], [h - bm, top]).nice();
   y.ticks(4).forEach((t) => { svg.append('line').attr('x1', lm).attr('x2', w).attr('y1', y(t)).attr('y2', y(t)).attr('stroke', t === 0 ? 'var(--cds-chart-axis)' : 'var(--cds-chart-grid)'); svg.append('text').attr('x', lm - 6).attr('y', y(t) + 4).attr('text-anchor', 'end').attr('fill', 'var(--color-fg-muted)').attr('font-size', 11).text(d3.format('~s')(t)); });
-  const tp = NZ.tip(el); const lab = dash.colors[7] || dash.colors[1];
+  const tp = NZ.tip(el); const lab = NZ.PARTY.LAB;
   seats.forEach((s, i) => {
     const x = d3.scaleBand(years, [lm + i * pw + 6, lm + (i + 1) * pw - 6]).padding(0.2);
     svg.append('text').attr('x', lm + i * pw + pw / 2).attr('y', 12).attr('text-anchor', 'middle').attr('fill', 'var(--color-fg)').attr('font-weight', 500).text(s);
     rows.filter((r) => r.seat === s).forEach((r) => {
-      svg.append('rect').attr('x', x(r.year)).attr('y', Math.min(y(0), y(r.labour_net))).attr('width', x.bandwidth()).attr('height', Math.max(1, Math.abs(y(r.labour_net) - y(0)))).attr('rx', 2).attr('fill', r.labour_net >= 0 ? lab : dash.colors[0])
+      svg.append('rect').attr('x', x(r.year)).attr('y', Math.min(y(0), y(r.labour_net))).attr('width', x.bandwidth()).attr('height', Math.max(1, Math.abs(y(r.labour_net) - y(0)))).attr('rx', 2).attr('fill', r.labour_net >= 0 ? lab : NZ.PARTY.NAT)
         .on('mousemove', (ev) => tp.show(ev, `${s}, ${r.year}`, [[null, `${r.labour_net >= 0 ? 'Labour' : 'National'} +${d3.format(',')(Math.abs(r.labour_net))} on specials`]])).on('mouseleave', () => tp.hide());
     });
     svg.append('text').attr('x', x(years[0])).attr('y', h - 6).attr('fill', 'var(--color-fg-muted)').attr('font-size', 10).text(String(years[0]));
@@ -300,3 +305,107 @@ dash.draw('hseats', (el) => {
 });
 
 dash.draw('atable', (tb) => NZ.rowsTable(tb, 'assumptions', [[(r) => r.assumption], [(r) => r.value], [(r) => r.basis], [(r) => r.if_wrong]]));
+
+// Battleground seats: each candidate's chance and the distribution of the final margin, centred on
+// zero, with the more left-leaning party always on the left.
+dash.draw('bground', (el) => {
+  el.replaceChildren();
+  if (!NZ.ok('battleground')) return;
+  const rows = dash.data('battleground').data.slice().sort((a, b) => a.order - b.order);
+  const ns = 'http://www.w3.org/2000/svg', P = NZ.PARTY, N = NZ.PNAME;
+  const last = (n) => n.split(' ').slice(-1)[0];
+  const num = (v) => Math.abs(Math.round(v)).toLocaleString('en-NZ');
+  rows.forEach((r) => {
+    const box = document.createElement('div'); box.className = 'bg-seat';
+    const head = document.createElement('div'); head.className = 'bg-head';
+    const t = document.createElement('h3'); t.textContent = r.seat; head.appendChild(t);
+    const sub = document.createElement('p'); sub.className = 'note';
+    const ahead = r.prelim_x >= 0 ? r.right_name : r.left_name, ap = r.prelim_x >= 0 ? r.right_party : r.left_party;
+    sub.textContent = `Preliminary count: ${last(ahead)} (${N[ap]}) ahead by ${num(r.prelim_margin)}`; head.appendChild(sub);
+    box.appendChild(head);
+    const odds = document.createElement('div'); odds.className = 'bg-odds';
+    [[r.left_name, r.left_party, r.left_win, 'l'], [r.right_name, r.right_party, r.right_win, 'r']].forEach(([n, p, v, side]) => {
+      const d = document.createElement('div'); d.className = 'bg-side ' + side;
+      const a = document.createElement('div'); a.className = 'note'; a.textContent = `${n} (${N[p]})`;
+      const b = document.createElement('div'); b.className = 'bg-pct'; b.textContent = NZ.show0(v, NZ.lr0([r.left_win, r.right_win])[side === 'l' ? 0 : 1]);
+      d.append(a, b); odds.appendChild(d);
+    });
+    box.appendChild(odds);
+    const bar = document.createElement('div'); bar.className = 'bg-bar';
+    [[r.left_win, r.left_party], [r.right_win, r.right_party]].forEach(([v, p]) => { const s = document.createElement('span'); s.style.flex = v; s.style.background = P[p]; bar.appendChild(s); });
+    box.appendChild(bar);
+    const W = 600, H = 120, top = 8, bot = 24, xl = 4, xr = W - 4, n = r.counts.length;
+    const ext = -r.bin_start, sx = (v) => xl + (v + ext) / (2 * ext) * (xr - xl), mx = Math.max(...r.counts), tot = r.counts.reduce((a, b) => a + b, 0);
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('width', '100%'); svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', `${r.seat}: ${r.left_name} ${r.left_win}%, ${r.right_name} ${r.right_win}% of runs.`);
+    const add = (tag, at) => { const e = document.createElementNS(ns, tag); Object.entries(at).forEach(([k, v]) => e.setAttribute(k, v)); svg.appendChild(e); return e; };
+    add('rect', {x: sx(r.p10_x), width: sx(r.p90_x) - sx(r.p10_x), y: top, height: H - top - bot, fill: 'var(--color-panel)'});
+    r.counts.forEach((v, i) => {
+      const a = r.bin_start + i * r.bin_width, b = a + r.bin_width, left = b <= 0, bh = (v / mx) * (H - top - bot);
+      const rect = add('rect', {x: sx(a) + 0.5, width: Math.max(0.8, sx(b) - sx(a) - 1), y: H - bot - bh, height: bh, rx: 1,
+        fill: P[left ? r.left_party : r.right_party], opacity: (i === 0 || i === n - 1) ? 0.35 : 0.85});
+      const who = last(left ? r.left_name : r.right_name), lo = Math.min(Math.abs(a), Math.abs(b)), hi = Math.max(Math.abs(a), Math.abs(b));
+      const tt = document.createElementNS(ns, 'title');
+      tt.textContent = ((i === 0 || i === n - 1) ? `${who} by ${num(lo)} or more` : `${who} by ${num(lo)} to ${num(hi)}`) + `: ${(v / tot * 100).toFixed(1)}% of runs`;
+      rect.appendChild(tt);
+    });
+    add('line', {x1: xl, x2: xr, y1: H - bot, y2: H - bot, stroke: 'var(--cds-chart-axis)'});
+    add('line', {x1: sx(0), x2: sx(0), y1: top - 4, y2: H - bot + 4, stroke: 'var(--color-fg)', 'stroke-width': 1.5});
+    add('line', {x1: sx(r.prelim_x), x2: sx(r.prelim_x), y1: top, y2: H - bot, stroke: 'var(--color-fg-muted)', 'stroke-dasharray': '3 3'});
+    const lab = (x, s, c) => { const e = add('text', {x, y: H - 7, 'font-size': 12, 'text-anchor': 'middle', fill: c || 'var(--color-fg-muted)'}); e.textContent = s; };
+    const step = [100, 200, 250, 500, 1000, 2000].find((s) => 2 * ext / s <= 8) || 2000;
+    for (let v = step; v <= ext * 0.95; v += step) { lab(sx(v), num(v)); lab(sx(-v), num(v)); }
+    lab(sx(0), '0', 'var(--color-fg)');
+    box.appendChild(svg);
+    const foot = document.createElement('div'); foot.className = 'bg-foot';
+    foot.innerHTML = '';
+    [[`← ${last(r.left_name)} ahead`, `If ${last(r.left_name)} wins: ${r.if_left_wins}`, 'l'], [`${last(r.right_name)} ahead →`, `If ${last(r.right_name)} wins: ${r.if_right_wins}`, 'r']].forEach(([a, b, side]) => {
+      const d = document.createElement('div'); d.className = 'bg-side ' + side;
+      const x = document.createElement('div'); x.textContent = a; const y = document.createElement('div'); y.className = 'note'; y.textContent = b;
+      d.append(x, y); foot.appendChild(d);
+    });
+    box.appendChild(foot);
+    el.appendChild(box);
+  });
+});
+
+// Who gains, who pays: list-seat changes from the preliminary allocation.
+dash.draw('lmatrix', (el) => {
+  el.replaceChildren();
+  if (!NZ.ok('list_matrix', 'list_matrix_rows', 'list_matrix_cols')) return;
+  const cells = dash.data('list_matrix').data, rows = dash.data('list_matrix_rows').data.slice().sort((a, b) => a.order - b.order);
+  const cols = dash.data('list_matrix_cols').data.slice().sort((a, b) => a.order - b.order), P = NZ.PARTY;
+  const get = (r, c) => (cells.find((x) => x.row === r && x.col === c) || {pct: 0}).pct;
+  const chips = (ps) => { const s = document.createElement('span'); s.className = 'mx-chips'; ps.forEach((p) => { const i = document.createElement('i'); i.style.background = P[p]; s.appendChild(i); }); return s; };
+  const div = (cls, txt) => { const d = document.createElement('div'); if (cls) d.className = cls; if (txt !== undefined) d.textContent = txt; return d; };
+  const allPct = cells.map((x) => x.pct), whole = NZ.lr0(allPct), W = new Map(cells.map((x, i) => [x.row + '|' + x.col, NZ.show0(x.pct, whole[i])]));
+  const g = div('mx');
+  g.style.gridTemplateColumns = `minmax(5.5rem,auto) repeat(${cols.length}, minmax(0,1fr))`;
+  g.appendChild(div('mx-corner', 'Gains ↓   Pays →'));
+  cols.forEach((c) => { const d = div('mx-ch'); d.appendChild(chips(c.parties)); d.appendChild(div('', c.label)); g.appendChild(d); });
+  rows.forEach((r) => {
+    const h = div('mx-rh'); h.appendChild(chips(r.parties)); h.appendChild(div('', r.label)); h.appendChild(div('note', NZ.fmt.pct0(r.pct))); g.appendChild(h);
+    cols.forEach((c) => {
+      const v = get(r.row, c.col), t = Math.min(1, v / 40), d = div('mx-c' + (v > 0 ? '' : ' empty'), v > 0 ? W.get(r.row + '|' + c.col) : '·');
+      if (v > 0) { d.style.background = `rgba(136,135,128,${0.12 + 0.62 * t})`; if (t > 0.55) d.style.color = '#fff'; }
+      d.title = `${r.label} while ${c.label}: ${v.toFixed(1)}% of runs`;
+      g.appendChild(d);
+    });
+  });
+  g.appendChild(div('mx-rh note', 'All'));
+  cols.forEach((c) => g.appendChild(div('mx-tot', NZ.fmt.pct0(c.pct))));
+  g.appendChild(div('mx-rh note', 'Effect'));
+  cols.forEach((c) => g.appendChild(div('mx-eff', c.effect)));
+  g.appendChild(div('mx-rh note', 'Outcome'));
+  cols.forEach((c) => {
+    const b = div('mx-out'), tw = NZ.trip(c);
+    b.title = NZ.SK.map((k) => `${NZ.scLong[k]} ${tw[k]}%`).join(', ');
+    ['labour', 'nat_needs_opp', 'alone'].forEach((k) => { if (c[k] > 0) { const s = document.createElement('span'); s.style.flex = c[k]; s.style.background = NZ.sc[k]; b.appendChild(s); } });
+    g.appendChild(b);
+  });
+  el.appendChild(g);
+  const key = div('mx-key');
+  ['labour', 'nat_needs_opp', 'alone'].forEach((k) => { const s = document.createElement('span'); const i = document.createElement('i'); i.className = 'sw'; i.style.background = NZ.sc[k]; s.append(i, document.createTextNode(NZ.scLong[k])); key.appendChild(s); });
+  el.appendChild(key);
+});

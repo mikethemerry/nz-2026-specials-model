@@ -27,7 +27,8 @@ from dataclasses import dataclass, field
 import numpy as np
 
 from .allocation import INDEX, PARTIES, seats_from
-from .data import load_calibration, load_prelim
+from .data import load_calibration, load_json, load_prelim
+from .flows import Seat, field_adjustment, load_weights_cached
 
 CATEGORIES = ["SP_before", "SP_on", "SP_overseas"]
 
@@ -57,6 +58,8 @@ class Config:
     other_pair_noise: float = 0.05
     seat_lean_2008: bool = False  # use 2008-2023 seat lean for Wairarapa, Hamilton East, Mt Roskill
     se_override: dict = field(default_factory=dict)  # e.g. {"Hamilton East": 8000} specials cast
+    seat_shift_pp: dict = field(default_factory=dict)  # extra Labour-minus-National swing on specials, e.g. {"Hamilton East": 2.0}
+    candidate_field: bool = True  # adjust each seat's swing for the candidates actually standing (nzspecials.flows)
 
     @classmethod
     def from_dict(cls, d: dict) -> "Config":
@@ -121,9 +124,29 @@ def simulate(cfg: Config | None = None, prelim: dict | None = None, calib: dict 
     fe = np.array([lean.get(p, 0.0) for p in pred]) / 100
 
     n_seats = len(names)
+
+    # Candidate field: for each seat and template year, how the candidates actually standing
+    # change the special-vote swing between the leader and runner-up (points, leader minus
+    # runner-up), relative to a field with every major party standing. Deterministic per
+    # template year, so it adds no random draws.
+    fd = {y: np.zeros(n_seats) for y in years}
+    if cfg.candidate_field:
+        cand = load_json("candidates_2026.json")["electorates"]
+        W = load_weights_cached()
+        for j, nm in enumerate(names):
+            e = cand[nm]
+            seat = Seat(nm, e["candidates"], e["party_votes"], W)
+            order = np.argsort(-seat.votes)
+            a, b = int(order[0]), int(order[1])
+            for y in years:
+                k0 = cfg.k_by_year.get(y, cfg.k_mean)
+                r0 = np.array([(1 - f_os) * (1 + k0 * (rat[y][p][0] - 1)) + f_os * (1 + cfg.ko_mean * (rat[y][p][1] - 1)) for p in PARTIES])
+                fd[y][j] = field_adjustment(seat, r0, a, b)[0] / 100
+
     seats = np.zeros((cfg.n, len(PARTIES)), int)
     share = np.zeros((cfg.n, len(PARTIES)))
     flips = np.zeros((cfg.n, n_seats), bool)
+    margins = np.zeros((cfg.n, n_seats), np.float32)   # final margin, preliminary leader minus runner-up
     year = np.empty(cfg.n, dtype="<U4")
     kk = np.zeros(cfg.n)
 
@@ -156,7 +179,7 @@ def simulate(cfg: Config | None = None, prelim: dict | None = None, calib: dict 
             mo = marg[j] / Oe[j]
             pair = {A, B}
             if pair == {"LAB", "NAT"}:
-                d_lab = mu_ln + cfg.seat_lean_shrink * fe[j] + rng.normal(0, cfg.labnat_noise)
+                d_lab = mu_ln + cfg.seat_lean_shrink * fe[j] + rng.normal(0, cfg.labnat_noise) + cfg.seat_shift_pp.get(names[j], 0) / 100
                 d = d_lab if A == "LAB" else -d_lab
             elif pair == {"LAB", "TPM"}:
                 d_lab = mu_lt + rng.normal(0, cfg.labtpm_noise)
@@ -167,7 +190,9 @@ def simulate(cfg: Config | None = None, prelim: dict | None = None, calib: dict 
                 d = sw_tpm if A == "TPM" else -sw_tpm
             else:
                 d = cfg.other_pair_mult * (dlean[INDEX[A]] - dlean[INDEX[B]]) + rng.normal(0, cfg.other_pair_noise)
+            d += fd[y][j]
             final_margin = marg[j] + (mo + d) * Se[j]
+            margins[it, j] = final_margin
             winner = A if final_margin > 0 else B
             flips[it, j] = winner != A
             wins[INDEX[winner]] += 1
@@ -177,5 +202,7 @@ def simulate(cfg: Config | None = None, prelim: dict | None = None, calib: dict 
         year[it] = y
         kk[it] = k
 
+    # template-weighted candidate-field effect per seat, points (leader minus runner-up)
+    field = sum(yw[i] * fd[y] for i, y in enumerate(years)) * 100
     return {"seats": seats, "total": seats.sum(1), "share": share, "flip": flips,
-            "year": year, "k": kk, "names": np.array(names)}
+            "year": year, "k": kk, "names": np.array(names), "field_pp": field, "margin": margins}

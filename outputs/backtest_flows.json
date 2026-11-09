@@ -1,0 +1,4864 @@
+{
+ "note": "RMSE in points of the special-vote margin between the top two; [rmse, seats]. B_lean* and C_loyo use only the other years' data for the seat lean (out of sample); C uses the published in-sample 2017-2023 lean.",
+ "all_seats": {
+  "A": [
+   4.9,
+   214
+  ],
+  "B": [
+   6.18,
+   214
+  ],
+  "B_lean0.5": [
+   5.63,
+   214
+  ],
+  "B_lean0.75": [
+   5.54,
+   214
+  ],
+  "B_lean1.0": [
+   5.58,
+   214
+  ]
+ },
+ "lab_v_nat_seats": {
+  "A": [
+   3.68,
+   181
+  ],
+  "B": [
+   5.73,
+   181
+  ],
+  "B_lean0.5": [
+   4.9,
+   181
+  ],
+  "B_lean0.75": [
+   4.67,
+   181
+  ],
+  "B_lean1.0": [
+   4.61,
+   181
+  ],
+  "C_in_sample": [
+   2.87,
+   181
+  ],
+  "C_loyo": [
+   3.66,
+   181
+  ],
+  "C_no_lean": [
+   5.55,
+   181
+  ]
+ },
+ "lab_v_nat_with_a_missing_candidate": {
+  "B_lean0.75": [
+   5.18,
+   60
+  ],
+  "C_loyo": [
+   3.68,
+   60
+  ],
+  "C_loyo_adj": [
+   3.57,
+   60
+  ]
+ },
+ "lab_v_nat_all_with_adjustment": {
+  "C_loyo": [
+   3.66,
+   181
+  ],
+  "C_loyo_adj": [
+   3.62,
+   181
+  ]
+ },
+ "by_year": {
+  "2017": {
+   "C_loyo": [
+    4.01,
+    61
+   ],
+   "C_loyo_adj": [
+    3.99,
+    61
+   ]
+  },
+  "2020": {
+   "C_loyo": [
+    3.78,
+    62
+   ],
+   "C_loyo_adj": [
+    3.71,
+    62
+   ]
+  },
+  "2023": {
+   "C_loyo": [
+    3.1,
+    58
+   ],
+   "C_loyo_adj": [
+    3.1,
+    58
+   ]
+  }
+ },
+ "key_seats": [
+  {
+   "year": 2017,
+   "seat": "Hamilton East",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 4.76,
+   "A": 0.48,
+   "B": 0.02,
+   "B_lean0.5": 1.08,
+   "B_lean0.75": 1.61,
+   "B_lean1.0": 2.14,
+   "C": 4.29,
+   "C_loyo": 5.81,
+   "C_no_lean": 5.34,
+   "delta": 0.0,
+   "C_loyo_adj": 5.81
+  },
+  {
+   "year": 2017,
+   "seat": "Mt Roskill",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 19.95,
+   "A": 6.97,
+   "B": 12.52,
+   "B_lean0.5": 12.6,
+   "B_lean0.75": 12.64,
+   "B_lean1.0": 12.68,
+   "C": 5.28,
+   "C_loyo": 6.84,
+   "C_no_lean": 8.43,
+   "delta": 0.0,
+   "C_loyo_adj": 6.84
+  },
+  {
+   "year": 2017,
+   "seat": "Wairarapa",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 3.68,
+   "A": -5.9,
+   "B": -8.18,
+   "B_lean0.5": -8.0,
+   "B_lean0.75": -7.92,
+   "B_lean1.0": -7.86,
+   "C": -2.41,
+   "C_loyo": -3.04,
+   "C_no_lean": -4.51,
+   "delta": 0.0,
+   "C_loyo_adj": -3.04
+  },
+  {
+   "year": 2020,
+   "seat": "Hamilton East",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 18.73,
+   "A": -2.27,
+   "B": -1.59,
+   "B_lean0.5": -2.41,
+   "B_lean0.75": -2.84,
+   "B_lean1.0": -3.27,
+   "C": -0.97,
+   "C_loyo": -1.24,
+   "C_no_lean": -2.02,
+   "delta": 0.0,
+   "C_loyo_adj": -1.24
+  },
+  {
+   "year": 2020,
+   "seat": "Mt Roskill",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 44.14,
+   "A": 2.95,
+   "B": 2.08,
+   "B_lean0.5": 0.98,
+   "B_lean0.75": 0.43,
+   "B_lean1.0": -0.13,
+   "C": -0.41,
+   "C_loyo": -0.99,
+   "C_no_lean": 2.74,
+   "delta": 0.0,
+   "C_loyo_adj": -0.99
+  },
+  {
+   "year": 2020,
+   "seat": "Wairarapa",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 23.41,
+   "A": 2.56,
+   "B": 3.04,
+   "B_lean0.5": 0.32,
+   "B_lean0.75": -1.11,
+   "B_lean1.0": -2.6,
+   "C": -0.53,
+   "C_loyo": -1.01,
+   "C_no_lean": 1.57,
+   "delta": 0.0,
+   "C_loyo_adj": -1.01
+  },
+  {
+   "year": 2023,
+   "seat": "Hamilton East",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP"
+   ],
+   "actual": 13.76,
+   "A": -2.51,
+   "B": -6.68,
+   "B_lean0.5": -6.08,
+   "B_lean0.75": -5.79,
+   "B_lean1.0": -5.5,
+   "C": -4.31,
+   "C_loyo": -6.02,
+   "C_no_lean": -3.26,
+   "delta": -1.48,
+   "C_loyo_adj": -7.5
+  },
+  {
+   "year": 2023,
+   "seat": "Mt Roskill",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 3.19,
+   "A": -3.18,
+   "B": -3.39,
+   "B_lean0.5": -2.18,
+   "B_lean0.75": -1.58,
+   "B_lean1.0": -0.97,
+   "C": 1.65,
+   "C_loyo": 2.69,
+   "C_no_lean": -1.5,
+   "delta": -0.06,
+   "C_loyo_adj": 2.63
+  },
+  {
+   "year": 2023,
+   "seat": "Wairarapa",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 5.71,
+   "A": -3.78,
+   "B": -4.07,
+   "B_lean0.5": -3.09,
+   "B_lean0.75": -2.57,
+   "B_lean1.0": -2.05,
+   "C": -0.25,
+   "C_loyo": -0.08,
+   "C_no_lean": -2.35,
+   "delta": 0.02,
+   "C_loyo_adj": -0.06
+  }
+ ],
+ "rows": [
+  {
+   "year": 2017,
+   "seat": "Auckland Central",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 1.12,
+   "A": -0.89,
+   "B": -7.34,
+   "B_lean0.5": -4.57,
+   "B_lean0.75": -3.16,
+   "B_lean1.0": -1.74,
+   "C": -2.62,
+   "C_loyo": -2.62,
+   "C_no_lean": -2.62,
+   "delta": 0.0,
+   "C_loyo_adj": -2.62
+  },
+  {
+   "year": 2017,
+   "seat": "Bay of Plenty",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP"
+   ],
+   "actual": 17.06,
+   "A": 4.12,
+   "B": 7.16,
+   "B_lean0.5": 7.09,
+   "B_lean0.75": 7.04,
+   "B_lean1.0": 6.97,
+   "C": 6.27,
+   "C_loyo": 8.13,
+   "C_no_lean": 10.55,
+   "delta": -1.19,
+   "C_loyo_adj": 6.94
+  },
+  {
+   "year": 2017,
+   "seat": "Botany",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 22.51,
+   "A": 3.99,
+   "B": 5.95,
+   "B_lean0.5": 3.87,
+   "B_lean0.75": 2.83,
+   "B_lean1.0": 1.78,
+   "C": 0.89,
+   "C_loyo": 0.19,
+   "C_no_lean": 9.29,
+   "delta": -0.62,
+   "C_loyo_adj": -0.43
+  },
+  {
+   "year": 2017,
+   "seat": "Christchurch Central",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 9.83,
+   "A": 4.68,
+   "B": 11.65,
+   "B_lean0.5": 8.36,
+   "B_lean0.75": 6.68,
+   "B_lean1.0": 4.99,
+   "C": 0.3,
+   "C_loyo": -0.32,
+   "C_no_lean": 6.53,
+   "delta": 0.0,
+   "C_loyo_adj": -0.32
+  },
+  {
+   "year": 2017,
+   "seat": "Christchurch East",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 23.39,
+   "A": 5.98,
+   "B": 10.72,
+   "B_lean0.5": 8.38,
+   "B_lean0.75": 7.2,
+   "B_lean1.0": 6.01,
+   "C": 1.42,
+   "C_loyo": 1.25,
+   "C_no_lean": 6.89,
+   "delta": 0.0,
+   "C_loyo_adj": 1.25
+  },
+  {
+   "year": 2017,
+   "seat": "Clutha-Southland",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 32.4,
+   "A": -1.08,
+   "B": -2.74,
+   "B_lean0.5": -2.74,
+   "B_lean0.75": -2.74,
+   "B_lean1.0": -2.74,
+   "C": -0.52,
+   "C_loyo": -0.52,
+   "C_no_lean": -0.52,
+   "delta": 0.0,
+   "C_loyo_adj": -0.52
+  },
+  {
+   "year": 2017,
+   "seat": "Coromandel",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 23.99,
+   "A": 0.78,
+   "B": 1.17,
+   "B_lean0.5": 1.69,
+   "B_lean0.75": 1.92,
+   "B_lean1.0": 2.13,
+   "C": 1.08,
+   "C_loyo": 1.24,
+   "C_no_lean": 3.03,
+   "delta": 0.0,
+   "C_loyo_adj": 1.24
+  },
+  {
+   "year": 2017,
+   "seat": "Dunedin North",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 31.05,
+   "A": 4.39,
+   "B": 11.32,
+   "B_lean0.5": 11.32,
+   "B_lean0.75": 11.32,
+   "B_lean1.0": 11.32,
+   "C": 9.5,
+   "C_loyo": 9.5,
+   "C_no_lean": 9.5,
+   "delta": 0.0,
+   "C_loyo_adj": 9.5
+  },
+  {
+   "year": 2017,
+   "seat": "Dunedin South",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 24.36,
+   "A": 5.08,
+   "B": 9.59,
+   "B_lean0.5": 9.59,
+   "B_lean0.75": 9.59,
+   "B_lean1.0": 9.59,
+   "C": 6.07,
+   "C_loyo": 6.07,
+   "C_no_lean": 6.07,
+   "delta": 0.0,
+   "C_loyo_adj": 6.07
+  },
+  {
+   "year": 2017,
+   "seat": "East Coast",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 1.09,
+   "A": -0.51,
+   "B": 1.25,
+   "B_lean0.5": -0.96,
+   "B_lean0.75": -2.05,
+   "B_lean1.0": -3.12,
+   "C": 1.46,
+   "C_loyo": 1.58,
+   "C_no_lean": 4.98,
+   "delta": 0.0,
+   "C_loyo_adj": 1.58
+  },
+  {
+   "year": 2017,
+   "seat": "East Coast Bays",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 42.15,
+   "A": 1.63,
+   "B": -4.65,
+   "B_lean0.5": -2.14,
+   "B_lean0.75": -0.92,
+   "B_lean1.0": 0.29,
+   "C": -3.89,
+   "C_loyo": -5.59,
+   "C_no_lean": -2.32,
+   "delta": 0.0,
+   "C_loyo_adj": -5.59
+  },
+  {
+   "year": 2017,
+   "seat": "Epsom",
+   "maori": false,
+   "top2": [
+    "ACT",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": -1.84,
+   "A": 20.71,
+   "B": 21.09,
+   "B_lean0.5": 21.15,
+   "B_lean0.75": 21.18,
+   "B_lean1.0": 21.21
+  },
+  {
+   "year": 2017,
+   "seat": "Hamilton East",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 4.76,
+   "A": 0.48,
+   "B": 0.02,
+   "B_lean0.5": 1.08,
+   "B_lean0.75": 1.61,
+   "B_lean1.0": 2.14,
+   "C": 4.29,
+   "C_loyo": 5.81,
+   "C_no_lean": 5.34,
+   "delta": 0.0,
+   "C_loyo_adj": 5.81
+  },
+  {
+   "year": 2017,
+   "seat": "Hamilton West",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 14.1,
+   "A": 0.47,
+   "B": -3.28,
+   "B_lean0.5": -1.12,
+   "B_lean0.75": -0.03,
+   "B_lean1.0": 1.07,
+   "C": 0.73,
+   "C_loyo": 1.02,
+   "C_no_lean": 0.43,
+   "delta": 0.0,
+   "C_loyo_adj": 1.02
+  },
+  {
+   "year": 2017,
+   "seat": "Helensville",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 27.6,
+   "A": 2.4,
+   "B": 2.14,
+   "B_lean0.5": 2.14,
+   "B_lean0.75": 2.14,
+   "B_lean1.0": 2.14,
+   "C": 4.21,
+   "C_loyo": 4.21,
+   "C_no_lean": 4.21,
+   "delta": 0.0,
+   "C_loyo_adj": 4.21
+  },
+  {
+   "year": 2017,
+   "seat": "Hunua",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 38.12,
+   "A": 0.94,
+   "B": 2.2,
+   "B_lean0.5": 2.2,
+   "B_lean0.75": 2.2,
+   "B_lean1.0": 2.2,
+   "C": 3.37,
+   "C_loyo": 3.37,
+   "C_no_lean": 3.37,
+   "delta": 0.0,
+   "C_loyo_adj": 3.37
+  },
+  {
+   "year": 2017,
+   "seat": "Hutt South",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": -8.71,
+   "A": -0.41,
+   "B": 0.43,
+   "B_lean0.5": 1.62,
+   "B_lean0.75": 2.22,
+   "B_lean1.0": 2.82,
+   "C": 3.78,
+   "C_loyo": 4.92,
+   "C_no_lean": 6.03,
+   "delta": 0.0,
+   "C_loyo_adj": 4.92
+  },
+  {
+   "year": 2017,
+   "seat": "Ilam",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "OTH"
+   ],
+   "missing": [
+    "NZF",
+    "OPP"
+   ],
+   "actual": 22.18,
+   "A": -6.03,
+   "B": -5.91,
+   "B_lean0.5": -5.4,
+   "B_lean0.75": -5.15,
+   "B_lean1.0": -4.9
+  },
+  {
+   "year": 2017,
+   "seat": "Invercargill",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 11.99,
+   "A": -4.34,
+   "B": -8.8,
+   "B_lean0.5": -6.83,
+   "B_lean0.75": -5.87,
+   "B_lean1.0": -4.93,
+   "C": -4.01,
+   "C_loyo": -5.47,
+   "C_no_lean": -4.31,
+   "delta": 0.0,
+   "C_loyo_adj": -5.47
+  },
+  {
+   "year": 2017,
+   "seat": "Kaikōura",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 20.48,
+   "A": -1.5,
+   "B": -4.19,
+   "B_lean0.5": -2.68,
+   "B_lean0.75": -1.98,
+   "B_lean1.0": -1.31,
+   "C": 0.01,
+   "C_loyo": 0.15,
+   "C_no_lean": -1.04,
+   "delta": 0.0,
+   "C_loyo_adj": 0.15
+  },
+  {
+   "year": 2017,
+   "seat": "Kelston",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 30.77,
+   "A": 1.98,
+   "B": 3.11,
+   "B_lean0.5": 1.11,
+   "B_lean0.75": 0.1,
+   "B_lean1.0": -0.92,
+   "C": -3.64,
+   "C_loyo": -5.44,
+   "C_no_lean": -0.41,
+   "delta": 0.0,
+   "C_loyo_adj": -5.44
+  },
+  {
+   "year": 2017,
+   "seat": "Mana",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "NZF",
+    "OPP"
+   ],
+   "actual": 36.78,
+   "A": 2.2,
+   "B": 1.98,
+   "B_lean0.5": 1.99,
+   "B_lean0.75": 2.0,
+   "B_lean1.0": 2.01,
+   "C": -1.71,
+   "C_loyo": -2.4,
+   "C_no_lean": -1.11,
+   "delta": 0.53,
+   "C_loyo_adj": -1.87
+  },
+  {
+   "year": 2017,
+   "seat": "Māngere",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 57.24,
+   "A": 1.05,
+   "B": 3.94,
+   "B_lean0.5": 4.64,
+   "B_lean0.75": 4.97,
+   "B_lean1.0": 5.31,
+   "C": 2.77,
+   "C_loyo": 3.54,
+   "C_no_lean": 5.02,
+   "delta": 0.0,
+   "C_loyo_adj": 3.54
+  },
+  {
+   "year": 2017,
+   "seat": "Manukau East",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 51.96,
+   "A": 1.35,
+   "B": 5.26,
+   "B_lean0.5": 5.26,
+   "B_lean0.75": 5.26,
+   "B_lean1.0": 5.26,
+   "C": 4.84,
+   "C_loyo": 4.84,
+   "C_no_lean": 4.84,
+   "delta": 0.0,
+   "C_loyo_adj": 4.84
+  },
+  {
+   "year": 2017,
+   "seat": "Manurewa",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 36.78,
+   "A": -0.4,
+   "B": 4.48,
+   "B_lean0.5": 3.08,
+   "B_lean0.75": 2.36,
+   "B_lean1.0": 1.61,
+   "C": -2.01,
+   "C_loyo": -3.25,
+   "C_no_lean": 1.96,
+   "delta": 0.0,
+   "C_loyo_adj": -3.25
+  },
+  {
+   "year": 2017,
+   "seat": "Maungakiekie",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 3.06,
+   "A": -0.37,
+   "B": -8.18,
+   "B_lean0.5": -7.06,
+   "B_lean0.75": -6.49,
+   "B_lean1.0": -5.92,
+   "C": -4.99,
+   "C_loyo": -6.99,
+   "C_no_lean": -4.39,
+   "delta": 0.0,
+   "C_loyo_adj": -6.99
+  },
+  {
+   "year": 2017,
+   "seat": "Mt Albert",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 43.13,
+   "A": 2.21,
+   "B": 6.69,
+   "B_lean0.5": 5.34,
+   "B_lean0.75": 4.65,
+   "B_lean1.0": 3.96,
+   "C": 1.21,
+   "C_loyo": 1.15,
+   "C_no_lean": 4.88,
+   "delta": 0.0,
+   "C_loyo_adj": 1.15
+  },
+  {
+   "year": 2017,
+   "seat": "Mt Roskill",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 19.95,
+   "A": 6.97,
+   "B": 12.52,
+   "B_lean0.5": 12.6,
+   "B_lean0.75": 12.64,
+   "B_lean1.0": 12.68,
+   "C": 5.28,
+   "C_loyo": 6.84,
+   "C_no_lean": 8.43,
+   "delta": 0.0,
+   "C_loyo_adj": 6.84
+  },
+  {
+   "year": 2017,
+   "seat": "Napier",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 20.69,
+   "A": 5.2,
+   "B": 4.71,
+   "B_lean0.5": 5.2,
+   "B_lean0.75": 5.45,
+   "B_lean1.0": 5.71,
+   "C": 1.22,
+   "C_loyo": 1.78,
+   "C_no_lean": 0.62,
+   "delta": -0.11,
+   "C_loyo_adj": 1.67
+  },
+  {
+   "year": 2017,
+   "seat": "Nelson",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 1.35,
+   "A": -0.38,
+   "B": -0.34,
+   "B_lean0.5": 1.41,
+   "B_lean0.75": 2.28,
+   "B_lean1.0": 3.13,
+   "C": 2.7,
+   "C_loyo": 3.84,
+   "C_no_lean": 1.87,
+   "delta": 0.0,
+   "C_loyo_adj": 3.84
+  },
+  {
+   "year": 2017,
+   "seat": "New Lynn",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 16.9,
+   "A": 3.13,
+   "B": 2.74,
+   "B_lean0.5": 0.84,
+   "B_lean0.75": -0.11,
+   "B_lean1.0": -1.07,
+   "C": -4.31,
+   "C_loyo": -6.27,
+   "C_no_lean": -1.84,
+   "delta": 0.0,
+   "C_loyo_adj": -6.27
+  },
+  {
+   "year": 2017,
+   "seat": "New Plymouth",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 11.35,
+   "A": -2.59,
+   "B": -3.4,
+   "B_lean0.5": -3.28,
+   "B_lean0.75": -3.23,
+   "B_lean1.0": -3.19,
+   "C": -1.66,
+   "C_loyo": -2.64,
+   "C_no_lean": 0.81,
+   "delta": 0.0,
+   "C_loyo_adj": -2.64
+  },
+  {
+   "year": 2017,
+   "seat": "North Shore",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP"
+   ],
+   "actual": 23.96,
+   "A": -0.87,
+   "B": -2.7,
+   "B_lean0.5": -1.71,
+   "B_lean0.75": -1.23,
+   "B_lean1.0": -0.77,
+   "C": 0.79,
+   "C_loyo": 1.0,
+   "C_no_lean": 1.92,
+   "delta": -1.4,
+   "C_loyo_adj": -0.4
+  },
+  {
+   "year": 2017,
+   "seat": "Northcote",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 12.39,
+   "A": 0.22,
+   "B": -7.88,
+   "B_lean0.5": -5.12,
+   "B_lean0.75": -3.74,
+   "B_lean1.0": -2.37,
+   "C": -1.27,
+   "C_loyo": -1.57,
+   "C_no_lean": -2.77,
+   "delta": 0.0,
+   "C_loyo_adj": -1.57
+  },
+  {
+   "year": 2017,
+   "seat": "Northland",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "NZF"
+   ],
+   "missing": [],
+   "actual": 1.36,
+   "A": -2.44,
+   "B": 0.08,
+   "B_lean0.5": -1.61,
+   "B_lean0.75": -2.44,
+   "B_lean1.0": -3.27
+  },
+  {
+   "year": 2017,
+   "seat": "Ōhāriu",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 7.3,
+   "A": 3.36,
+   "B": 7.5,
+   "B_lean0.5": 5.39,
+   "B_lean0.75": 4.33,
+   "B_lean1.0": 3.27,
+   "C": -1.94,
+   "C_loyo": -3.25,
+   "C_no_lean": 2.94,
+   "delta": 0.0,
+   "C_loyo_adj": -3.25
+  },
+  {
+   "year": 2017,
+   "seat": "Ōtaki",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 7.03,
+   "A": -5.49,
+   "B": -4.16,
+   "B_lean0.5": -5.27,
+   "B_lean0.75": -5.81,
+   "B_lean1.0": -6.34,
+   "C": -2.53,
+   "C_loyo": -3.91,
+   "C_no_lean": 0.62,
+   "delta": 0.0,
+   "C_loyo_adj": -3.91
+  },
+  {
+   "year": 2017,
+   "seat": "Pakuranga",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 31.3,
+   "A": 0.77,
+   "B": 2.02,
+   "B_lean0.5": 0.38,
+   "B_lean0.75": -0.44,
+   "B_lean1.0": -1.27,
+   "C": -2.1,
+   "C_loyo": -3.7,
+   "C_no_lean": 4.73,
+   "delta": 0.0,
+   "C_loyo_adj": -3.7
+  },
+  {
+   "year": 2017,
+   "seat": "Palmerston North",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 23.82,
+   "A": 5.66,
+   "B": 6.37,
+   "B_lean0.5": 5.58,
+   "B_lean0.75": 5.18,
+   "B_lean1.0": 4.79,
+   "C": -1.08,
+   "C_loyo": -1.85,
+   "C_no_lean": 2.3,
+   "delta": 0.0,
+   "C_loyo_adj": -1.85
+  },
+  {
+   "year": 2017,
+   "seat": "Papakura",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 8.62,
+   "A": 2.84,
+   "B": 1.14,
+   "B_lean0.5": -2.2,
+   "B_lean0.75": -3.9,
+   "B_lean1.0": -5.61,
+   "C": -1.3,
+   "C_loyo": -2.71,
+   "C_no_lean": 5.98,
+   "delta": 0.0,
+   "C_loyo_adj": -2.71
+  },
+  {
+   "year": 2017,
+   "seat": "Port Hills",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "OPP"
+   ],
+   "actual": 20.32,
+   "A": 5.22,
+   "B": 11.24,
+   "B_lean0.5": 11.24,
+   "B_lean0.75": 11.24,
+   "B_lean1.0": 11.24,
+   "C": 6.73,
+   "C_loyo": 6.73,
+   "C_no_lean": 6.73,
+   "delta": 0.74,
+   "C_loyo_adj": 7.47
+  },
+  {
+   "year": 2017,
+   "seat": "Rangitata",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 14.15,
+   "A": -2.65,
+   "B": -10.16,
+   "B_lean0.5": -8.63,
+   "B_lean0.75": -7.95,
+   "B_lean1.0": -7.34,
+   "C": -3.68,
+   "C_loyo": -4.88,
+   "C_no_lean": -5.33,
+   "delta": -0.18,
+   "C_loyo_adj": -5.06
+  },
+  {
+   "year": 2017,
+   "seat": "Rangitīkei",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 15.8,
+   "A": 0.44,
+   "B": 1.61,
+   "B_lean0.5": 1.9,
+   "B_lean0.75": 2.04,
+   "B_lean1.0": 2.17,
+   "C": 2.16,
+   "C_loyo": 2.63,
+   "C_no_lean": 5.31,
+   "delta": 0.0,
+   "C_loyo_adj": 2.63
+  },
+  {
+   "year": 2017,
+   "seat": "Rimutaka",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 32.58,
+   "A": 2.22,
+   "B": 0.42,
+   "B_lean0.5": 0.42,
+   "B_lean0.75": 0.42,
+   "B_lean1.0": 0.42,
+   "C": -3.67,
+   "C_loyo": -3.67,
+   "C_no_lean": -3.67,
+   "delta": 0.0,
+   "C_loyo_adj": -3.67
+  },
+  {
+   "year": 2017,
+   "seat": "Rodney",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 33.7,
+   "A": 2.09,
+   "B": 1.51,
+   "B_lean0.5": 1.51,
+   "B_lean0.75": 1.51,
+   "B_lean1.0": 1.51,
+   "C": 3.29,
+   "C_loyo": 3.29,
+   "C_no_lean": 3.29,
+   "delta": 0.0,
+   "C_loyo_adj": 3.29
+  },
+  {
+   "year": 2017,
+   "seat": "Rongotai",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 32.76,
+   "A": 4.03,
+   "B": 2.49,
+   "B_lean0.5": 1.39,
+   "B_lean0.75": 0.83,
+   "B_lean1.0": 0.26,
+   "C": 1.25,
+   "C_loyo": 1.25,
+   "C_no_lean": 1.25,
+   "delta": 0.0,
+   "C_loyo_adj": 1.25
+  },
+  {
+   "year": 2017,
+   "seat": "Rotorua",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 9.8,
+   "A": 0.8,
+   "B": 2.48,
+   "B_lean0.5": 1.92,
+   "B_lean0.75": 1.65,
+   "B_lean1.0": 1.37,
+   "C": 2.93,
+   "C_loyo": 3.63,
+   "C_no_lean": 6.31,
+   "delta": 0.0,
+   "C_loyo_adj": 3.63
+  },
+  {
+   "year": 2017,
+   "seat": "Selwyn",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 35.54,
+   "A": 3.82,
+   "B": -0.0,
+   "B_lean0.5": 1.05,
+   "B_lean0.75": 1.58,
+   "B_lean1.0": 2.1,
+   "C": -0.38,
+   "C_loyo": -0.88,
+   "C_no_lean": 2.85,
+   "delta": 0.0,
+   "C_loyo_adj": -0.88
+  },
+  {
+   "year": 2017,
+   "seat": "Tāmaki",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 26.44,
+   "A": 1.72,
+   "B": 5.82,
+   "B_lean0.5": 3.88,
+   "B_lean0.75": 2.9,
+   "B_lean1.0": 1.92,
+   "C": 2.03,
+   "C_loyo": 1.8,
+   "C_no_lean": 9.23,
+   "delta": 0.0,
+   "C_loyo_adj": 1.8
+  },
+  {
+   "year": 2017,
+   "seat": "Taranaki-King Country",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 27.52,
+   "A": 3.48,
+   "B": 5.11,
+   "B_lean0.5": 4.25,
+   "B_lean0.75": 3.82,
+   "B_lean1.0": 3.38,
+   "C": 2.43,
+   "C_loyo": 2.6,
+   "C_no_lean": 8.58,
+   "delta": -0.77,
+   "C_loyo_adj": 1.83
+  },
+  {
+   "year": 2017,
+   "seat": "Taupō",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 26.34,
+   "A": -0.35,
+   "B": -0.37,
+   "B_lean0.5": 0.13,
+   "B_lean0.75": 0.38,
+   "B_lean1.0": 0.62,
+   "C": 0.73,
+   "C_loyo": 0.63,
+   "C_no_lean": 3.43,
+   "delta": -0.6,
+   "C_loyo_adj": 0.03
+  },
+  {
+   "year": 2017,
+   "seat": "Tauranga",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 20.17,
+   "A": -4.39,
+   "B": -1.68,
+   "B_lean0.5": -2.74,
+   "B_lean0.75": -3.28,
+   "B_lean1.0": -3.83,
+   "C": -0.3,
+   "C_loyo": -0.64,
+   "C_no_lean": 1.27,
+   "delta": 0.0,
+   "C_loyo_adj": -0.64
+  },
+  {
+   "year": 2017,
+   "seat": "Te Atatū",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 17.96,
+   "A": 1.91,
+   "B": 3.26,
+   "B_lean0.5": 2.7,
+   "B_lean0.75": 2.43,
+   "B_lean1.0": 2.17,
+   "C": -2.42,
+   "C_loyo": -3.37,
+   "C_no_lean": -1.82,
+   "delta": 0.0,
+   "C_loyo_adj": -3.37
+  },
+  {
+   "year": 2017,
+   "seat": "Tukituki",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 1.93,
+   "A": -6.76,
+   "B": -7.4,
+   "B_lean0.5": -8.91,
+   "B_lean0.75": -9.67,
+   "B_lean1.0": -10.43,
+   "C": -3.02,
+   "C_loyo": -4.24,
+   "C_no_lean": -2.27,
+   "delta": 0.0,
+   "C_loyo_adj": -4.24
+  },
+  {
+   "year": 2017,
+   "seat": "Upper Harbour",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 16.76,
+   "A": 3.99,
+   "B": 0.05,
+   "B_lean0.5": 1.66,
+   "B_lean0.75": 2.46,
+   "B_lean1.0": 3.26,
+   "C": 3.3,
+   "C_loyo": 4.47,
+   "C_no_lean": 3.9,
+   "delta": 0.0,
+   "C_loyo_adj": 4.47
+  },
+  {
+   "year": 2017,
+   "seat": "Waikato",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 28.49,
+   "A": 1.03,
+   "B": 1.33,
+   "B_lean0.5": 2.03,
+   "B_lean0.75": 2.37,
+   "B_lean1.0": 2.7,
+   "C": 0.09,
+   "C_loyo": -0.39,
+   "C_no_lean": 3.76,
+   "delta": 0.0,
+   "C_loyo_adj": -0.39
+  },
+  {
+   "year": 2017,
+   "seat": "Waimakariri",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 25.21,
+   "A": -0.88,
+   "B": -10.36,
+   "B_lean0.5": -7.01,
+   "B_lean0.75": -5.39,
+   "B_lean1.0": -3.82,
+   "C": -5.61,
+   "C_loyo": -7.68,
+   "C_no_lean": -5.98,
+   "delta": 0.0,
+   "C_loyo_adj": -7.68
+  },
+  {
+   "year": 2017,
+   "seat": "Wairarapa",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 3.68,
+   "A": -5.9,
+   "B": -8.18,
+   "B_lean0.5": -8.0,
+   "B_lean0.75": -7.92,
+   "B_lean1.0": -7.86,
+   "C": -2.41,
+   "C_loyo": -3.04,
+   "C_no_lean": -4.51,
+   "delta": 0.0,
+   "C_loyo_adj": -3.04
+  },
+  {
+   "year": 2017,
+   "seat": "Waitaki",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 26.87,
+   "A": -3.2,
+   "B": -9.43,
+   "B_lean0.5": -7.34,
+   "B_lean0.75": -6.34,
+   "B_lean1.0": -5.39,
+   "C": -2.19,
+   "C_loyo": -2.64,
+   "C_no_lean": -5.34,
+   "delta": 0.0,
+   "C_loyo_adj": -2.64
+  },
+  {
+   "year": 2017,
+   "seat": "Wellington Central",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 27.56,
+   "A": 4.71,
+   "B": 4.57,
+   "B_lean0.5": 3.62,
+   "B_lean0.75": 3.14,
+   "B_lean1.0": 2.65,
+   "C": -1.93,
+   "C_loyo": -4.57,
+   "C_no_lean": 3.02,
+   "delta": 0.0,
+   "C_loyo_adj": -4.57
+  },
+  {
+   "year": 2017,
+   "seat": "West Coast-Tasman",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 19.93,
+   "A": 4.33,
+   "B": 6.78,
+   "B_lean0.5": 5.7,
+   "B_lean0.75": 5.2,
+   "B_lean1.0": 4.73,
+   "C": 0.91,
+   "C_loyo": 1.0,
+   "C_no_lean": 2.86,
+   "delta": 0.0,
+   "C_loyo_adj": 1.0
+  },
+  {
+   "year": 2017,
+   "seat": "Whanganui",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": -4.46,
+   "A": -2.32,
+   "B": -3.14,
+   "B_lean0.5": -3.51,
+   "B_lean0.75": -3.69,
+   "B_lean1.0": -3.88,
+   "C": 0.94,
+   "C_loyo": 1.21,
+   "C_no_lean": 1.62,
+   "delta": 0.0,
+   "C_loyo_adj": 1.21
+  },
+  {
+   "year": 2017,
+   "seat": "Whangarei",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 13.97,
+   "A": 3.31,
+   "B": 5.91,
+   "B_lean0.5": 5.91,
+   "B_lean0.75": 5.91,
+   "B_lean1.0": 5.91,
+   "C": 6.29,
+   "C_loyo": 6.29,
+   "C_no_lean": 6.29,
+   "delta": 0.0,
+   "C_loyo_adj": 6.29
+  },
+  {
+   "year": 2017,
+   "seat": "Wigram",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 10.59,
+   "A": 6.15,
+   "B": 17.56,
+   "B_lean0.5": 12.93,
+   "B_lean0.75": 10.54,
+   "B_lean1.0": 8.12,
+   "C": 3.8,
+   "C_loyo": 4.1,
+   "C_no_lean": 12.65,
+   "delta": 0.0,
+   "C_loyo_adj": 4.1
+  },
+  {
+   "year": 2017,
+   "seat": "Hauraki-Waikato",
+   "maori": true,
+   "top2": [
+    "LAB",
+    "TPM"
+   ],
+   "missing": [
+    "NAT",
+    "GP",
+    "NZF"
+   ],
+   "actual": 37.84,
+   "A": 6.13,
+   "B": 4.77,
+   "B_lean0.5": 6.37,
+   "B_lean0.75": 7.13,
+   "B_lean1.0": 7.88
+  },
+  {
+   "year": 2017,
+   "seat": "Ikaroa-Rāwhiti",
+   "maori": true,
+   "top2": [
+    "LAB",
+    "TPM"
+   ],
+   "missing": [
+    "NAT",
+    "NZF"
+   ],
+   "actual": 13.13,
+   "A": 5.81,
+   "B": 4.96,
+   "B_lean0.5": 6.53,
+   "B_lean0.75": 7.26,
+   "B_lean1.0": 7.94
+  },
+  {
+   "year": 2017,
+   "seat": "Tāmaki Makaurau",
+   "maori": true,
+   "top2": [
+    "LAB",
+    "TPM"
+   ],
+   "missing": [
+    "NAT",
+    "NZF"
+   ],
+   "actual": 19.09,
+   "A": 1.06,
+   "B": -0.7,
+   "B_lean0.5": 1.18,
+   "B_lean0.75": 2.05,
+   "B_lean1.0": 2.88
+  },
+  {
+   "year": 2017,
+   "seat": "Te Tai Hauāuru",
+   "maori": true,
+   "top2": [
+    "LAB",
+    "TPM"
+   ],
+   "missing": [
+    "NAT",
+    "NZF"
+   ],
+   "actual": -2.03,
+   "A": 7.26,
+   "B": 6.29,
+   "B_lean0.5": 7.97,
+   "B_lean0.75": 8.76,
+   "B_lean1.0": 9.52
+  },
+  {
+   "year": 2017,
+   "seat": "Te Tai Tokerau",
+   "maori": true,
+   "top2": [
+    "LAB",
+    "OTH"
+   ],
+   "missing": [
+    "NAT",
+    "NZF"
+   ],
+   "actual": 10.62,
+   "A": 15.25,
+   "B": 15.62,
+   "B_lean0.5": 16.2,
+   "B_lean0.75": 16.48,
+   "B_lean1.0": 16.75
+  },
+  {
+   "year": 2017,
+   "seat": "Te Tai Tonga",
+   "maori": true,
+   "top2": [
+    "LAB",
+    "GP"
+   ],
+   "missing": [
+    "NAT",
+    "NZF",
+    "OPP"
+   ],
+   "actual": 14.36,
+   "A": 7.96,
+   "B": 6.4,
+   "B_lean0.5": 7.82,
+   "B_lean0.75": 8.51,
+   "B_lean1.0": 9.17
+  },
+  {
+   "year": 2017,
+   "seat": "Waiariki",
+   "maori": true,
+   "top2": [
+    "LAB",
+    "TPM"
+   ],
+   "missing": [
+    "NAT",
+    "GP",
+    "NZF"
+   ],
+   "actual": 8.61,
+   "A": -0.47,
+   "B": -4.54,
+   "B_lean0.5": -2.06,
+   "B_lean0.75": -0.87,
+   "B_lean1.0": 0.29
+  },
+  {
+   "year": 2020,
+   "seat": "Auckland Central",
+   "maori": false,
+   "top2": [
+    "GP",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 5.76,
+   "A": -3.69,
+   "B": -1.49,
+   "B_lean0.5": -2.59,
+   "B_lean0.75": -3.11,
+   "B_lean1.0": -3.62
+  },
+  {
+   "year": 2020,
+   "seat": "Banks Peninsula",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 27.9,
+   "A": 4.58,
+   "B": 8.31,
+   "B_lean0.5": 5.64,
+   "B_lean0.75": 4.26,
+   "B_lean1.0": 2.85,
+   "C": 3.94,
+   "C_loyo": 5.34,
+   "C_no_lean": 10.17,
+   "delta": 0.0,
+   "C_loyo_adj": 5.34
+  },
+  {
+   "year": 2020,
+   "seat": "Bay of Plenty",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": -4.66,
+   "A": 2.47,
+   "B": 2.35,
+   "B_lean0.5": 2.09,
+   "B_lean0.75": 1.97,
+   "B_lean1.0": 1.84,
+   "C": -1.28,
+   "C_loyo": -2.26,
+   "C_no_lean": 2.99,
+   "delta": 0.0,
+   "C_loyo_adj": -2.26
+  },
+  {
+   "year": 2020,
+   "seat": "Botany",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP"
+   ],
+   "actual": -11.64,
+   "A": 10.42,
+   "B": 14.44,
+   "B_lean0.5": 12.21,
+   "B_lean0.75": 11.14,
+   "B_lean1.0": 10.1,
+   "C": 7.41,
+   "C_loyo": 9.16,
+   "C_no_lean": 15.81,
+   "delta": -1.21,
+   "C_loyo_adj": 7.95
+  },
+  {
+   "year": 2020,
+   "seat": "Christchurch Central",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 36.94,
+   "A": 3.6,
+   "B": 8.26,
+   "B_lean0.5": 5.36,
+   "B_lean0.75": 3.85,
+   "B_lean1.0": 2.3,
+   "C": 3.4,
+   "C_loyo": 3.93,
+   "C_no_lean": 9.62,
+   "delta": 0.0,
+   "C_loyo_adj": 3.93
+  },
+  {
+   "year": 2020,
+   "seat": "Christchurch East",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 44.35,
+   "A": 3.85,
+   "B": 7.24,
+   "B_lean0.5": 4.99,
+   "B_lean0.75": 3.81,
+   "B_lean1.0": 2.61,
+   "C": 4.81,
+   "C_loyo": 5.91,
+   "C_no_lean": 10.28,
+   "delta": 0.0,
+   "C_loyo_adj": 5.91
+  },
+  {
+   "year": 2020,
+   "seat": "Coromandel",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": -4.45,
+   "A": 1.69,
+   "B": 1.26,
+   "B_lean0.5": 2.9,
+   "B_lean0.75": 3.72,
+   "B_lean1.0": 4.55,
+   "C": 0.47,
+   "C_loyo": 0.41,
+   "C_no_lean": 2.42,
+   "delta": -0.07,
+   "C_loyo_adj": 0.34
+  },
+  {
+   "year": 2020,
+   "seat": "Dunedin",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 33.99,
+   "A": 1.63,
+   "B": 7.12,
+   "B_lean0.5": 4.46,
+   "B_lean0.75": 3.05,
+   "B_lean1.0": 1.6,
+   "C": 2.63,
+   "C_loyo": 2.33,
+   "C_no_lean": 11.93,
+   "delta": 0.0,
+   "C_loyo_adj": 2.33
+  },
+  {
+   "year": 2020,
+   "seat": "East Coast",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 27.74,
+   "A": 0.2,
+   "B": -1.93,
+   "B_lean0.5": -1.35,
+   "B_lean0.75": -1.1,
+   "B_lean1.0": -0.88,
+   "C": 0.49,
+   "C_loyo": 1.1,
+   "C_no_lean": -3.03,
+   "delta": 0.27,
+   "C_loyo_adj": 1.37
+  },
+  {
+   "year": 2020,
+   "seat": "East Coast Bays",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 8.99,
+   "A": 8.52,
+   "B": 5.53,
+   "B_lean0.5": 8.62,
+   "B_lean0.75": 10.2,
+   "B_lean1.0": 11.8,
+   "C": 4.27,
+   "C_loyo": 5.64,
+   "C_no_lean": 5.85,
+   "delta": 0.0,
+   "C_loyo_adj": 5.64
+  },
+  {
+   "year": 2020,
+   "seat": "Epsom",
+   "maori": false,
+   "top2": [
+    "ACT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 3.81,
+   "A": 11.47,
+   "B": 15.01,
+   "B_lean0.5": 14.25,
+   "B_lean0.75": 13.89,
+   "B_lean1.0": 13.53
+  },
+  {
+   "year": 2020,
+   "seat": "Hamilton East",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 18.73,
+   "A": -2.27,
+   "B": -1.59,
+   "B_lean0.5": -2.41,
+   "B_lean0.75": -2.84,
+   "B_lean1.0": -3.27,
+   "C": -0.97,
+   "C_loyo": -1.24,
+   "C_no_lean": -2.02,
+   "delta": 0.0,
+   "C_loyo_adj": -1.24
+  },
+  {
+   "year": 2020,
+   "seat": "Hamilton West",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "GP"
+   ],
+   "actual": 28.21,
+   "A": -2.83,
+   "B": -2.94,
+   "B_lean0.5": -5.07,
+   "B_lean0.75": -6.18,
+   "B_lean1.0": -7.31,
+   "C": -3.57,
+   "C_loyo": -4.93,
+   "C_no_lean": -3.27,
+   "delta": 0.71,
+   "C_loyo_adj": -4.22
+  },
+  {
+   "year": 2020,
+   "seat": "Hutt South",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 21.11,
+   "A": -6.34,
+   "B": -5.22,
+   "B_lean0.5": -5.45,
+   "B_lean0.75": -5.57,
+   "B_lean1.0": -5.7,
+   "C": -1.33,
+   "C_loyo": -1.56,
+   "C_no_lean": -3.58,
+   "delta": 0.0,
+   "C_loyo_adj": -1.56
+  },
+  {
+   "year": 2020,
+   "seat": "Ilam",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 17.68,
+   "A": -0.84,
+   "B": 1.22,
+   "B_lean0.5": 0.23,
+   "B_lean0.75": -0.28,
+   "B_lean1.0": -0.78,
+   "C": -0.02,
+   "C_loyo": -0.1,
+   "C_no_lean": -0.1,
+   "delta": 0.0,
+   "C_loyo_adj": -0.1
+  },
+  {
+   "year": 2020,
+   "seat": "Invercargill",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "ACT"
+   ],
+   "actual": -10.02,
+   "A": 3.07,
+   "B": -1.08,
+   "B_lean0.5": 2.5,
+   "B_lean0.75": 4.34,
+   "B_lean1.0": 6.21,
+   "C": 0.8,
+   "C_loyo": 1.14,
+   "C_no_lean": 0.5,
+   "delta": -0.18,
+   "C_loyo_adj": 0.96
+  },
+  {
+   "year": 2020,
+   "seat": "Kaikōura",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": -0.45,
+   "A": -0.65,
+   "B": -5.05,
+   "B_lean0.5": -2.84,
+   "B_lean0.75": -1.74,
+   "B_lean1.0": -0.64,
+   "C": -3.57,
+   "C_loyo": -4.77,
+   "C_no_lean": -4.62,
+   "delta": 0.0,
+   "C_loyo_adj": -4.77
+  },
+  {
+   "year": 2020,
+   "seat": "Kaipara ki Mahurangi",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 0.36,
+   "A": 2.44,
+   "B": -0.14,
+   "B_lean0.5": 0.45,
+   "B_lean0.75": 0.75,
+   "B_lean1.0": 1.05,
+   "C": -0.95,
+   "C_loyo": -2.11,
+   "C_no_lean": 0.55,
+   "delta": 0.0,
+   "C_loyo_adj": -2.11
+  },
+  {
+   "year": 2020,
+   "seat": "Kelston",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 49.22,
+   "A": 1.35,
+   "B": 3.52,
+   "B_lean0.5": 3.08,
+   "B_lean0.75": 2.84,
+   "B_lean1.0": 2.6,
+   "C": 3.46,
+   "C_loyo": 4.32,
+   "C_no_lean": 6.69,
+   "delta": 0.0,
+   "C_loyo_adj": 4.32
+  },
+  {
+   "year": 2020,
+   "seat": "Mana",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "ACT"
+   ],
+   "actual": 45.42,
+   "A": 1.55,
+   "B": 1.28,
+   "B_lean0.5": 1.77,
+   "B_lean0.75": 2.01,
+   "B_lean1.0": 2.24,
+   "C": 2.59,
+   "C_loyo": 3.5,
+   "C_no_lean": 3.19,
+   "delta": 0.97,
+   "C_loyo_adj": 4.47
+  },
+  {
+   "year": 2020,
+   "seat": "Māngere",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 70.51,
+   "A": -1.69,
+   "B": -3.07,
+   "B_lean0.5": -3.27,
+   "B_lean0.75": -3.41,
+   "B_lean1.0": -3.57,
+   "C": 1.25,
+   "C_loyo": 1.44,
+   "C_no_lean": 3.5,
+   "delta": 0.12,
+   "C_loyo_adj": 1.56
+  },
+  {
+   "year": 2020,
+   "seat": "Manurewa",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 64.8,
+   "A": 0.35,
+   "B": -0.16,
+   "B_lean0.5": -1.23,
+   "B_lean0.75": -1.82,
+   "B_lean1.0": -2.45,
+   "C": 1.3,
+   "C_loyo": 1.3,
+   "C_no_lean": 5.27,
+   "delta": 0.0,
+   "C_loyo_adj": 1.3
+  },
+  {
+   "year": 2020,
+   "seat": "Maungakiekie",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 15.6,
+   "A": -9.72,
+   "B": -6.95,
+   "B_lean0.5": -8.26,
+   "B_lean0.75": -8.94,
+   "B_lean1.0": -9.63,
+   "C": -5.63,
+   "C_loyo": -7.61,
+   "C_no_lean": -6.23,
+   "delta": 0.0,
+   "C_loyo_adj": -7.61
+  },
+  {
+   "year": 2020,
+   "seat": "Mt Albert",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "ACT"
+   ],
+   "actual": 56.54,
+   "A": 0.76,
+   "B": 3.63,
+   "B_lean0.5": 1.96,
+   "B_lean0.75": 1.09,
+   "B_lean1.0": 0.21,
+   "C": 2.01,
+   "C_loyo": 2.26,
+   "C_no_lean": 5.69,
+   "delta": 0.45,
+   "C_loyo_adj": 2.71
+  },
+  {
+   "year": 2020,
+   "seat": "Mt Roskill",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 44.14,
+   "A": 2.95,
+   "B": 2.08,
+   "B_lean0.5": 0.98,
+   "B_lean0.75": 0.43,
+   "B_lean1.0": -0.13,
+   "C": -0.41,
+   "C_loyo": -0.99,
+   "C_no_lean": 2.74,
+   "delta": 0.0,
+   "C_loyo_adj": -0.99
+  },
+  {
+   "year": 2020,
+   "seat": "Napier",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 23.75,
+   "A": 0.39,
+   "B": 1.96,
+   "B_lean0.5": 1.44,
+   "B_lean0.75": 1.13,
+   "B_lean1.0": 0.79,
+   "C": 1.1,
+   "C_loyo": 1.62,
+   "C_no_lean": 0.5,
+   "delta": 0.0,
+   "C_loyo_adj": 1.62
+  },
+  {
+   "year": 2020,
+   "seat": "Nelson",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 16.43,
+   "A": -2.54,
+   "B": 2.57,
+   "B_lean0.5": 0.96,
+   "B_lean0.75": 0.12,
+   "B_lean1.0": -0.75,
+   "C": 3.48,
+   "C_loyo": 4.66,
+   "C_no_lean": 4.31,
+   "delta": 0.0,
+   "C_loyo_adj": 4.66
+  },
+  {
+   "year": 2020,
+   "seat": "New Lynn",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 37.85,
+   "A": 2.52,
+   "B": 3.25,
+   "B_lean0.5": 2.59,
+   "B_lean0.75": 2.25,
+   "B_lean1.0": 1.89,
+   "C": 1.87,
+   "C_loyo": 2.23,
+   "C_no_lean": 4.35,
+   "delta": 0.0,
+   "C_loyo_adj": 2.23
+  },
+  {
+   "year": 2020,
+   "seat": "New Plymouth",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "GP"
+   ],
+   "actual": 19.53,
+   "A": -2.72,
+   "B": -2.66,
+   "B_lean0.5": -4.23,
+   "B_lean0.75": -5.04,
+   "B_lean1.0": -5.87,
+   "C": -1.77,
+   "C_loyo": -2.08,
+   "C_no_lean": -4.25,
+   "delta": 0.6,
+   "C_loyo_adj": -1.48
+  },
+  {
+   "year": 2020,
+   "seat": "North Shore",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": -2.8,
+   "A": 1.27,
+   "B": 1.34,
+   "B_lean0.5": 3.02,
+   "B_lean0.75": 3.85,
+   "B_lean1.0": 4.67,
+   "C": 1.58,
+   "C_loyo": 2.09,
+   "C_no_lean": 2.71,
+   "delta": 0.0,
+   "C_loyo_adj": 2.09
+  },
+  {
+   "year": 2020,
+   "seat": "Northcote",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 16.14,
+   "A": -3.68,
+   "B": 0.57,
+   "B_lean0.5": -2.47,
+   "B_lean0.75": -4.03,
+   "B_lean1.0": -5.61,
+   "C": -1.66,
+   "C_loyo": -2.46,
+   "C_no_lean": -0.16,
+   "delta": 0.0,
+   "C_loyo_adj": -2.46
+  },
+  {
+   "year": 2020,
+   "seat": "Northland",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 15.66,
+   "A": -2.63,
+   "B": -6.47,
+   "B_lean0.5": -5.02,
+   "B_lean0.75": -4.32,
+   "B_lean1.0": -3.64,
+   "C": -1.67,
+   "C_loyo": -1.86,
+   "C_no_lean": -6.17,
+   "delta": 0.0,
+   "C_loyo_adj": -1.86
+  },
+  {
+   "year": 2020,
+   "seat": "Ōhāriu",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 30.87,
+   "A": 2.54,
+   "B": 6.3,
+   "B_lean0.5": 4.43,
+   "B_lean0.75": 3.44,
+   "B_lean1.0": 2.41,
+   "C": 2.84,
+   "C_loyo": 3.33,
+   "C_no_lean": 7.72,
+   "delta": 0.0,
+   "C_loyo_adj": 3.33
+  },
+  {
+   "year": 2020,
+   "seat": "Ōtaki",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 23.18,
+   "A": -4.73,
+   "B": -7.01,
+   "B_lean0.5": -7.53,
+   "B_lean0.75": -7.83,
+   "B_lean1.0": -8.15,
+   "C": -4.26,
+   "C_loyo": -5.42,
+   "C_no_lean": -7.41,
+   "delta": 0.0,
+   "C_loyo_adj": -5.42
+  },
+  {
+   "year": 2020,
+   "seat": "Pakuranga",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 5.85,
+   "A": 10.1,
+   "B": 14.42,
+   "B_lean0.5": 12.87,
+   "B_lean0.75": 12.13,
+   "B_lean1.0": 11.41,
+   "C": 7.6,
+   "C_loyo": 9.62,
+   "C_no_lean": 14.42,
+   "delta": 0.0,
+   "C_loyo_adj": 9.62
+  },
+  {
+   "year": 2020,
+   "seat": "Palmerston North",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 38.37,
+   "A": 3.35,
+   "B": 4.56,
+   "B_lean0.5": 3.74,
+   "B_lean0.75": 3.31,
+   "B_lean1.0": 2.89,
+   "C": 1.86,
+   "C_loyo": 2.19,
+   "C_no_lean": 5.24,
+   "delta": 0.0,
+   "C_loyo_adj": 2.19
+  },
+  {
+   "year": 2020,
+   "seat": "Panmure-Ōtāhuhu",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 65.9,
+   "A": 0.04,
+   "B": 2.14,
+   "B_lean0.5": 0.93,
+   "B_lean0.75": 0.28,
+   "B_lean1.0": -0.41,
+   "C": 1.91,
+   "C_loyo": 2.06,
+   "C_no_lean": 7.24,
+   "delta": 0.0,
+   "C_loyo_adj": 2.06
+  },
+  {
+   "year": 2020,
+   "seat": "Papakura",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": -2.72,
+   "A": 5.16,
+   "B": 8.85,
+   "B_lean0.5": 7.4,
+   "B_lean0.75": 6.68,
+   "B_lean1.0": 5.96,
+   "C": 2.72,
+   "C_loyo": 2.82,
+   "C_no_lean": 10.0,
+   "delta": 0.0,
+   "C_loyo_adj": 2.82
+  },
+  {
+   "year": 2020,
+   "seat": "Port Waikato",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 1.32,
+   "A": 2.94,
+   "B": 0.51,
+   "B_lean0.5": 0.51,
+   "B_lean0.75": 0.51,
+   "B_lean1.0": 0.51,
+   "C": -0.03,
+   "C_loyo": -0.1,
+   "C_no_lean": -0.1,
+   "delta": 0.0,
+   "C_loyo_adj": -0.1
+  },
+  {
+   "year": 2020,
+   "seat": "Rangitata",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 20.69,
+   "A": 0.13,
+   "B": 2.18,
+   "B_lean0.5": -2.0,
+   "B_lean0.75": -4.06,
+   "B_lean1.0": -6.1,
+   "C": -1.69,
+   "C_loyo": -2.5,
+   "C_no_lean": -0.04,
+   "delta": 0.0,
+   "C_loyo_adj": -2.5
+  },
+  {
+   "year": 2020,
+   "seat": "Rangitīkei",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": -6.4,
+   "A": 6.16,
+   "B": 3.72,
+   "B_lean0.5": 4.38,
+   "B_lean0.75": 4.73,
+   "B_lean1.0": 5.11,
+   "C": 1.17,
+   "C_loyo": 1.27,
+   "C_no_lean": 4.32,
+   "delta": 0.0,
+   "C_loyo_adj": 1.27
+  },
+  {
+   "year": 2020,
+   "seat": "Remutaka",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 51.21,
+   "A": 3.73,
+   "B": 5.61,
+   "B_lean0.5": 4.44,
+   "B_lean0.75": 3.84,
+   "B_lean1.0": 3.24,
+   "C": 2.74,
+   "C_loyo": 3.48,
+   "C_no_lean": 7.69,
+   "delta": 0.0,
+   "C_loyo_adj": 3.48
+  },
+  {
+   "year": 2020,
+   "seat": "Rongotai",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "GP"
+   ],
+   "missing": [],
+   "actual": 39.19,
+   "A": 6.61,
+   "B": 5.07,
+   "B_lean0.5": 4.91,
+   "B_lean0.75": 4.83,
+   "B_lean1.0": 4.73
+  },
+  {
+   "year": 2020,
+   "seat": "Rotorua",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": -8.01,
+   "A": 2.23,
+   "B": 0.28,
+   "B_lean0.5": -0.27,
+   "B_lean0.75": -0.52,
+   "B_lean1.0": -0.75,
+   "C": -2.77,
+   "C_loyo": -4.21,
+   "C_no_lean": 0.6,
+   "delta": 0.0,
+   "C_loyo_adj": -4.21
+  },
+  {
+   "year": 2020,
+   "seat": "Selwyn",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": -1.33,
+   "A": 5.06,
+   "B": 2.21,
+   "B_lean0.5": 4.47,
+   "B_lean0.75": 5.61,
+   "B_lean1.0": 6.77,
+   "C": 0.54,
+   "C_loyo": 0.38,
+   "C_no_lean": 3.77,
+   "delta": 0.0,
+   "C_loyo_adj": 0.38
+  },
+  {
+   "year": 2020,
+   "seat": "Southland",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "ACT"
+   ],
+   "actual": 4.17,
+   "A": -1.19,
+   "B": -2.17,
+   "B_lean0.5": -1.5,
+   "B_lean0.75": -1.2,
+   "B_lean1.0": -0.92,
+   "C": -2.23,
+   "C_loyo": -4.6,
+   "C_no_lean": 0.62,
+   "delta": -0.83,
+   "C_loyo_adj": -5.43
+  },
+  {
+   "year": 2020,
+   "seat": "Taieri",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 32.46,
+   "A": 0.6,
+   "B": 5.69,
+   "B_lean0.5": 3.07,
+   "B_lean0.75": 1.73,
+   "B_lean1.0": 0.36,
+   "C": 2.44,
+   "C_loyo": 3.32,
+   "C_no_lean": 6.34,
+   "delta": 0.0,
+   "C_loyo_adj": 3.32
+  },
+  {
+   "year": 2020,
+   "seat": "Takanini",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "GP"
+   ],
+   "actual": 36.48,
+   "A": -5.9,
+   "B": -6.45,
+   "B_lean0.5": -5.66,
+   "B_lean0.75": -5.26,
+   "B_lean1.0": -4.87,
+   "C": -3.01,
+   "C_loyo": -4.1,
+   "C_no_lean": -7.66,
+   "delta": 1.23,
+   "C_loyo_adj": -2.87
+  },
+  {
+   "year": 2020,
+   "seat": "Tāmaki",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 2.23,
+   "A": 5.38,
+   "B": 8.75,
+   "B_lean0.5": 6.37,
+   "B_lean0.75": 5.19,
+   "B_lean1.0": 4.02,
+   "C": 2.7,
+   "C_loyo": 2.98,
+   "C_no_lean": 9.9,
+   "delta": 0.0,
+   "C_loyo_adj": 2.98
+  },
+  {
+   "year": 2020,
+   "seat": "Taranaki-King Country",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP"
+   ],
+   "actual": -9.47,
+   "A": 5.79,
+   "B": 7.08,
+   "B_lean0.5": 6.4,
+   "B_lean0.75": 6.07,
+   "B_lean1.0": 5.74,
+   "C": 3.07,
+   "C_loyo": 3.47,
+   "C_no_lean": 9.22,
+   "delta": -1.18,
+   "C_loyo_adj": 2.29
+  },
+  {
+   "year": 2020,
+   "seat": "Taupō",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": -1.05,
+   "A": 3.71,
+   "B": 3.16,
+   "B_lean0.5": 4.22,
+   "B_lean0.75": 4.78,
+   "B_lean1.0": 5.34,
+   "C": 1.04,
+   "C_loyo": 1.06,
+   "C_no_lean": 3.74,
+   "delta": 0.0,
+   "C_loyo_adj": 1.06
+  },
+  {
+   "year": 2020,
+   "seat": "Tauranga",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": -9.34,
+   "A": 0.94,
+   "B": 3.76,
+   "B_lean0.5": 2.87,
+   "B_lean0.75": 2.43,
+   "B_lean1.0": 1.99,
+   "C": 3.06,
+   "C_loyo": 3.99,
+   "C_no_lean": 4.63,
+   "delta": 0.0,
+   "C_loyo_adj": 3.99
+  },
+  {
+   "year": 2020,
+   "seat": "Te Atatū",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 35.18,
+   "A": 1.09,
+   "B": 2.24,
+   "B_lean0.5": 2.42,
+   "B_lean0.75": 2.51,
+   "B_lean1.0": 2.59,
+   "C": 2.56,
+   "C_loyo": 3.49,
+   "C_no_lean": 3.16,
+   "delta": 0.0,
+   "C_loyo_adj": 3.49
+  },
+  {
+   "year": 2020,
+   "seat": "Tukituki",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 14.66,
+   "A": 2.27,
+   "B": 0.36,
+   "B_lean0.5": -0.28,
+   "B_lean0.75": -0.63,
+   "B_lean1.0": -1.01,
+   "C": -0.38,
+   "C_loyo": -0.42,
+   "C_no_lean": -1.13,
+   "delta": 0.0,
+   "C_loyo_adj": -0.42
+  },
+  {
+   "year": 2020,
+   "seat": "Upper Harbour",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 13.98,
+   "A": -0.3,
+   "B": 2.58,
+   "B_lean0.5": 1.34,
+   "B_lean0.75": 0.71,
+   "B_lean1.0": 0.08,
+   "C": 2.23,
+   "C_loyo": 3.12,
+   "C_no_lean": 1.63,
+   "delta": 0.0,
+   "C_loyo_adj": 3.12
+  },
+  {
+   "year": 2020,
+   "seat": "Waikato",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP"
+   ],
+   "actual": -2.84,
+   "A": 7.35,
+   "B": 5.31,
+   "B_lean0.5": 5.48,
+   "B_lean0.75": 5.57,
+   "B_lean1.0": 5.67,
+   "C": 3.61,
+   "C_loyo": 4.46,
+   "C_no_lean": 7.28,
+   "delta": -0.94,
+   "C_loyo_adj": 3.52
+  },
+  {
+   "year": 2020,
+   "seat": "Waimakariri",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP"
+   ],
+   "actual": -9.61,
+   "A": 9.75,
+   "B": 3.18,
+   "B_lean0.5": 7.99,
+   "B_lean0.75": 10.47,
+   "B_lean1.0": 13.0,
+   "C": 3.74,
+   "C_loyo": 5.17,
+   "C_no_lean": 3.36,
+   "delta": -0.17,
+   "C_loyo_adj": 5.0
+  },
+  {
+   "year": 2020,
+   "seat": "Wairarapa",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 23.41,
+   "A": 2.56,
+   "B": 3.04,
+   "B_lean0.5": 0.32,
+   "B_lean0.75": -1.11,
+   "B_lean1.0": -2.6,
+   "C": -0.53,
+   "C_loyo": -1.01,
+   "C_no_lean": 1.57,
+   "delta": 0.0,
+   "C_loyo_adj": -1.01
+  },
+  {
+   "year": 2020,
+   "seat": "Waitaki",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 1.94,
+   "A": 0.39,
+   "B": -5.68,
+   "B_lean0.5": -2.35,
+   "B_lean0.75": -0.68,
+   "B_lean1.0": 1.0,
+   "C": -1.84,
+   "C_loyo": -2.15,
+   "C_no_lean": -4.99,
+   "delta": 0.0,
+   "C_loyo_adj": -2.15
+  },
+  {
+   "year": 2020,
+   "seat": "Wellington Central",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 40.79,
+   "A": 4.51,
+   "B": 5.99,
+   "B_lean0.5": 5.56,
+   "B_lean0.75": 5.32,
+   "B_lean1.0": 5.07,
+   "C": 5.17,
+   "C_loyo": 7.86,
+   "C_no_lean": 10.12,
+   "delta": 0.0,
+   "C_loyo_adj": 7.86
+  },
+  {
+   "year": 2020,
+   "seat": "West Coast-Tasman",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 22.43,
+   "A": -0.92,
+   "B": 2.64,
+   "B_lean0.5": 0.29,
+   "B_lean0.75": -0.89,
+   "B_lean1.0": -2.06,
+   "C": 0.39,
+   "C_loyo": 0.29,
+   "C_no_lean": 2.34,
+   "delta": 0.0,
+   "C_loyo_adj": 0.29
+  },
+  {
+   "year": 2020,
+   "seat": "Whanganui",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "ACT",
+    "NZF"
+   ],
+   "actual": 28.47,
+   "A": 2.71,
+   "B": 3.68,
+   "B_lean0.5": 2.3,
+   "B_lean0.75": 1.52,
+   "B_lean1.0": 0.69,
+   "C": 2.95,
+   "C_loyo": 4.14,
+   "C_no_lean": 2.27,
+   "delta": 0.82,
+   "C_loyo_adj": 4.96
+  },
+  {
+   "year": 2020,
+   "seat": "Whangaparāoa",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP"
+   ],
+   "actual": 2.29,
+   "A": 7.69,
+   "B": 5.49,
+   "B_lean0.5": 8.88,
+   "B_lean0.75": 10.54,
+   "B_lean1.0": 12.18,
+   "C": 3.73,
+   "C_loyo": 5.78,
+   "C_no_lean": 6.73,
+   "delta": -0.43,
+   "C_loyo_adj": 5.35
+  },
+  {
+   "year": 2020,
+   "seat": "Whangārei",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 11.28,
+   "A": -0.41,
+   "B": -1.11,
+   "B_lean0.5": -1.46,
+   "B_lean0.75": -1.7,
+   "B_lean1.0": -1.98,
+   "C": 1.01,
+   "C_loyo": 2.03,
+   "C_no_lean": -0.34,
+   "delta": 0.0,
+   "C_loyo_adj": 2.03
+  },
+  {
+   "year": 2020,
+   "seat": "Wigram",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 38.34,
+   "A": 4.34,
+   "B": 10.65,
+   "B_lean0.5": 6.62,
+   "B_lean0.75": 4.48,
+   "B_lean1.0": 2.27,
+   "C": 2.97,
+   "C_loyo": 2.96,
+   "C_no_lean": 11.82,
+   "delta": 0.0,
+   "C_loyo_adj": 2.96
+  },
+  {
+   "year": 2020,
+   "seat": "Hauraki-Waikato",
+   "maori": true,
+   "top2": [
+    "LAB",
+    "TPM"
+   ],
+   "missing": [
+    "NAT",
+    "GP",
+    "NZF"
+   ],
+   "actual": 33.31,
+   "A": 7.32,
+   "B": 4.92,
+   "B_lean0.5": 6.23,
+   "B_lean0.75": 6.86,
+   "B_lean1.0": 7.49
+  },
+  {
+   "year": 2020,
+   "seat": "Ikaroa-Rāwhiti",
+   "maori": true,
+   "top2": [
+    "LAB",
+    "TPM"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 17.93,
+   "A": 4.58,
+   "B": 2.66,
+   "B_lean0.5": 3.98,
+   "B_lean0.75": 4.61,
+   "B_lean1.0": 5.22
+  },
+  {
+   "year": 2020,
+   "seat": "Tāmaki Makaurau",
+   "maori": true,
+   "top2": [
+    "LAB",
+    "TPM"
+   ],
+   "missing": [
+    "NAT",
+    "NZF"
+   ],
+   "actual": -0.32,
+   "A": 3.6,
+   "B": 0.16,
+   "B_lean0.5": 1.83,
+   "B_lean0.75": 2.61,
+   "B_lean1.0": 3.36
+  },
+  {
+   "year": 2020,
+   "seat": "Te Tai Hauāuru",
+   "maori": true,
+   "top2": [
+    "LAB",
+    "TPM"
+   ],
+   "missing": [
+    "NAT",
+    "GP",
+    "NZF"
+   ],
+   "actual": -1.49,
+   "A": 3.14,
+   "B": 0.63,
+   "B_lean0.5": 2.22,
+   "B_lean0.75": 2.98,
+   "B_lean1.0": 3.71
+  },
+  {
+   "year": 2020,
+   "seat": "Te Tai Tokerau",
+   "maori": true,
+   "top2": [
+    "LAB",
+    "TPM"
+   ],
+   "missing": [
+    "NAT",
+    "GP",
+    "NZF"
+   ],
+   "actual": 22.2,
+   "A": 8.97,
+   "B": 6.65,
+   "B_lean0.5": 7.14,
+   "B_lean0.75": 7.38,
+   "B_lean1.0": 7.61
+  },
+  {
+   "year": 2020,
+   "seat": "Te Tai Tonga",
+   "maori": true,
+   "top2": [
+    "LAB",
+    "TPM"
+   ],
+   "missing": [
+    "NAT",
+    "NZF"
+   ],
+   "actual": 14.85,
+   "A": 8.64,
+   "B": 7.85,
+   "B_lean0.5": 8.71,
+   "B_lean0.75": 9.12,
+   "B_lean1.0": 9.51
+  },
+  {
+   "year": 2020,
+   "seat": "Waiariki",
+   "maori": true,
+   "top2": [
+    "TPM",
+    "LAB"
+   ],
+   "missing": [
+    "GP",
+    "NZF"
+   ],
+   "actual": 6.7,
+   "A": -1.03,
+   "B": 2.49,
+   "B_lean0.5": 0.29,
+   "B_lean0.75": -0.75,
+   "B_lean1.0": -1.75
+  },
+  {
+   "year": 2023,
+   "seat": "Auckland Central",
+   "maori": false,
+   "top2": [
+    "GP",
+    "NAT"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 16.29,
+   "A": -2.07,
+   "B": 4.2,
+   "B_lean0.5": -0.5,
+   "B_lean0.75": -2.84,
+   "B_lean1.0": -5.17
+  },
+  {
+   "year": 2023,
+   "seat": "Banks Peninsula",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "OPP"
+   ],
+   "actual": 3.55,
+   "A": -2.68,
+   "B": -8.65,
+   "B_lean0.5": -6.29,
+   "B_lean0.75": -5.11,
+   "B_lean1.0": -3.93,
+   "C": -0.22,
+   "C_loyo": 1.18,
+   "C_no_lean": -6.44,
+   "delta": -0.23,
+   "C_loyo_adj": 0.95
+  },
+  {
+   "year": 2023,
+   "seat": "Bay of Plenty",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 29.11,
+   "A": 1.85,
+   "B": 3.17,
+   "B_lean0.5": 2.57,
+   "B_lean0.75": 2.26,
+   "B_lean1.0": 1.95,
+   "C": -0.81,
+   "C_loyo": -1.61,
+   "C_no_lean": 3.46,
+   "delta": 0.0,
+   "C_loyo_adj": -1.61
+  },
+  {
+   "year": 2023,
+   "seat": "Botany",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP",
+    "NZF"
+   ],
+   "actual": 35.51,
+   "A": 3.88,
+   "B": 7.56,
+   "B_lean0.5": 6.03,
+   "B_lean0.75": 5.26,
+   "B_lean1.0": 4.48,
+   "C": 0.06,
+   "C_loyo": -0.95,
+   "C_no_lean": 8.46,
+   "delta": -1.41,
+   "C_loyo_adj": -2.36
+  },
+  {
+   "year": 2023,
+   "seat": "Christchurch Central",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "OPP"
+   ],
+   "actual": 0.54,
+   "A": 4.13,
+   "B": 11.2,
+   "B_lean0.5": 8.02,
+   "B_lean0.75": 6.4,
+   "B_lean1.0": 4.76,
+   "C": 2.42,
+   "C_loyo": 2.59,
+   "C_no_lean": 8.65,
+   "delta": 0.36,
+   "C_loyo_adj": 2.95
+  },
+  {
+   "year": 2023,
+   "seat": "Christchurch East",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "OPP"
+   ],
+   "actual": 4.9,
+   "A": 1.57,
+   "B": 5.85,
+   "B_lean0.5": 3.32,
+   "B_lean0.75": 2.04,
+   "B_lean1.0": 0.74,
+   "C": -0.71,
+   "C_loyo": -1.68,
+   "C_no_lean": 4.76,
+   "delta": 0.19,
+   "C_loyo_adj": -1.49
+  },
+  {
+   "year": 2023,
+   "seat": "Coromandel",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 32.85,
+   "A": 4.1,
+   "B": 2.15,
+   "B_lean0.5": 1.73,
+   "B_lean0.75": 1.5,
+   "B_lean1.0": 1.27,
+   "C": 0.4,
+   "C_loyo": 0.31,
+   "C_no_lean": 2.35,
+   "delta": 0.0,
+   "C_loyo_adj": 0.31
+  },
+  {
+   "year": 2023,
+   "seat": "Dunedin",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 11.21,
+   "A": 7.09,
+   "B": 13.17,
+   "B_lean0.5": 9.3,
+   "B_lean0.75": 7.22,
+   "B_lean1.0": 5.06,
+   "C": 3.49,
+   "C_loyo": 3.85,
+   "C_no_lean": 12.79,
+   "delta": 0.0,
+   "C_loyo_adj": 3.85
+  },
+  {
+   "year": 2023,
+   "seat": "East Coast",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 0.2,
+   "A": 0.45,
+   "B": 4.91,
+   "B_lean0.5": 3.76,
+   "B_lean0.75": 3.21,
+   "B_lean1.0": 2.66,
+   "C": 2.52,
+   "C_loyo": 3.03,
+   "C_no_lean": 6.04,
+   "delta": 0.0,
+   "C_loyo_adj": 3.03
+  },
+  {
+   "year": 2023,
+   "seat": "East Coast Bays",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP",
+    "NZF"
+   ],
+   "actual": 48.54,
+   "A": 6.42,
+   "B": 1.0,
+   "B_lean0.5": 2.98,
+   "B_lean0.75": 3.95,
+   "B_lean1.0": 4.92,
+   "C": 1.31,
+   "C_loyo": 1.56,
+   "C_no_lean": 2.89,
+   "delta": -0.7,
+   "C_loyo_adj": 0.86
+  },
+  {
+   "year": 2023,
+   "seat": "Epsom",
+   "maori": false,
+   "top2": [
+    "ACT",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 8.98,
+   "A": 14.14,
+   "B": 14.29,
+   "B_lean0.5": 13.71,
+   "B_lean0.75": 13.42,
+   "B_lean1.0": 13.15
+  },
+  {
+   "year": 2023,
+   "seat": "Hamilton East",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP"
+   ],
+   "actual": 13.76,
+   "A": -2.51,
+   "B": -6.68,
+   "B_lean0.5": -6.08,
+   "B_lean0.75": -5.79,
+   "B_lean1.0": -5.5,
+   "C": -4.31,
+   "C_loyo": -6.02,
+   "C_no_lean": -3.26,
+   "delta": -1.48,
+   "C_loyo_adj": -7.5
+  },
+  {
+   "year": 2023,
+   "seat": "Hamilton West",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 18.66,
+   "A": 0.44,
+   "B": -6.4,
+   "B_lean0.5": -5.47,
+   "B_lean0.75": -5.01,
+   "B_lean1.0": -4.54,
+   "C": -4.56,
+   "C_loyo": -6.24,
+   "C_no_lean": -4.86,
+   "delta": 0.0,
+   "C_loyo_adj": -6.24
+  },
+  {
+   "year": 2023,
+   "seat": "Hutt South",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 1.04,
+   "A": -0.08,
+   "B": -3.45,
+   "B_lean0.5": -3.11,
+   "B_lean0.75": -2.95,
+   "B_lean1.0": -2.78,
+   "C": -2.88,
+   "C_loyo": -4.24,
+   "C_no_lean": -0.63,
+   "delta": 0.0,
+   "C_loyo_adj": -4.24
+  },
+  {
+   "year": 2023,
+   "seat": "Ilam",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "OPP"
+   ],
+   "missing": [
+    "ACT",
+    "NZF"
+   ],
+   "actual": 12.58,
+   "A": 1.24,
+   "B": 1.0,
+   "B_lean0.5": 1.44,
+   "B_lean0.75": 1.66,
+   "B_lean1.0": 1.87
+  },
+  {
+   "year": 2023,
+   "seat": "Invercargill",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP",
+    "NZF"
+   ],
+   "actual": 21.7,
+   "A": 4.11,
+   "B": 1.02,
+   "B_lean0.5": 2.49,
+   "B_lean0.75": 3.16,
+   "B_lean1.0": 3.78,
+   "C": 2.89,
+   "C_loyo": 4.02,
+   "C_no_lean": 2.59,
+   "delta": -1.1,
+   "C_loyo_adj": 2.92
+  },
+  {
+   "year": 2023,
+   "seat": "Kaikōura",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 23.54,
+   "A": 1.76,
+   "B": 0.79,
+   "B_lean0.5": 1.97,
+   "B_lean0.75": 2.53,
+   "B_lean1.0": 3.06,
+   "C": 2.51,
+   "C_loyo": 3.57,
+   "C_no_lean": 1.46,
+   "delta": 0.0,
+   "C_loyo_adj": 3.57
+  },
+  {
+   "year": 2023,
+   "seat": "Kaipara ki Mahurangi",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 34.68,
+   "A": 3.23,
+   "B": 2.32,
+   "B_lean0.5": 3.25,
+   "B_lean0.75": 3.7,
+   "B_lean1.0": 4.15,
+   "C": 2.05,
+   "C_loyo": 3.13,
+   "C_no_lean": 3.55,
+   "delta": 0.0,
+   "C_loyo_adj": 3.13
+  },
+  {
+   "year": 2023,
+   "seat": "Kelston",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 10.79,
+   "A": 3.74,
+   "B": 7.46,
+   "B_lean0.5": 5.98,
+   "B_lean0.75": 5.24,
+   "B_lean1.0": 4.5,
+   "C": 3.49,
+   "C_loyo": 4.37,
+   "C_no_lean": 6.72,
+   "delta": 0.0,
+   "C_loyo_adj": 4.37
+  },
+  {
+   "year": 2023,
+   "seat": "Mana",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 20.16,
+   "A": 1.76,
+   "B": 1.84,
+   "B_lean0.5": 1.64,
+   "B_lean0.75": 1.54,
+   "B_lean1.0": 1.44,
+   "C": -0.33,
+   "C_loyo": -0.51,
+   "C_no_lean": 0.27,
+   "delta": 0.0,
+   "C_loyo_adj": -0.51
+  },
+  {
+   "year": 2023,
+   "seat": "Māngere",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 43.48,
+   "A": 0.51,
+   "B": -1.51,
+   "B_lean0.5": -2.28,
+   "B_lean0.75": -2.7,
+   "B_lean1.0": -3.13,
+   "C": -1.78,
+   "C_loyo": -2.72,
+   "C_no_lean": 0.47,
+   "delta": -0.07,
+   "C_loyo_adj": -2.79
+  },
+  {
+   "year": 2023,
+   "seat": "Manurewa",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "GP",
+    "NZF"
+   ],
+   "actual": 21.55,
+   "A": 2.04,
+   "B": 8.44,
+   "B_lean0.5": 6.53,
+   "B_lean0.75": 5.57,
+   "B_lean1.0": 4.59,
+   "C": 4.65,
+   "C_loyo": 5.91,
+   "C_no_lean": 8.63,
+   "delta": 0.54,
+   "C_loyo_adj": 6.45
+  },
+  {
+   "year": 2023,
+   "seat": "Maungakiekie",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 10.39,
+   "A": -0.89,
+   "B": -2.2,
+   "B_lean0.5": 0.89,
+   "B_lean0.75": 2.45,
+   "B_lean1.0": 4.02,
+   "C": 0.1,
+   "C_loyo": 0.01,
+   "C_no_lean": 0.7,
+   "delta": 0.0,
+   "C_loyo_adj": 0.01
+  },
+  {
+   "year": 2023,
+   "seat": "Mt Albert",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": -0.78,
+   "A": 3.75,
+   "B": 6.22,
+   "B_lean0.5": 4.01,
+   "B_lean0.75": 2.9,
+   "B_lean1.0": 1.77,
+   "C": 0.6,
+   "C_loyo": 0.31,
+   "C_no_lean": 4.27,
+   "delta": 0.04,
+   "C_loyo_adj": 0.35
+  },
+  {
+   "year": 2023,
+   "seat": "Mt Roskill",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 3.19,
+   "A": -3.18,
+   "B": -3.39,
+   "B_lean0.5": -2.18,
+   "B_lean0.75": -1.58,
+   "B_lean1.0": -0.97,
+   "C": 1.65,
+   "C_loyo": 2.69,
+   "C_no_lean": -1.5,
+   "delta": -0.06,
+   "C_loyo_adj": 2.63
+  },
+  {
+   "year": 2023,
+   "seat": "Napier",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 16.48,
+   "A": -0.41,
+   "B": 1.8,
+   "B_lean0.5": 2.71,
+   "B_lean0.75": 3.2,
+   "B_lean1.0": 3.71,
+   "C": 3.0,
+   "C_loyo": 4.02,
+   "C_no_lean": 3.6,
+   "delta": 0.0,
+   "C_loyo_adj": 4.02
+  },
+  {
+   "year": 2023,
+   "seat": "Nelson",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 1.94,
+   "A": 1.19,
+   "B": 3.9,
+   "B_lean0.5": 2.76,
+   "B_lean0.75": 2.2,
+   "B_lean1.0": 1.64,
+   "C": 0.11,
+   "C_loyo": 0.03,
+   "C_no_lean": 0.94,
+   "delta": 0.12,
+   "C_loyo_adj": 0.15
+  },
+  {
+   "year": 2023,
+   "seat": "New Lynn",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 5.98,
+   "A": -4.28,
+   "B": -9.84,
+   "B_lean0.5": -9.19,
+   "B_lean0.75": -8.86,
+   "B_lean1.0": -8.54,
+   "C": -5.0,
+   "C_loyo": -6.54,
+   "C_no_lean": -7.48,
+   "delta": -0.09,
+   "C_loyo_adj": -6.63
+  },
+  {
+   "year": 2023,
+   "seat": "New Plymouth",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP",
+    "NZF"
+   ],
+   "actual": 9.43,
+   "A": 2.07,
+   "B": 1.76,
+   "B_lean0.5": 1.29,
+   "B_lean0.75": 1.03,
+   "B_lean1.0": 0.75,
+   "C": 2.49,
+   "C_loyo": 3.07,
+   "C_no_lean": 4.96,
+   "delta": -1.59,
+   "C_loyo_adj": 1.48
+  },
+  {
+   "year": 2023,
+   "seat": "North Shore",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 38.14,
+   "A": 0.26,
+   "B": -2.68,
+   "B_lean0.5": -2.86,
+   "B_lean0.75": -2.96,
+   "B_lean1.0": -3.07,
+   "C": -1.38,
+   "C_loyo": -2.0,
+   "C_no_lean": -0.26,
+   "delta": -0.32,
+   "C_loyo_adj": -2.32
+  },
+  {
+   "year": 2023,
+   "seat": "Northcote",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 24.66,
+   "A": -0.74,
+   "B": -6.66,
+   "B_lean0.5": -3.43,
+   "B_lean0.75": -1.84,
+   "B_lean1.0": -0.26,
+   "C": -1.87,
+   "C_loyo": -2.39,
+   "C_no_lean": -3.37,
+   "delta": 0.0,
+   "C_loyo_adj": -2.39
+  },
+  {
+   "year": 2023,
+   "seat": "Northland",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 5.84,
+   "A": 3.03,
+   "B": 5.46,
+   "B_lean0.5": 3.51,
+   "B_lean0.75": 2.53,
+   "B_lean1.0": 1.56,
+   "C": 1.25,
+   "C_loyo": 1.12,
+   "C_no_lean": 5.75,
+   "delta": 0.0,
+   "C_loyo_adj": 1.12
+  },
+  {
+   "year": 2023,
+   "seat": "Ōhāriu",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": -1.57,
+   "A": 8.31,
+   "B": 11.71,
+   "B_lean0.5": 8.7,
+   "B_lean0.75": 7.16,
+   "B_lean1.0": 5.61,
+   "C": 3.89,
+   "C_loyo": 4.78,
+   "C_no_lean": 8.77,
+   "delta": 0.01,
+   "C_loyo_adj": 4.79
+  },
+  {
+   "year": 2023,
+   "seat": "Ōtaki",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 7.67,
+   "A": 2.59,
+   "B": 2.46,
+   "B_lean0.5": 1.45,
+   "B_lean0.75": 0.96,
+   "B_lean1.0": 0.48,
+   "C": 1.53,
+   "C_loyo": 1.67,
+   "C_no_lean": 4.68,
+   "delta": -0.4,
+   "C_loyo_adj": 1.27
+  },
+  {
+   "year": 2023,
+   "seat": "Pakuranga",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP",
+    "NZF"
+   ],
+   "actual": 43.0,
+   "A": 5.09,
+   "B": 6.49,
+   "B_lean0.5": 4.89,
+   "B_lean0.75": 4.09,
+   "B_lean1.0": 3.29,
+   "C": 1.24,
+   "C_loyo": 0.88,
+   "C_no_lean": 8.07,
+   "delta": -1.34,
+   "C_loyo_adj": -0.46
+  },
+  {
+   "year": 2023,
+   "seat": "Palmerston North",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 6.55,
+   "A": 5.72,
+   "B": 7.45,
+   "B_lean0.5": 6.81,
+   "B_lean0.75": 6.5,
+   "B_lean1.0": 6.19,
+   "C": 2.44,
+   "C_loyo": 2.99,
+   "C_no_lean": 5.82,
+   "delta": 0.01,
+   "C_loyo_adj": 3.0
+  },
+  {
+   "year": 2023,
+   "seat": "Panmure-Ōtāhuhu",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 24.92,
+   "A": 0.67,
+   "B": 5.51,
+   "B_lean0.5": 3.35,
+   "B_lean0.75": 2.21,
+   "B_lean1.0": 1.04,
+   "C": 1.57,
+   "C_loyo": 1.47,
+   "C_no_lean": 6.89,
+   "delta": -0.19,
+   "C_loyo_adj": 1.28
+  },
+  {
+   "year": 2023,
+   "seat": "Papakura",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP"
+   ],
+   "actual": 20.58,
+   "A": 6.06,
+   "B": 11.86,
+   "B_lean0.5": 11.7,
+   "B_lean0.75": 11.63,
+   "B_lean1.0": 11.57,
+   "C": 5.88,
+   "C_loyo": 7.16,
+   "C_no_lean": 13.15,
+   "delta": -1.19,
+   "C_loyo_adj": 5.97
+  },
+  {
+   "year": 2023,
+   "seat": "Rangitata",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "ACT"
+   ],
+   "actual": 25.45,
+   "A": 1.06,
+   "B": -2.15,
+   "B_lean0.5": -0.83,
+   "B_lean0.75": -0.31,
+   "B_lean1.0": 0.12,
+   "C": 0.42,
+   "C_loyo": 0.75,
+   "C_no_lean": -1.23,
+   "delta": -0.07,
+   "C_loyo_adj": 0.68
+  },
+  {
+   "year": 2023,
+   "seat": "Rangitīkei",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 19.17,
+   "A": 1.98,
+   "B": 2.53,
+   "B_lean0.5": 2.83,
+   "B_lean0.75": 2.99,
+   "B_lean1.0": 3.15,
+   "C": -0.33,
+   "C_loyo": -0.79,
+   "C_no_lean": 2.82,
+   "delta": 0.0,
+   "C_loyo_adj": -0.79
+  },
+  {
+   "year": 2023,
+   "seat": "Remutaka",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 19.42,
+   "A": 3.55,
+   "B": 7.07,
+   "B_lean0.5": 6.05,
+   "B_lean0.75": 5.56,
+   "B_lean1.0": 5.07,
+   "C": 0.66,
+   "C_loyo": -0.16,
+   "C_no_lean": 5.61,
+   "delta": -0.1,
+   "C_loyo_adj": -0.26
+  },
+  {
+   "year": 2023,
+   "seat": "Rongotai",
+   "maori": false,
+   "top2": [
+    "GP",
+    "LAB"
+   ],
+   "missing": [
+    "OPP"
+   ],
+   "actual": 21.02,
+   "A": -9.01,
+   "B": -11.35,
+   "B_lean0.5": -12.92,
+   "B_lean0.75": -13.7,
+   "B_lean1.0": -14.47
+  },
+  {
+   "year": 2023,
+   "seat": "Rotorua",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP",
+    "NZF"
+   ],
+   "actual": 16.76,
+   "A": 1.86,
+   "B": 4.51,
+   "B_lean0.5": 4.83,
+   "B_lean0.75": 5.0,
+   "B_lean1.0": 5.18,
+   "C": 3.16,
+   "C_loyo": 3.94,
+   "C_no_lean": 6.53,
+   "delta": -1.16,
+   "C_loyo_adj": 2.78
+  },
+  {
+   "year": 2023,
+   "seat": "Selwyn",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP",
+    "NZF"
+   ],
+   "actual": 33.83,
+   "A": 6.45,
+   "B": 3.66,
+   "B_lean0.5": 5.45,
+   "B_lean0.75": 6.34,
+   "B_lean1.0": 7.22,
+   "C": 2.95,
+   "C_loyo": 3.69,
+   "C_no_lean": 6.18,
+   "delta": -0.88,
+   "C_loyo_adj": 2.81
+  },
+  {
+   "year": 2023,
+   "seat": "Southland",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 35.67,
+   "A": 4.29,
+   "B": 6.04,
+   "B_lean0.5": 5.48,
+   "B_lean0.75": 5.16,
+   "B_lean1.0": 4.81,
+   "C": 4.11,
+   "C_loyo": 6.49,
+   "C_no_lean": 6.96,
+   "delta": -0.33,
+   "C_loyo_adj": 6.16
+  },
+  {
+   "year": 2023,
+   "seat": "Taieri",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [],
+   "actual": 2.7,
+   "A": 2.29,
+   "B": 4.97,
+   "B_lean0.5": 2.62,
+   "B_lean0.75": 1.47,
+   "B_lean1.0": 0.34,
+   "C": 0.11,
+   "C_loyo": -0.73,
+   "C_no_lean": 4.01,
+   "delta": 0.0,
+   "C_loyo_adj": -0.73
+  },
+  {
+   "year": 2023,
+   "seat": "Takanini",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP",
+    "NZF"
+   ],
+   "actual": 17.47,
+   "A": 3.69,
+   "B": 3.12,
+   "B_lean0.5": 3.43,
+   "B_lean0.75": 3.59,
+   "B_lean1.0": 3.74,
+   "C": 0.1,
+   "C_loyo": -1.0,
+   "C_no_lean": 4.75,
+   "delta": -1.53,
+   "C_loyo_adj": -2.53
+  },
+  {
+   "year": 2023,
+   "seat": "Tāmaki",
+   "maori": false,
+   "top2": [
+    "ACT",
+    "NAT"
+   ],
+   "missing": [
+    "GP"
+   ],
+   "actual": -4.78,
+   "A": 19.52,
+   "B": 18.52,
+   "B_lean0.5": 18.04,
+   "B_lean0.75": 17.81,
+   "B_lean1.0": 17.59
+  },
+  {
+   "year": 2023,
+   "seat": "Taranaki-King Country",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP",
+    "ACT",
+    "NZF"
+   ],
+   "actual": 28.03,
+   "A": 1.83,
+   "B": 4.18,
+   "B_lean0.5": 3.0,
+   "B_lean0.75": 2.39,
+   "B_lean1.0": 1.75,
+   "C": 0.59,
+   "C_loyo": 0.06,
+   "C_no_lean": 6.74,
+   "delta": -2.89,
+   "C_loyo_adj": -2.83
+  },
+  {
+   "year": 2023,
+   "seat": "Taupō",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 32.59,
+   "A": 4.45,
+   "B": 3.46,
+   "B_lean0.5": 3.53,
+   "B_lean0.75": 3.56,
+   "B_lean1.0": 3.6,
+   "C": 1.03,
+   "C_loyo": 1.04,
+   "C_no_lean": 3.73,
+   "delta": 0.0,
+   "C_loyo_adj": 1.04
+  },
+  {
+   "year": 2023,
+   "seat": "Tauranga",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 19.91,
+   "A": -2.43,
+   "B": -0.59,
+   "B_lean0.5": -1.83,
+   "B_lean0.75": -2.46,
+   "B_lean1.0": -3.11,
+   "C": -1.12,
+   "C_loyo": -1.76,
+   "C_no_lean": 0.46,
+   "delta": 0.0,
+   "C_loyo_adj": -1.76
+  },
+  {
+   "year": 2023,
+   "seat": "Te Atatū",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 2.05,
+   "A": 1.3,
+   "B": 1.94,
+   "B_lean0.5": 0.97,
+   "B_lean0.75": 0.49,
+   "B_lean1.0": 0.01,
+   "C": 0.36,
+   "C_loyo": 0.46,
+   "C_no_lean": 0.96,
+   "delta": 0.07,
+   "C_loyo_adj": 0.53
+  },
+  {
+   "year": 2023,
+   "seat": "Tukituki",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 18.72,
+   "A": 0.55,
+   "B": 2.47,
+   "B_lean0.5": 2.49,
+   "B_lean0.75": 2.52,
+   "B_lean1.0": 2.57,
+   "C": 3.4,
+   "C_loyo": 4.57,
+   "C_no_lean": 4.15,
+   "delta": -0.27,
+   "C_loyo_adj": 4.3
+  },
+  {
+   "year": 2023,
+   "seat": "Upper Harbour",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 25.42,
+   "A": 0.62,
+   "B": -1.45,
+   "B_lean0.5": 0.39,
+   "B_lean0.75": 1.31,
+   "B_lean1.0": 2.22,
+   "C": -0.51,
+   "C_loyo": -0.76,
+   "C_no_lean": 0.09,
+   "delta": 0.0,
+   "C_loyo_adj": -0.76
+  },
+  {
+   "year": 2023,
+   "seat": "Waikato",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP",
+    "ACT"
+   ],
+   "actual": 38.55,
+   "A": 3.32,
+   "B": 2.69,
+   "B_lean0.5": 1.98,
+   "B_lean0.75": 1.6,
+   "B_lean1.0": 1.2,
+   "C": 0.11,
+   "C_loyo": -0.36,
+   "C_no_lean": 3.78,
+   "delta": -1.95,
+   "C_loyo_adj": -2.31
+  },
+  {
+   "year": 2023,
+   "seat": "Waimakariri",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "GP",
+    "NZF"
+   ],
+   "actual": 24.58,
+   "A": 4.89,
+   "B": -1.08,
+   "B_lean0.5": 2.42,
+   "B_lean0.75": 4.13,
+   "B_lean1.0": 5.79,
+   "C": 1.54,
+   "C_loyo": 2.15,
+   "C_no_lean": 1.16,
+   "delta": -0.79,
+   "C_loyo_adj": 1.36
+  },
+  {
+   "year": 2023,
+   "seat": "Wairarapa",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 5.71,
+   "A": -3.78,
+   "B": -4.07,
+   "B_lean0.5": -3.09,
+   "B_lean0.75": -2.57,
+   "B_lean1.0": -2.05,
+   "C": -0.25,
+   "C_loyo": -0.08,
+   "C_no_lean": -2.35,
+   "delta": 0.02,
+   "C_loyo_adj": -0.06
+  },
+  {
+   "year": 2023,
+   "seat": "Waitaki",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 26.97,
+   "A": -1.11,
+   "B": -3.37,
+   "B_lean0.5": -1.27,
+   "B_lean0.75": -0.28,
+   "B_lean1.0": 0.69,
+   "C": 0.94,
+   "C_loyo": 1.66,
+   "C_no_lean": -2.21,
+   "delta": 0.0,
+   "C_loyo_adj": 1.66
+  },
+  {
+   "year": 2023,
+   "seat": "Wellington Central",
+   "maori": false,
+   "top2": [
+    "GP",
+    "LAB"
+   ],
+   "missing": [
+    "ACT"
+   ],
+   "actual": 21.87,
+   "A": -6.23,
+   "B": -4.62,
+   "B_lean0.5": -6.87,
+   "B_lean0.75": -8.0,
+   "B_lean1.0": -9.13
+  },
+  {
+   "year": 2023,
+   "seat": "West Coast-Tasman",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 2.0,
+   "A": -1.66,
+   "B": -3.57,
+   "B_lean0.5": -2.85,
+   "B_lean0.75": -2.53,
+   "B_lean1.0": -2.24,
+   "C": -0.66,
+   "C_loyo": -0.66,
+   "C_no_lean": -2.61,
+   "delta": 0.0,
+   "C_loyo_adj": -0.66
+  },
+  {
+   "year": 2023,
+   "seat": "Whanganui",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 8.56,
+   "A": 0.5,
+   "B": 1.89,
+   "B_lean0.5": 2.57,
+   "B_lean0.75": 2.91,
+   "B_lean1.0": 3.26,
+   "C": 2.69,
+   "C_loyo": 3.61,
+   "C_no_lean": 3.36,
+   "delta": 0.0,
+   "C_loyo_adj": 3.61
+  },
+  {
+   "year": 2023,
+   "seat": "Whangaparāoa",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 46.96,
+   "A": 3.19,
+   "B": 0.32,
+   "B_lean0.5": 0.4,
+   "B_lean0.75": 0.39,
+   "B_lean1.0": 0.34,
+   "C": -1.72,
+   "C_loyo": -3.78,
+   "C_no_lean": 1.28,
+   "delta": -0.36,
+   "C_loyo_adj": -4.14
+  },
+  {
+   "year": 2023,
+   "seat": "Whangārei",
+   "maori": false,
+   "top2": [
+    "NAT",
+    "LAB"
+   ],
+   "missing": [],
+   "actual": 21.32,
+   "A": 1.25,
+   "B": 2.43,
+   "B_lean0.5": 1.51,
+   "B_lean0.75": 1.05,
+   "B_lean1.0": 0.59,
+   "C": 1.82,
+   "C_loyo": 2.91,
+   "C_no_lean": 3.17,
+   "delta": 0.0,
+   "C_loyo_adj": 2.91
+  },
+  {
+   "year": 2023,
+   "seat": "Wigram",
+   "maori": false,
+   "top2": [
+    "LAB",
+    "NAT"
+   ],
+   "missing": [
+    "NZF",
+    "OPP"
+   ],
+   "actual": -2.95,
+   "A": 4.44,
+   "B": 13.36,
+   "B_lean0.5": 8.22,
+   "B_lean0.75": 5.6,
+   "B_lean1.0": 2.95,
+   "C": 2.13,
+   "C_loyo": 1.8,
+   "C_no_lean": 10.98,
+   "delta": 0.08,
+   "C_loyo_adj": 1.88
+  },
+  {
+   "year": 2023,
+   "seat": "Hauraki-Waikato",
+   "maori": true,
+   "top2": [
+    "TPM",
+    "LAB"
+   ],
+   "missing": [
+    "NAT",
+    "GP",
+    "NZF"
+   ],
+   "actual": 22.96,
+   "A": -9.8,
+   "B": -4.4,
+   "B_lean0.5": -5.97,
+   "B_lean0.75": -6.76,
+   "B_lean1.0": -7.54
+  },
+  {
+   "year": 2023,
+   "seat": "Ikaroa-Rāwhiti",
+   "maori": true,
+   "top2": [
+    "LAB",
+    "TPM"
+   ],
+   "missing": [
+    "NAT",
+    "GP",
+    "NZF"
+   ],
+   "actual": -2.46,
+   "A": 13.58,
+   "B": 7.02,
+   "B_lean0.5": 8.67,
+   "B_lean0.75": 9.46,
+   "B_lean1.0": 10.21
+  },
+  {
+   "year": 2023,
+   "seat": "Tāmaki Makaurau",
+   "maori": true,
+   "top2": [
+    "TPM",
+    "LAB"
+   ],
+   "missing": [
+    "NZF"
+   ],
+   "actual": 7.98,
+   "A": -7.59,
+   "B": -1.28,
+   "B_lean0.5": -3.91,
+   "B_lean0.75": -5.19,
+   "B_lean1.0": -6.43
+  },
+  {
+   "year": 2023,
+   "seat": "Te Tai Hauāuru",
+   "maori": true,
+   "top2": [
+    "TPM",
+    "LAB"
+   ],
+   "missing": [
+    "GP",
+    "NZF"
+   ],
+   "actual": 41.33,
+   "A": -3.17,
+   "B": 2.28,
+   "B_lean0.5": 0.65,
+   "B_lean0.75": -0.16,
+   "B_lean1.0": -0.96
+  },
+  {
+   "year": 2023,
+   "seat": "Te Tai Tokerau",
+   "maori": true,
+   "top2": [
+    "TPM",
+    "LAB"
+   ],
+   "missing": [
+    "NAT",
+    "NZF"
+   ],
+   "actual": 15.39,
+   "A": -12.11,
+   "B": -9.31,
+   "B_lean0.5": -10.26,
+   "B_lean0.75": -10.73,
+   "B_lean1.0": -11.2
+  },
+  {
+   "year": 2023,
+   "seat": "Te Tai Tonga",
+   "maori": true,
+   "top2": [
+    "TPM",
+    "LAB"
+   ],
+   "missing": [
+    "NAT",
+    "GP",
+    "NZF"
+   ],
+   "actual": 23.69,
+   "A": -11.25,
+   "B": -8.32,
+   "B_lean0.5": -9.26,
+   "B_lean0.75": -9.72,
+   "B_lean1.0": -10.19
+  },
+  {
+   "year": 2023,
+   "seat": "Waiariki",
+   "maori": true,
+   "top2": [
+    "TPM",
+    "LAB"
+   ],
+   "missing": [
+    "NAT",
+    "GP",
+    "NZF"
+   ],
+   "actual": 62.86,
+   "A": -5.56,
+   "B": -1.39,
+   "B_lean0.5": -3.2,
+   "B_lean0.75": -4.1,
+   "B_lean1.0": -4.99
+  }
+ ]
+}

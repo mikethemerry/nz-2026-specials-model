@@ -1,5 +1,5 @@
 {
- "_label": "Revised central: 85% lean, 85% valid",
+ "_label": "Central: 85% lean, 85% valid, 2026 candidates",
  "n": 20000,
  "k_mean": 0.85,
  "valid": 0.85

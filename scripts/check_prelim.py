@@ -18,7 +18,8 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from nzspecials.calibration import read_text  # noqa: E402
-from nzspecials.ge2026 import parse_electorate_status, parse_overall, parse_votes_counted  # noqa: E402
+from nzspecials.ge2026 import parse_candidates, parse_electorate_status, parse_overall, parse_votes_counted  # noqa: E402
+from nzspecials.splitvotes import code  # noqa: E402
 from nzspecials.sources import party_key  # noqa: E402
 
 SNAPS = ROOT / "data" / "raw" / "ge2026"
@@ -60,6 +61,27 @@ def main() -> int:
             vc = parse_votes_counted(read_text(snap / s["details"]))
             if vc != e["votes_counted"]:
                 diffs.append(f"{name} votes counted: snapshot {vc} vs prelim {e['votes_counted']}")
+
+    # every candidate and each seat's party vote, against candidates_2026.json
+    cand = json.loads((ROOT / "data" / "inputs" / "candidates_2026.json").read_text())["electorates"]
+    checked = 0
+    for name, e in cand.items():
+        page = snap / f"electorate-details-{e['number']:02d}.html"
+        if not page.exists():
+            continue
+        cs, ps = parse_candidates(read_text(page))
+        checked += 1
+        got = sorted((n, code(p) if p else "IND", v) for n, p, v in cs)
+        want = sorted((c["name"], c["party"], c["votes"]) for c in e["candidates"])
+        if got != want:
+            diffs.append(f"{name}: candidates differ ({len(got)} in snapshot, {len(want)} in candidates_2026.json)")
+        agg: dict = {}
+        for p, v in ps.items():
+            agg[code(p) if code(p) != "IND" else "OTH"] = agg.get(code(p) if code(p) != "IND" else "OTH", 0) + v
+        for k, v in e["party_votes"].items():
+            if agg.get(k, 0) != v:
+                diffs.append(f"{name} party vote {k}: snapshot {agg.get(k, 0)} vs file {v}")
+    print(f"Checked candidates in {checked} electorates")
 
     print(f"Snapshot {snap.relative_to(ROOT) if snap.is_relative_to(ROOT) else snap}: {len(diffs)} differences")
     for d in diffs:
