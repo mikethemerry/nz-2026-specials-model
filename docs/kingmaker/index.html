@@ -62,18 +62,23 @@ h2{font-size:1.3rem}
 section{display:grid;gap:14px}
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}
 
-/* walkthrough */
-.guide{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:10px 16px}
-.guide summary{cursor:pointer;font-weight:500;font-size:.9rem;padding:2px 0}
-.guide[open] summary{margin-bottom:10px}
-.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}
-.g-group{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;align-content:start}
-.g-head{grid-column:1/-1;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;padding-bottom:4px;border-bottom:1px solid var(--line)}
-.g-item h3{font-size:.88rem;font-weight:600;margin:0 0 2px}
-.g-item p{font-size:.82rem;color:var(--muted);margin:0;line-height:1.45}
-.g-item b{color:var(--fg);font-weight:600}.g-item b.tL{color:var(--left)}.g-item b.tR{color:var(--right)}
-@media (max-width:900px){.guide-grid{grid-template-columns:1fr}}
-@media (max-width:520px){.g-group{grid-template-columns:1fr}}
+/* guided tour */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tour-btn{font:inherit;font-size:.82rem;padding:5px 12px;border-radius:99px;border:1px solid var(--line-strong);background:var(--panel);color:var(--fg);cursor:pointer}
+.tour-btn:hover{background:var(--chip)}
+.tour-spot{position:fixed;z-index:50;border-radius:10px;box-shadow:0 0 0 3px var(--fg),0 0 0 9999px rgba(10,10,9,.62);pointer-events:none;animation:tour-in .2s ease}
+.tour-tip{position:fixed;z-index:51;width:min(21rem,calc(100vw - 32px));background:var(--panel);color:var(--fg);border:1px solid var(--line-strong);border-radius:10px;padding:14px 16px;box-shadow:0 8px 28px rgba(0,0,0,.28);animation:tour-in .2s ease}
+@keyframes tour-in{from{opacity:0}}
+.tour-tip .t-step{font-size:.75rem;color:var(--muted)}
+.tour-tip h3{font-family:var(--serif);font-weight:600;font-size:1.05rem;margin:2px 0 4px}
+.tour-tip p{font-size:.86rem;line-height:1.45;margin:0;color:var(--muted)}
+.tour-tip p b{color:var(--fg)}.tour-tip b.tL{color:var(--left)}.tour-tip b.tR{color:var(--right)}
+.tour-nav{display:flex;align-items:center;gap:8px;margin-top:12px}
+.tour-nav .sp{flex:1}
+.tour-nav button{font:inherit;font-size:.82rem;border-radius:6px;padding:5px 12px;cursor:pointer;border:1px solid var(--line-strong);background:transparent;color:var(--fg)}
+.tour-nav button.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tour-nav button.skip{border:0;color:var(--muted);padding-inline:0}
+@media (prefers-reduced-motion:reduce){.tour-spot,.tour-tip{animation:none}}
 
 /* house strip */
 .house{position:relative;height:36px;display:flex;border-radius:5px;background:var(--grid)}
@@ -162,42 +167,15 @@ details summary{cursor:pointer;font-weight:500}
 </head>
 <body>
 <div class="wrap">
-  <nav class="crumb"><a href="../">← Election 2026 home</a></nav>
+  <nav class="crumb topbar"><a href="../">← Election 2026 home</a><button class="tour-btn" id="tour-start" type="button">How to use</button></nav>
   <header>
     <div class="eyebrow">NZ 2026 · election night to final count</div>
     <h1>Who holds the balance of power?</h1>
     <p class="lede">Choose which parties can sit with which bloc, and the page counts every possible majority government. Switch between the preliminary and final counts to see how special votes moved the power.</p>
   </header>
 
-  <details class="guide" id="guide" open>
-    <summary>How to use this page</summary>
-    <div class="guide-grid">
-      <div class="g-group">
-        <div class="g-head">The controls</div>
-        <div class="g-item">
-          <h3>Count</h3>
-          <p>Switch between election night (7 November, 131 seats) and the final count after special votes (27 November, 130 seats). Every figure shows how it changed from the other count.</p>
-        </div>
-        <div class="g-item">
-          <h3>Can join</h3>
-          <p>Set who each party could govern with. <b class="tL">L</b> and <b class="tR">R</b> parties never govern together. <b>Either</b> can join any majority. <b>Out</b> keeps its seats but joins no government. A preset sets all seven parties at once.</p>
-        </div>
-      </div>
-      <div class="g-group">
-        <div class="g-head">Reading the charts</div>
-        <div class="g-item">
-          <h3>The House</h3>
-          <p>The left bloc fills from the left and the right bloc from the right. The kingmaker, the party with the most power, is outlined in the middle. The line marks halfway: a side that crosses it with the kingmaker has a majority.</p>
-        </div>
-        <div class="g-item">
-          <h3>Power by party</h3>
-          <p>Each bar is the party's share of the power: how often it's the one a majority government can't do without. The thin tick marks its share of seats, so a bar past the tick means more power than seats. ×n is power per seat.</p>
-        </div>
-      </div>
-    </div>
-  </details>
 
-  <section aria-label="The House" class="house-sec">
+  <section aria-label="The House" class="house-sec" id="tour-house">
     <div class="house-wrap">
       <div class="quota-lab num" id="qlab"></div>
       <div class="house" id="house"></div>
@@ -208,7 +186,7 @@ details summary{cursor:pointer;font-weight:500}
 
   <div class="layout">
     <aside class="panel controls" aria-label="Constraints">
-      <div class="ctl">
+      <div class="ctl" id="tour-count">
         <div class="eyebrow">Count</div>
         <div class="seg full" id="source" role="group" aria-label="Count">
           <button id="src-prelim" data-v="prelim" aria-pressed="false">Preliminary · 7 Nov</button>
@@ -219,7 +197,7 @@ details summary{cursor:pointer;font-weight:500}
         <div class="eyebrow">Preset <span class="custom-tag" id="customtag" hidden>· custom</span></div>
         <div class="seg full stack" id="presets" role="group" aria-label="Preset"></div>
       </div>
-      <div class="ctl">
+      <div class="ctl" id="tour-join">
         <div class="eyebrow prow-head"><span>Party</span><span>Seats</span><span>Can join</span></div>
         <div class="plist" id="ptable"></div>
       </div>
@@ -231,7 +209,7 @@ details summary{cursor:pointer;font-weight:500}
         <div class="headline" id="headline"></div>
         <div id="warn"></div>
       </section>
-      <section>
+      <section id="tour-power">
         <h2>Power by party</h2>
         <div class="keyline">
           <span><i style="width:16px;height:9px;background:var(--fg);border-radius:2px"></i>Share of the power</span>
@@ -453,9 +431,6 @@ function render(){
   fitLabels();
 }
 
-(()=>{const g=document.getElementById("guide");
-  try{if(localStorage.getItem("kingmaker-guide")==="closed")g.open=false;}catch(e){}
-  g.addEventListener("toggle",()=>{try{localStorage.setItem("kingmaker-guide",g.open?"open":"closed");}catch(e){}});})();
 document.addEventListener("click",e=>{
   const btn=e.target.closest("button");if(!btn)return;
   if(btn.dataset.k){state.c={...PRESETS[btn.dataset.k].c};render();}
@@ -490,6 +465,69 @@ window.addEventListener("resize",()=>requestAnimationFrame(fitLabels));
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitLabels);
 
 render();
+
+// ---- guided tour: spotlights each control or chart with a short caption ----
+const TOUR=[
+  {el:"tour-count",title:"Pick a count",text:"Switch between election night (7 November, 131 seats) and the final count after special votes (27 November, 130 seats). Every figure shows how it changed from the other count."},
+  {el:"tour-join",title:"Set who can work with whom",text:"<b class='tL'>L</b> and <b class='tR'>R</b> parties never govern together. <b>Either</b> can join any majority. <b>Out</b> keeps its seats but joins no government. The presets above set all seven at once."},
+  {el:"tour-house",title:"Read the House",text:"The left bloc fills from the left and the right bloc from the right. The kingmaker, the party with the most power, is outlined in the middle. A side that crosses the halfway line has a majority."},
+  {el:"tour-power",title:"Read the power",text:"Each bar is a party's share of the power: how often it's the one a majority can't do without. The tick marks its share of seats, so a bar past the tick means more power than seats."}
+];
+const tour=(()=>{
+  let i=-1,spot=null,tip=null,lastFocus=null,raf=0;
+  // Follow the target every frame, so the highlight tracks smooth scrolling and sticky panels.
+  const loop=()=>{place();raf=requestAnimationFrame(loop);};
+  const place=()=>{
+    if(i<0)return;
+    const r=document.getElementById(TOUR[i].el).getBoundingClientRect(),pad=8;
+    Object.assign(spot.style,{top:r.top-pad+"px",left:r.left-pad+"px",width:r.width+pad*2+"px",height:r.height+pad*2+"px"});
+    const tw=tip.offsetWidth,th=tip.offsetHeight,vw=innerWidth,vh=innerHeight,gap=14;
+    let top=r.bottom+pad+gap;
+    if(top+th>vh-12)top=r.top-pad-gap-th;           // no room below: go above
+    if(top<12)top=Math.min(vh-th-12,Math.max(12,r.top+12)); // tall target: overlap its top
+    let left=Math.min(Math.max(16,r.left),vw-tw-16);
+    if(r.width>vw*0.6)left=Math.min(Math.max(16,r.left+r.width/2-tw/2),vw-tw-16);
+    Object.assign(tip.style,{top:top+"px",left:left+"px"});
+  };
+  const show=n=>{
+    i=n;const st=TOUR[i],target=document.getElementById(st.el);
+    target.scrollIntoView({block:"center",behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+    tip.innerHTML=`<div class="t-step">${i+1} of ${TOUR.length}</div><h3 id="tour-title">${st.title}</h3><p>${st.text}</p>
+      <div class="tour-nav"><button class="skip" id="tour-skip">Skip tour</button><span class="sp"></span>
+      ${i?'<button id="tour-back">Back</button>':""}<button class="primary" id="tour-next">${i===TOUR.length-1?"Done":"Next"}</button></div>`;
+    place();
+    document.getElementById("tour-next").focus({preventScroll:true});
+  };
+  const end=()=>{
+    if(i<0)return;i=-1;cancelAnimationFrame(raf);spot.remove();tip.remove();
+    removeEventListener("keydown",key);
+    try{localStorage.setItem("kingmaker-tour","seen");}catch(e){}
+    lastFocus&&lastFocus.focus&&lastFocus.focus();
+  };
+  const key=e=>{
+    if(e.key==="Escape")end();
+    else if(e.key==="ArrowRight")i<TOUR.length-1?show(i+1):end();
+    else if(e.key==="ArrowLeft"&&i>0)show(i-1);
+  };
+  const start=()=>{
+    if(i>=0)return;lastFocus=document.activeElement;
+    spot=document.createElement("div");spot.className="tour-spot";
+    tip=document.createElement("div");tip.className="tour-tip";tip.setAttribute("role","dialog");tip.setAttribute("aria-labelledby","tour-title");
+    tip.addEventListener("click",e=>{
+      const id=e.target.id;
+      if(id==="tour-next")i<TOUR.length-1?show(i+1):end();
+      else if(id==="tour-back")show(i-1);
+      else if(id==="tour-skip")end();
+    });
+    document.body.append(spot,tip);
+    addEventListener("keydown",key);
+    show(0);loop();
+  };
+  return {start};
+})();
+document.getElementById("tour-start").addEventListener("click",tour.start);
+// First visit: start the tour once the page has drawn.
+try{if(!localStorage.getItem("kingmaker-tour"))setTimeout(tour.start,600);}catch(e){}
 </script>
 </body>
 </html>
