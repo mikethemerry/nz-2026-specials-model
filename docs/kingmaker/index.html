@@ -39,13 +39,15 @@ body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px
 .ctl{display:grid;gap:6px}
 .seg.full{display:flex}.seg.full button{flex:1 1 auto}
 .seg.stack{flex-direction:column}.seg.stack button{text-align:left}
-.prow-head{display:grid;grid-template-columns:1fr 3rem 9rem;gap:8px}
-.prow-head span:nth-child(2){text-align:right}
+.prow-head{display:grid;grid-template-columns:1fr 3.6rem 9rem;gap:8px}
+.prow-head span:nth-child(2){text-align:right;padding-right:1.7rem}
 .plist{display:grid}
-.prow-c{display:grid;grid-template-columns:1fr 3rem 9rem;gap:8px;align-items:center;padding:5px 0;border-top:1px solid var(--line)}
+.prow-c{display:grid;grid-template-columns:1fr 3.6rem 9rem;gap:8px;align-items:center;padding:5px 0;border-top:1px solid var(--line)}
 .prow-c:first-child{border-top:0}
 .prow-c .pname{font-size:.88rem;overflow:hidden;text-overflow:ellipsis}
-.prow-c .pseats{color:var(--muted);text-align:right;white-space:nowrap;font-size:.88rem}
+.prow-c .pseats{color:var(--muted);white-space:nowrap;font-size:.88rem;display:grid;grid-template-columns:1fr 1.7rem;align-items:baseline}
+.prow-c .pseats .n{text-align:right}
+.prow-c .pseats .delta{margin-left:0;padding-left:4px}
 .prow-c .seg{display:flex;padding:1px}
 .prow-c .seg button{flex:1;padding:3px 0;font-size:.74rem;text-align:center}
 @media (max-width:900px){.layout{grid-template-columns:1fr}.controls{position:static}}
@@ -267,7 +269,7 @@ function renderControls(){
     const d=seats[i]-other[i];
     return `<div class="prow-c">
     <div class="pname"><span class="sw" style="background:${col(p)}"></span>${NAME[p]}</div>
-    <div class="pseats num">${seats[i]}${d?`<span class="delta ${d>0?"up":"down"}">${d>0?"+":"−"}${Math.abs(d)}</span>`:""}</div>
+    <div class="pseats num"><span class="n">${seats[i]}</span><span class="delta ${d>0?"up":"down"}">${d?`${d>0?"+":"−"}${Math.abs(d)}`:""}</span></div>
     <div class="seg" role="group" aria-label="${NAME[p]} can join">${SIDES.map(([v,l])=>`<button id="side-${p}-${v}" data-p="${p}" data-v="${v}" aria-pressed="${state.c[p]===v}" title="${l}">${SIDE_SHORT[v]}</button>`).join("")}</div>
   </div>`;}).join("");
   for(const b of document.querySelectorAll("#source button"))b.setAttribute("aria-pressed",b.dataset.v===state.src);
