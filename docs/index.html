@@ -7,6 +7,8 @@
 <meta name="description" content="Two ways into New Zealand's 2026 election result: the model of what the special votes would decide, and an interactive look at who holds the balance of power.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.jpg">
 <link rel="stylesheet" href="theme.css">
 <style>
 :root{
@@ -27,15 +29,23 @@ h1{font-size:clamp(2rem,5vw,2.9rem);line-height:1.1;max-width:22ch}
 .num{font-variant-numeric:tabular-nums}
 
 /* final House */
-.house-block{display:grid;gap:10px}
+.house-block{display:grid;gap:8px}
 .house-cap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;font-size:.85rem;color:var(--color-fg-muted)}
 .house-cap b{color:var(--color-fg);font-weight:500}
-.house{position:relative;display:flex;height:40px;border-radius:6px;overflow:visible}
+.house-wrap{position:relative;padding-top:22px}
+.mid-lab{position:absolute;top:0;left:50%;transform:translateX(-50%);font-size:.75rem;white-space:nowrap;color:var(--color-fg)}
+.house{position:relative;display:flex;height:40px}
 .house span{display:flex;align-items:center;justify-content:center;color:#fff;font-size:.72rem;font-weight:500;white-space:nowrap;overflow:hidden;box-shadow:inset -1px 0 0 var(--color-bg)}
 .house span:first-child{border-radius:6px 0 0 6px}.house span:last-of-type{border-radius:0 6px 6px 0}
-.house .line{position:absolute;top:-7px;bottom:-7px;left:calc(66/130*100% - 1px);width:2px;background:var(--color-fg)}
-.house-keys{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.8rem;color:var(--color-fg-muted)}
-.sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px}
+.house .line{position:absolute;top:-6px;bottom:-6px;left:calc(50% - 1px);width:2px;background:var(--color-fg)}
+.brackets{display:grid;grid-template-columns:58fr 7fr 65fr;margin-top:6px;font-size:.8rem}
+.br{border:1.5px solid;border-top:0;height:8px;border-radius:0 0 4px 4px;margin-inline:1px}
+.br-l{border-color:var(--LAB)}.br-o{border-color:var(--TOP)}.br-r{border-color:var(--NAT)}
+.blabs{display:flex;justify-content:space-between;gap:12px;font-size:.8rem;color:var(--color-fg-muted)}
+.blabs b{font-weight:500}
+.blabs .o{color:var(--TOP);text-align:center}.blabs .l{color:var(--LAB)}.blabs .r{color:var(--NAT);text-align:right}
+.house-note{font-size:.88rem;color:var(--color-fg-muted);margin:4px 0 0;max-width:44rem}
+.house-note b{color:var(--color-fg);font-weight:500}
 
 /* the two views */
 .views{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:16px}
@@ -68,22 +78,26 @@ h1{font-size:clamp(2rem,5vw,2.9rem);line-height:1.1;max-width:22ch}
       <span><b>The final House</b> · official result, 27 November</span>
       <span class="num"><b>130</b> seats · <b>66</b> for a majority</span>
     </div>
-    <div class="house" role="img" aria-label="Te Pāti Māori 5, Green 17, Labour 36, Opportunity 7, NZ First 12, National 40, ACT 13. The majority line falls inside Opportunity's seats.">
-      <span style="flex:5;background:var(--TPM)"></span>
-      <span style="flex:17;background:var(--GRN)">GRN 17</span>
-      <span style="flex:36;background:var(--LAB)">LAB 36</span>
-      <span style="flex:7;background:var(--TOP)">TOP 7</span>
-      <span style="flex:12;background:var(--NZF)">NZF 12</span>
-      <span style="flex:40;background:var(--NAT)">NAT 40</span>
-      <span style="flex:13;background:var(--ACT)">ACT 13</span>
-      <div class="line" aria-hidden="true"></div>
+    <div class="house-wrap">
+      <span class="mid-lab num">65 | 65 · 66 needed for a majority</span>
+      <div class="house" role="img" aria-label="Te Pāti Māori 5, Green 17, Labour 36 and Opportunity 7 make 65. NZ First 12, National 40 and ACT 13 make 65. A majority needs 66.">
+        <span style="flex:5;background:var(--TPM)" title="Te Pāti Māori 5">5</span>
+        <span style="flex:17;background:var(--GRN)">GRN 17</span>
+        <span style="flex:36;background:var(--LAB)">LAB 36</span>
+        <span style="flex:7;background:var(--TOP)">TOP 7</span>
+        <span style="flex:12;background:var(--NZF)">NZF 12</span>
+        <span style="flex:40;background:var(--NAT)">NAT 40</span>
+        <span style="flex:13;background:var(--ACT)">ACT 13</span>
+        <div class="line" aria-hidden="true"></div>
+      </div>
+      <div class="brackets" aria-hidden="true"><div class="br br-l"></div><div class="br br-o"></div><div class="br br-r"></div></div>
     </div>
-    <div class="house-keys num">
-      <span><span class="sw" style="background:var(--TPM)"></span>Te Pāti Māori 5</span>
-      <span>Left bloc 58</span>
-      <span><span class="sw" style="background:var(--TOP)"></span>Opportunity 7</span>
-      <span>Coalition 65</span>
+    <div class="blabs num">
+      <span class="l">Left bloc <b>58</b></span>
+      <span class="o">Opportunity <b>7</b></span>
+      <span class="r">Coalition <b>65</b></span>
     </div>
+    <p class="house-note">The House splits exactly in half. With Opportunity, the left reaches 65, a tie and not a majority. With Opportunity, the coalition reaches <b>72</b>. Opportunity is the only party that can make a majority, and only for the coalition.</p>
   </section>
 
   <section class="views" aria-label="Explore">

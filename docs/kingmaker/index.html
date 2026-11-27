@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.jpg">
 <title>Balance of Power 2026</title>
 <meta name="description" content="Interactive coalition power index for the 2026 New Zealand election: choose which bloc each party can join and compare power at the preliminary and final counts.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,8 +75,7 @@ section{display:grid;gap:14px}
 .house-wrap{position:relative;padding-top:22px}
 .quota-lab{position:absolute;top:0;left:0;right:0;height:18px;font-size:.75rem;color:var(--fg)}
 .quota-lab span{position:absolute;white-space:nowrap}
-.quota-lab .ql-l{padding-left:6px}
-.quota-lab .ql-r{transform:translateX(-100%);padding-right:6px}
+.quota-lab .ql-mid{left:50%;transform:translateX(-50%)}
 .brackets{position:relative;height:34px;margin-top:8px}
 .br{position:absolute;top:0;height:8px;border:1.5px solid var(--muted);border-top:0;border-radius:0 0 4px 4px}
 .br span{position:absolute;top:12px;left:50%;transform:translateX(-50%);font-size:.78rem;white-space:nowrap;color:var(--muted)}
@@ -232,7 +233,6 @@ const PRESETS={
 };
 const SIDES=[["L","Left"],["E","Either"],["R","Right"],["X","Out"]];
 let state={c:{...PRESETS.general.c},src:"final"};
-try{const s=JSON.parse(localStorage.getItem("bop2026v3")||"null");if(s&&s.c&&P.every(p=>s.c[p])&&SEATS[s.src])state=s;}catch(e){}
 
 const col=p=>`var(--${p})`;
 const fmt=x=>(x*100).toFixed(1)+"%";
@@ -333,9 +333,11 @@ function renderHouse(a){
     const cls=[state.c[p]==="X"?"out":"",p===K?"king":""].join(" ");
     html+=`<span class="${cls}" style="width:${pct(seat(p))}%;background:${col(p)}" title="${NAME[p]} ${seat(p)}"><em data-full="${SHORT[p]} ${seat(p)}" data-short="${seat(p)}"></em></span>`;
   }
-  html+=`<div class="quota" style="left:calc(${pct(Q)}% - 1px)"></div><div class="quota" style="left:calc(${pct(total-Q)}% - 1px)"></div>`;
+  // One line at the halfway point: a majority is any side that crosses it.
+  html+=`<div class="quota" style="left:calc(50% - 1px)"></div>`;
   document.getElementById("house").innerHTML=html;
-  document.getElementById("qlab").innerHTML=`<span style="left:${pct(total-Q)}%" class="ql-r">${Q} from the right</span><span style="left:${pct(Q)}%" class="ql-l">${Q} from the left</span>`;
+  const half=total/2,halfTxt=Number.isInteger(half)?`${half} | ${half}`:`${Math.floor(half)}½`;
+  document.getElementById("qlab").innerHTML=`<span class="ql-mid">Halfway · ${halfTxt} · ${Q} needed for a majority</span>`;
 
   // Brackets under the bar: each side's bloc, and the kingmaker between them.
   let x=0;const spans=[];
@@ -389,7 +391,6 @@ function coalRow(x,a,tag){
 }
 
 function render(){
-  try{localStorage.setItem("bop2026v3",JSON.stringify(state));}catch(e){}
   renderControls();
   const vsKey=OTHER[state.src],vs=SEATS[vsKey].label;
   const a=analyse(seatsNow(),state.c),b=analyse(SEATS[vsKey].seats,state.c);
