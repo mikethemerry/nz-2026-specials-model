@@ -106,10 +106,9 @@ button:focus-visible{outline:2px solid var(--NAT);outline-offset:2px}
 /* power bars */
 .prow{display:grid;grid-template-columns:7.5rem 1fr 10rem;gap:6px 14px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
 .prow:first-of-type{border-top:0}
-.track{position:relative;height:26px}
+.track{position:relative;height:14px}
 .track .b{position:absolute;left:0;height:11px;border-radius:2px}
-.track .bz{top:0}
-.track .ss{top:14px;height:7px;opacity:.45}
+.track .bz{top:1px;height:12px}
 .track .seat{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--fg);opacity:.55}
 .pv{text-align:right;font-size:.85rem;line-height:1.25}
 .pv b{font-family:var(--serif);font-weight:600;font-size:1.05rem}
@@ -191,8 +190,7 @@ details summary{cursor:pointer;font-weight:500}
       <section>
         <h2>Power by party</h2>
         <div class="keyline">
-          <span><i style="width:16px;height:9px;background:var(--fg);border-radius:2px"></i>Banzhaf index</span>
-          <span><i style="width:16px;height:6px;background:var(--fg);opacity:.45;border-radius:2px"></i>Shapley–Shubik</span>
+          <span><i style="width:16px;height:9px;background:var(--fg);border-radius:2px"></i>Share of the power</span>
           <span><i style="width:2px;height:14px;background:var(--fg);opacity:.55"></i>Seat share</span>
         </div>
         <div id="power"></div>
@@ -208,10 +206,9 @@ details summary{cursor:pointer;font-weight:500}
   <details class="method">
     <summary>How this is calculated</summary>
     <p><b>Feasible coalitions.</b> A coalition is any group of parties that are not Out, with no Left party alongside a Right party. It wins if it holds a majority of the House: at least half the seats plus one, so a 65–65 tie is not a win.</p>
-    <p><b>Banzhaf index.</b> Count every feasible winning coalition. A member is <em>critical</em> if the coalition loses its majority without it. A party's index is its share of all critical appearances.</p>
-    <p><b>Shapley–Shubik index.</b> Parties join one at a time, in every possible order. A party that clashes with someone already in skips its turn. The party whose arrival first takes the group past the majority line is pivotal. A party's index is the share of orderings in which it is pivotal.</p>
+    <p><b>Power.</b> Power is the Banzhaf power index. Count every feasible winning coalition. A member is <em>critical</em> if the coalition loses its majority without it. A party's power is its share of all critical appearances, so the figures add to 100%. The ×n beside each figure is power divided by seat share.</p>
     <p><b>Minimal winning coalitions.</b> Coalitions in which every party is critical. These are the realistic governments.</p>
-    <p><b>Kingmaker.</b> The party with the highest Banzhaf index. Ties go to the higher Shapley–Shubik index, then to the smaller party.</p>
+    <p><b>Kingmaker.</b> The party with the most power. When parties tie, the smallest of them is shown, since it gets the most power per seat.</p>
     <p><b>Preliminary and final.</b> Preliminary seats are from the Electoral Commission's election-night count (7 November: a House of 131). Final seats are from the official result after special votes (27 November: 130). Each change marker compares the selected count with the other one.</p>
     <p>This counts arithmetic only. It doesn't weigh policy distance, ministerial demands or confidence-and-supply deals.</p>
   </details>
@@ -253,21 +250,8 @@ function analyse(seats,c){
   }
   const ct=crit.reduce((a,b)=>a+b,0);
   const bz=crit.map(x=>ct?x/ct:0);
-  // Shapley–Shubik: parties join in every order; one that clashes with a member skips its turn.
-  const piv=new Array(n).fill(0);let orders=0;
-  const idx=P.map((_,i)=>i).filter(i=>c[P[i]]!=="X");
-  const perm=(arr,k)=>{
-    if(k===arr.length){
-      let m=0,s=0;
-      for(const i of arr){const m2=m|1<<i;if(!ok(m2))continue;m=m2;s+=seats[i];if(s>=Q){piv[i]++;orders++;return;}}
-      return;
-    }
-    for(let j=k;j<arr.length;j++){[arr[k],arr[j]]=[arr[j],arr[k]];perm(arr,k+1);[arr[k],arr[j]]=[arr[j],arr[k]];}
-  };
-  perm(idx.slice(),0);
-  const ss=piv.map(x=>orders?x/orders:0);
   mwc.sort((a,b)=>a.s-b.s||a.m-b.m);
-  return {seats,total,Q,wins,bz,ss,mwc,seatShare:seats.map(x=>x/total)};
+  return {seats,total,Q,wins,bz,mwc,seatShare:seats.map(x=>x/total)};
 }
 
 // ---- render ----
@@ -295,7 +279,7 @@ const IDEO=["TPM","GRN","LAB","TOP","NZF","NAT","ACT"];
 function kingmaker(a){
   if(!a.bz.some(x=>x>0))return null;
   return P[P.map((_,i)=>i).sort((x,y)=>
-    (a.bz[y]-a.bz[x]>1e-9?1:a.bz[x]-a.bz[y]>1e-9?-1:0)||(a.ss[y]-a.ss[x])||(a.seats[x]-a.seats[y]))[0]];
+    (a.bz[y]-a.bz[x]>1e-9?1:a.bz[x]-a.bz[y]>1e-9?-1:0)||(a.seats[x]-a.seats[y]))[0]];
 }
 
 // Order the House: Left bloc from the left edge, Right bloc from the right edge,
@@ -377,7 +361,7 @@ function delta(now,then,vsLabel){
 }
 
 function renderPower(a,b,vs){
-  const max=Math.max(...a.bz,...a.ss,...a.seatShare,0.01);
+  const max=Math.max(...a.bz,...a.seatShare,0.01);
   const sc=x=>Math.min(100,x/max*100);
   const order=P.map((p,i)=>i).sort((x,y)=>a.bz[y]-a.bz[x]||a.seatShare[y]-a.seatShare[x]);
   document.getElementById("power").innerHTML=order.map(i=>{
@@ -386,10 +370,9 @@ function renderPower(a,b,vs){
       <div class="pname"><span class="sw" style="background:${col(p)}"></span>${NAME[p]}</div>
       <div class="track">
         <div class="b bz" style="width:${sc(a.bz[i])}%;background:${col(p)}"></div>
-        <div class="b ss" style="width:${sc(a.ss[i])}%;background:${col(p)}"></div>
         <div class="seat" style="left:${sc(a.seatShare[i])}%"></div>
       </div>
-      <div class="pv num"><b>${fmt(a.bz[i])}</b>${out?"":`<span class="ratio" title="Power relative to seat share">×${r.toFixed(1)}</span>`}<small>SS ${fmt(a.ss[i])}</small><small>${delta(a.bz[i],b.bz[i],vs)}</small></div>
+      <div class="pv num"><b>${fmt(a.bz[i])}</b>${out?"":`<span class="ratio" title="Power relative to seat share">×${r.toFixed(1)}</span>`}<small>${delta(a.bz[i],b.bz[i],vs)}</small></div>
     </div>`;}).join("");
 }
 
@@ -413,7 +396,7 @@ function render(){
   const K=kingmaker(a),Kb=kingmaker(b);
   const kNote=K===Kb?`same as at the ${vs} count`:Kb?`was ${NAME[Kb]} at the ${vs} count`:`no majority at the ${vs} count`;
   hl.innerHTML=(K?`
-    <div class="stat"><div class="l">Kingmaker (most power)</div><div class="v" style="color:${col(K)}">${NAME[K]}</div><div class="l num">${fmt(a.bz[P.indexOf(K)])} Banzhaf · ${kNote}</div></div>`:
+    <div class="stat"><div class="l">Kingmaker (most power)</div><div class="v" style="color:${col(K)}">${NAME[K]}</div><div class="l num">${fmt(a.bz[P.indexOf(K)])} of the power · ${kNote}</div></div>`:
     `<div class="stat"><div class="l">Kingmaker</div><div class="v">None</div><div class="l">${Kb?`was ${NAME[Kb]} at the ${vs} count`:"no feasible majority"}</div></div>`)+`
     <div class="stat"><div class="l">Majority coalitions possible</div><div class="v num">${a.wins}</div><div class="l num">${b.wins} at the ${vs} count</div></div>
     <div class="stat"><div class="l">Minimal winning coalitions</div><div class="v num">${a.mwc.length}</div><div class="l num">${b.mwc.length} at the ${vs} count</div></div>`;
