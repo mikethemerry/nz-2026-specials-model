@@ -11,6 +11,8 @@
  * Every number on the page is drawn from data/*.json; nothing is hard-coded.
  */
 (function () {
+  // data/ sits beside this script, so pages in subfolders load it correctly.
+  const base = new URL('.', document.currentScript.src);
   const cache = {};
   const draws = {};
   let pending = false;
@@ -26,7 +28,7 @@
   function data(id) {
     if (!cache[id]) {
       cache[id] = { status: 'loading', data: [] };
-      fetch(`data/${id}.json`)
+      fetch(new URL(`data/${id}.json`, base))
         .then((r) => { if (!r.ok) throw new Error(`${r.status} loading data/${id}.json`); return r.json(); })
         .then((d) => { cache[id] = { status: 'ok', data: d, columns: Array.isArray(d) && d.length ? Object.keys(d[0]) : [] }; schedule(); })
         .catch((e) => { cache[id] = { status: 'error', data: [], message: String(e) }; console.error(e); schedule(); });

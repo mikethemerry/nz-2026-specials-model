@@ -6,7 +6,7 @@ A Monte Carlo model of the 2026 New Zealand general election special-vote count.
 2. **National needs Opportunity** - neither bloc has a majority, so Opportunity holds the balance of power.
 3. **Labour could form a government** - Labour, Green, Te Pāti Māori and Opportunity together hold a majority.
 
-**Live site:** https://election26.vantg.nz/ · **Balance of power:** https://election26.vantg.nz/balance/
+**Live site:** https://election26.vantg.nz/ — the model is at [/specials/](https://election26.vantg.nz/specials/) and the balance-of-power explorer at [/balance/](https://election26.vantg.nz/balance/).
 
 ## Headline (central case, 20,000 runs)
 
