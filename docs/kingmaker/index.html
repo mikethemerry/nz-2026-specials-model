@@ -193,7 +193,7 @@ details summary{cursor:pointer;font-weight:500}
           <button id="src-final" data-v="final" aria-pressed="true">Final · 27 Nov</button>
         </div>
       </div>
-      <div class="ctl">
+      <div class="ctl" id="tour-preset">
         <div class="eyebrow">Preset <span class="custom-tag" id="customtag" hidden>· custom</span></div>
         <div class="seg full stack" id="presets" role="group" aria-label="Preset"></div>
       </div>
@@ -469,7 +469,8 @@ render();
 // ---- guided tour: spotlights each control or chart with a short caption ----
 const TOUR=[
   {el:"tour-count",title:"Pick a count",text:"Switch between election night (7 November, 131 seats) and the final count after special votes (27 November, 130 seats). Every figure shows how it changed from the other count."},
-  {el:"tour-join",title:"Set who can work with whom",text:"<b class='tL'>L</b> and <b class='tR'>R</b> parties never govern together. <b>Either</b> can join any majority. <b>Out</b> keeps its seats but joins no government. The presets above set all seven at once."},
+  {el:"tour-preset",title:"Start from a preset",text:"<b>General view</b> puts Labour, the Greens and Te Pāti Māori on the left, National, ACT and NZ First on the right, and leaves Opportunity free. <b>Greens &amp; NZ First flex</b> frees those two as well. <b>No constraints</b> lets any party work with any other."},
+  {el:"tour-join",title:"Or set each party yourself",text:"<b class='tL'>L</b> and <b class='tR'>R</b> parties never govern together. <b>Either</b> can join any majority. <b>Out</b> keeps its seats but joins no government."},
   {el:"tour-house",title:"Read the House",text:"The left bloc fills from the left and the right bloc from the right. The kingmaker, the party with the most power, is outlined in the middle. A side that crosses the halfway line has a majority."},
   {el:"tour-power",title:"Read the power",text:"Each bar is a party's share of the power: how often it's the one a majority can't do without. The tick marks its share of seats, so a bar past the tick means more power than seats."}
 ];
@@ -482,6 +483,12 @@ const tour=(()=>{
     const r=document.getElementById(TOUR[i].el).getBoundingClientRect(),pad=8;
     Object.assign(spot.style,{top:r.top-pad+"px",left:r.left-pad+"px",width:r.width+pad*2+"px",height:r.height+pad*2+"px"});
     const tw=tip.offsetWidth,th=tip.offsetHeight,vw=innerWidth,vh=innerHeight,gap=14;
+    const roomRight=vw-(r.right+pad+gap),roomLeft=r.left-pad-gap;
+    if(r.width<vw*0.6&&(roomRight>=tw+16||roomLeft>=tw+16)){
+      const left=roomRight>=tw+16?r.right+pad+gap:r.left-pad-gap-tw;
+      const top=Math.min(Math.max(12,r.top+r.height/2-th/2),vh-th-12);
+      Object.assign(tip.style,{top:top+"px",left:left+"px"});return;
+    }
     let top=r.bottom+pad+gap;
     if(top+th>vh-12)top=r.top-pad-gap-th;           // no room below: go above
     if(top<12)top=Math.min(vh-th-12,Math.max(12,r.top+12)); // tall target: overlap its top
@@ -491,7 +498,7 @@ const tour=(()=>{
   };
   const show=n=>{
     i=n;const st=TOUR[i],target=document.getElementById(st.el);
-    target.scrollIntoView({block:"center",behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+    target.scrollIntoView({block:"center"});
     tip.innerHTML=`<div class="t-step">${i+1} of ${TOUR.length}</div><h3 id="tour-title">${st.title}</h3><p>${st.text}</p>
       <div class="tour-nav"><button class="skip" id="tour-skip">Skip tour</button><span class="sp"></span>
       ${i?'<button id="tour-back">Back</button>':""}<button class="primary" id="tour-next">${i===TOUR.length-1?"Done":"Next"}</button></div>`;
